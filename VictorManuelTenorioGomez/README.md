@@ -94,7 +94,41 @@ En cuanto al esquema de los mismos, en la página web no se puede encontrar un e
 
 ### Estrategia de nombrado de recursos
 
+A continuación, definiré la estrategia que utilizaré para nombrar los recursos de este conjunto. El dominio que he elegido para las URIs de los recursos y los posibles términos ontológicos que se necesiten es el mismo utilizado en los ejemplos, http://smartcity.linkeddata.es, debido a que las medidas de contaminación considero que están muy relacionadas con el concepto de Smart Cities.
+
+La estrategia a utilizar para nombrar los distintos elementos del vocabulario será la siguiente:
+
+* Para identificar los términos ontológicos, en caso de que sea necesario crear algún elemento por no encontrar otro concepto a reutilizar, utilizaré la '#'. La ruta de los mismos y el patrón para la construcción de las URIs será "http://smartcity.linkeddata.es/airQuality/ontology#\<nombre del término\>".
+* Para los identificar las estaciones utilizaremos el carácter '/', debido a que, aunque no es un conjunto muy grande (24 estaciones) y no es dinámico (no tiene ningún parámetro que se actualice cada poco tiempo), utilizaremos estos recursos posteriormente para referirnos a los sensores. La ruta y el patrón se definirán como "http://smartcity.linkeddata.es/airQuality/resources/stations/\<Código de la estación\>".
+* Para las magnitudes vamos a utilizar en su lugar el carácter '#', debido a que son pocos datos y no cambian a menudo. La URI para representarlas seguirá el patrón "http://smartcity.linkeddata.es/airQuality/resources/magnitudes#\<Código de la magnitud\>".
+* Para los datos de mediciones, utilizaremos la '/', utilizando el punto de muestreo, la magnitud medida y la fecha de la medición. El patrón será "http://smartcity.linkeddata.es/airQuality/resources/measurement/\<Campo "punto\_muestreo" de la tabla sin la información sobre la técnica de medida, contiene información sobre la estación y sobre la magnitud a medir\>/\<Fecha de la medición\>".
+* Para los datos de los sensores de las distintas magnitudes alojados en cada una de las estaciones, utilizaremos la '#', debido a que son pocos sensores dentro de una estación. Así, el patrón de definición de las URIs será "http://smartcity.linkeddata.es/airQuality/resources/stations/\<Código de la estación\>#\<Código de la magnitud que mide\>".
+* En cuanto a los municipios y las zonas donde están ubicados, serán representados igualmente con la '#', con el patrón "http://smartcity.linkeddata.es/airQuality/resources/towns#\<Nombre del municipio\>" o "http://smartcity.linkeddata.es/airQuality/resources/zones#\<Nombre de la zona\>", respectivamente.
+
 ### Desarrollo del vocabulario
+
+Los datos de mediciones de calidad del aire se ajustan a una red de sensores que miden el grado de presencia de ciertos elementos contaminantes en el aire. Por ello, he decidido utilizar la ontología estándar del W3C **Semantic Sensor Network Ontology (SSN)**, más concretamente la ontología derivada de la misma y que compone su núcleo **Sensor, Observation, Sample and Actuator (SOSA)**, que contiene todos los elementos ontológicos necesarios para la descripción de nuestros datos. El esquema utilizado para representar los datos de este conjunto se puede observar en la siguiente imagen:
+
+![Vocabulario utilizado como soporte para el conjunto de datos de mediciones](ontology/ontology.jpg)
+
+Las equivalencias con nuestro conjunto de datos son las siguientes:
+
+* Las **mediciones** de datos de calidad del aire estarían representadas por individuos de la clase **sosa:Observation**. Estas tendrán asociadas
+	* Un elemento **sosa:hasSimpleResult**, con el resultado de la medición (como **xsd^float**).
+	* Una validez descrita por la propiedad definida en nuestra ontología **isValidResult** que tomaría el valor de un rdfs:Literal debido a que puede tomar los valores 'V' para indicar que la medida es válida, 'T' que indica que la medición es válida temporalmente y 'N' que indica que no es válida.
+	* La fecha y hora de la medición, mediante la propiedad **sosa:resultTime** y objetos de la clase **xsd:dateTime**.
+* Las **estaciones** de medición de calidad del aire estarían representadas por la clase **sosa:Platform**, debido a que alojan varios sensores para medir las distintas magnitudes de calidad del aire. Este elemento tendrá asociado:
+	* Están ubicadas en un municipio representado por la clase **schema:Place**, que a su vez está contenido (**schema:containedInPlace**) en una zona, también descrita por la clase **schema:Place**.
+	* Fecha de alta mediante la propiedad definida en mi ontología **fechaAlta**, y de tipo **xsd^date**.
+	* El tipo de estación, utilizando la propiedad **tipoEstacion**.
+	* El tipo de zona donde está ubicada la estación mediante la propiedad **zonaEstacion**.
+	* Dirección mediante la propiedad **schema:address** y la clase **schema:PostalAddress**.
+	* Punto de coordenadas, descrito por las propiedades **geo:lat**, **geo:long** y **geo:alt** del vocabulario WGS84. Debido a que en el conjunto de datos vienen como los grados, minutos y segundos, he optado por utilizar **rdfs:Literal** para describir la latitud y la longitud, aunque normalmente vengan como floats.
+* Los **sensores** para cada una de las magnitudes alojados por las distintas estaciones serán representados por **sosa:Sensor**. Estos estarán asociados a las observaciones, las propiedades y las estaciones (Platform) mediante las propiedades estándar del vocabulario **sosa**.
+* Por último, las **magnitudes** a medir serán **sosa:ObservableProperty**. Estarán descritas por:
+	* Un título o nombre de la magnitud mediante la propiedad **dc:title**, representado por un **rdfs:Literal**.
+	* Una unidad de medida mediante la propiedad **om:hasUnit** de la **Ontology of units of Measure** (link [aquí](https://github.com/HajoRijgersberg/OM)). Sin embargo, en dicha ontología no se encontraba la magnitud que más aparecía en nuestros datos, microgramos por metro cúbico, por lo que he definido mi propia clase **Unidad**. Esta tiene una **rdfs:label** que se asocia con un **rdfs:Literal** que nos dice el nombre de la unidad.
+	* Para las distintas técnicas de medición especificadas para las magnitudes no he podido encontrar una ontología que se ajustase de forma correcta a las mismas, por lo que he definido la clase **Tecnica** con la propiedad **hasTecnica**. Esta tiene un título (propiedad **dc:title**) que lo relaciona con un **rdfs:Literal**.
 
 ### Proceso de transformación de los datos
 
@@ -109,3 +143,11 @@ En cuanto al esquema de los mismos, en la página web no se puede encontrar un e
 ## Bibliografía
 
 * [Portal de datos abiertos de la Comunidad de Madrid](https://www.comunidad.madrid/gobierno/datos-abiertos)
+* [Best Practices for Publishing Linked Data](https://www.w3.org/TR/ld-bp/)
+* [Protegé](https://protege.stanford.edu/)
+* [OpenRefine](https://openrefine.org/)
+* [Semantic Sensor Network Ontology](https://www.w3.org/TR/vocab-ssn/)
+* [Ontology of units of Measure](https://github.com/HajoRijgersberg/OM)
+* [Geo (WGS84 lat/long) Vocabulary](https://www.w3.org/2003/01/geo/)
+* [Schema.org](https://schema.org/)
+* [Dublin Core Metadata Initiative](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
