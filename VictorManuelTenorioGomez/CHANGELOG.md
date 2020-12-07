@@ -18,3 +18,8 @@ Fichero utilizado para hacer tracking de los cambios en cada pull request realiz
 * Estrategia de nombrado de recursos.
 * Definición de la ontología.
 
+## 2020-12-07
+
+* Procesamiento de los datos
+* Enlazado
+

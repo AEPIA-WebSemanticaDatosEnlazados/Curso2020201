@@ -44,8 +44,8 @@ A continuación, resumiré en tablas el significado y el rango que pueden tomar 
 | estacion | número | Código numérico de la estación. Es correlativo, lo asigna el ministerio y sirve para identificar las posibles ubicaciones de las estaciones en ese municipio  | 1 - 14  | 
 | magnitud | número | Código numérico del contaminante de la medición. Los distintos valores que puede tomar son los del conjunto de datos de magnitudes, también transformado  | 1 (Dióxido de carbono) - 431 (MetaParaXileno) | 
 | punto\_muestreo | string | Código alfanumérico (contiene el caracter '\_') con la siguiente estructura: "{Código de la provincia con 2 números}{Código del municipio con 3 números}{Código de la estación con 3 números}\_{Código de la medida}\_{Código de la técnica de medida}" | N/A  | 
-| ano | número | Año de la realización de la medición  | Debido a que únicamente he descargado los datos de los meses de marzo, abril y mayo de 2020, este campo siempre tendrá el valor 2020 | 
-| mes | número | Mes de la realización de la medición  | Podrá tomar los valores 3, 4 y 5, debido a que son los meses que hemos descargado | 
+| ano | número | Año de la realización de la medición  | Debido a que únicamente he descargado los datos del mes de marzo de 2020, este campo siempre tendrá el valor 2020 | 
+| mes | número | Mes de la realización de la medición  | Por la misma razón que el caso anterior, solo podrá tomar el valor 3. | 
 | dia | número | Día de la realización de la medición  | 1 - 31 | 
 | h01-h24 | número | Valor de las mediciones para cada una de las horas del día. Se realiza una medición por hora, de ahí que tengamos 24 columnas de este tipo  | 0 - 375 | 
 | v01-v24 | caracter | De acuerdo al PDF en el que se explican este conjunto de datos, estas columnas indican si la medición de la hora correspondiente es válida (en ese caso toma el valor V), temporalmente válida (valor T) o inválida (valor N) | Puede tomar los valores V, T y N  | 
@@ -101,7 +101,7 @@ La estrategia a utilizar para nombrar los distintos elementos del vocabulario se
 * Para identificar los términos ontológicos, en caso de que sea necesario crear algún elemento por no encontrar otro concepto a reutilizar, utilizaré la '#'. La ruta de los mismos y el patrón para la construcción de las URIs será "http://smartcity.linkeddata.es/airQuality/ontology#\<nombre del término\>".
 * Para los identificar las estaciones utilizaremos el carácter '/', debido a que, aunque no es un conjunto muy grande (24 estaciones) y no es dinámico (no tiene ningún parámetro que se actualice cada poco tiempo), utilizaremos estos recursos posteriormente para referirnos a los sensores. La ruta y el patrón se definirán como "http://smartcity.linkeddata.es/airQuality/resources/stations/\<Código de la estación\>".
 * Para las magnitudes vamos a utilizar en su lugar el carácter '#', debido a que son pocos datos y no cambian a menudo. La URI para representarlas seguirá el patrón "http://smartcity.linkeddata.es/airQuality/resources/magnitudes#\<Código de la magnitud\>".
-* Para los datos de mediciones, utilizaremos la '/', utilizando el punto de muestreo, la magnitud medida y la fecha de la medición. El patrón será "http://smartcity.linkeddata.es/airQuality/resources/measurement/\<Campo "punto\_muestreo" de la tabla sin la información sobre la técnica de medida, contiene información sobre la estación y sobre la magnitud a medir\>/\<Fecha de la medición\>".
+* Para los datos de mediciones, utilizaremos la '/', utilizando el punto de muestreo, la magnitud medida y la fecha de la medición. El patrón será "http://smartcity.linkeddata.es/airQuality/resources/measurement/\<Campo "punto\_muestreo" de la tabla sin la información sobre la técnica de medida, que contiene información sobre la estación y sobre la magnitud a medir\>/\<Fecha y hora de la medición\>".
 * Para los datos de los sensores de las distintas magnitudes alojados en cada una de las estaciones, utilizaremos la '#', debido a que son pocos sensores dentro de una estación. Así, el patrón de definición de las URIs será "http://smartcity.linkeddata.es/airQuality/resources/stations/\<Código de la estación\>#\<Código de la magnitud que mide\>".
 * En cuanto a los municipios y las zonas donde están ubicados, serán representados igualmente con la '#', con el patrón "http://smartcity.linkeddata.es/airQuality/resources/towns#\<Nombre del municipio\>" o "http://smartcity.linkeddata.es/airQuality/resources/zones#\<Nombre de la zona\>", respectivamente.
 
@@ -130,11 +130,143 @@ Las equivalencias con nuestro conjunto de datos son las siguientes:
 	* Una unidad de medida mediante la propiedad **om:hasUnit** de la **Ontology of units of Measure** (link [aquí](https://github.com/HajoRijgersberg/OM)). Sin embargo, en dicha ontología no se encontraba la magnitud que más aparecía en nuestros datos, microgramos por metro cúbico, por lo que he definido mi propia clase **Unidad**. Esta tiene una **rdfs:label** que se asocia con un **rdfs:Literal** que nos dice el nombre de la unidad.
 	* Para las distintas técnicas de medición especificadas para las magnitudes no he podido encontrar una ontología que se ajustase de forma correcta a las mismas, por lo que he definido la clase **Tecnica** con la propiedad **hasTecnica**. Esta tiene un título (propiedad **dc:title**) que lo relaciona con un **rdfs:Literal**.
 
+
 ### Proceso de transformación de los datos
+
+En esta sección se describe el proceso de adecuación de los datos para su posterior transformación a datos enlazados en RDF. Para ello utilizaremos la herramienta de OpenRefine que, junto con la extensión de RDF, nos permite realizar esta transformación de una forma sencilla.
+
+#### Conjunto de datos de mediciones
+
+Los datos de mediciones tienen el siguiente formato nada más cargar el fichero CSV en la herramienta OpenRefine:
+
+![Previsualización de los datos en OpenRefine para el conjunto de mediciones](images/MedicionesPreview.png)
+
+El mismo cuenta con 4991 filas, y en cada fila tenemos en realidad 24 observaciones, pues las mismas se representan mediante columnas. Vamos a realizar los siguientes pasos para su adecuación al vocabulario definido:
+
+1. En primer lugar queremos transponer las columnas de las mediciones para poder tener un registro por cada observación. Para ello, primero es necesario unir las mediciones en sí mismas con las columnas que expresan su validez. Esto lo hacemos con una operación "join-columns", en este caso mediante el separador '-'.
+2. A continuación, eliminamos las columnas de la validez, pues ya no tenemos esa información en la columna de la magnitud. Al finalizar este paso tendríamos un conjunto como el que sigue.
+
+![Conjunto tras la unión de las columnas de las medidas y la validez](images/ProcMediciones1.png)
+
+3. El siguiente paso es la transposición propiamente dicha. De esta forma tendremos 24 registros por cada fila antigua, uno con la medición de cada hora. El nombre de la columna lo mantenemos en una columna nueva llamada 'hora', pues lo utilizaremos para obtener la marca temporal de la medida.
+4. Separamos la medida de la validez por el separador utilizado en el paso 1 ('-').
+
+![Conjunto tras la trasposición de las columnas de las medidas](images/ProcMediciones2.png)
+
+5. Eliminamos la 'h' de la columna de la hora para quedarnos únicamente con el número, lo unimos con el año, el mes y el día utilizando el '-' de nuevo (para ello tenemos que hacer la operación *fill-down* en primer lugar) y lo procesamos como fecha indicándole el formato ("yyyy-M-dd-kk"). Eliminamos las columnas que hemos incorporado en la marca temporal (mes, día, hora).
+
+![Conjunto tras la creación de la marca temporal](images/ProcMediciones3.png)
+
+6. Eliminamos las columnas que no vamos a utilizar (provincia, municipio, estación y código estación) y hacemos *fill-down* del resto de columnas para obtener todo como filas. Tenemos así 119784 filas.
+
+![Conjunto tras la eliminación de columnas y la transformación a filas](images/ProcMediciones4.png)
+
+7. Para poder obtener las URIs tanto del sensor como del id que utilizaremos para identificar cada medición, vamos a utilizar la columna "punto\_muestreo", de la que no nos interesa la última parte, que representa la técnica de medición, por lo que hacemos una transformación para eliminar desde la última '\_' hasta el final.
+8. Por último, para obtener la columna que utilizaremos como identificador para construir las URIs de las mediciones ("\<Código de la estación\>/\<Fecha y hora de la medición\>), unimos los campos de punto\_muestreo que acabamos de adaptar y de la marca temporal mediante el carácter '/' en una nueva columna.
+9. Para poder obtener la URI del sensor que realizó la magnitud, la cual tiene la forma "\<Código de la estación\>#\<Código de la magnitud\>", podemos aprovechar de nuevo la columna punto\_muestreo, reemplazando la '\_' por '#'.
+
+![Conjunto de datos al finalizar el procesamiento](images/ProcMediciones5.png)
+
+Por último, creamos el esqueleto de RDF de los datos. Este tiene la siguiente forma:
+
+![Esqueleto de RDF del conjunto de mediciones](images/MedicionesRDFSkeleton.png)
+
+
+#### Conjunto de datos de estaciones
+
+Del mismo fichero de las estaciones de medición obtendremos dos conjuntos distintos realizando dos procesamientos distintos: por un lado obtendremos los datos de los sensores y por otro el de las estaciones propiamente dichas (**sosa:Platform**).
+
+![Previsualización de los datos en OpenRefine para los datos de estaciones](images/EstacionesPreview.png "opt title")
+
+##### Procesamiento para obtener los sensores
+
+1. Los datos sobre los sensores de cada estación se encuentran en las últimas columnas de cada fila, donde existe una columna para cada magnitud que puede ser medida, y las estaciones tienen el valor "Sí" para aquellas que pueden medir. Por ello, el primer paso será trasponer estas columnas para obtener los datos de sensores como filas. Como solo quiero los datos de aquellas magnitudes que las estaciones puedan medir, especifico que se salte las filas en blanco.
+
+![Conjunto de datos de sensores tras la trasposición de las distintas magnitudes](images/ProcSensores1.png)
+
+2. Elimino el texto "estacion\_analizador\_" de la columna de magnitud y, para poder enlazarlo con las magnitudes, necesito obtener el código de la magnitud y no las siglas del compuesto químico que analiza. Para ello, he realizado un diccionario de forma manual que realiza la sustitución, mediante una transformación con Python.
+
+![Transformación realizada](images/ProcSensores2.png)
+![Datos tras la transformación](images/ProcSensores3.png)
+
+3. Eliminamos todas las columnas que no son el código de la estación y la magnitud que mide, pues son características de la estación, no del sensor, y hacemos *fill-down* de la columna "estacion\_codigo"
+
+![Conjunto de datos tras la trasformación](images/ProcSensores4.png)
+
+Por último, creamos el esqueleto RDF de estos datos, que queda como sigue:
+
+![Esqueleto RDF del conjunto de datos de sensores](images/SensoresRDFSkeleton.png)
+
+El identificador elegido en este caso, "\<Código de la estación\>#\<Código de la magnitud que mide\>", utiliza los datos de dos columnas. Por ello, para construir correctamente la URI a partir dichos valores, la he construido a partir de la columna "estacion\_codigo" y he utilizado la expresión `value + '#' + cells['magnitud'].value`.
+
+##### Procesamiento para obtener las estaciones
+
+1. Eliminamos todas las columnas relacionadas con sensores, debido a que ya no son necesarias.
+2. Eliminamos las columnas con las coordenadas UTM ETRS89, debido a que utilizaremos las coordenadas geográficas expresadas mediante la latitud y la longitud.
+3. Convertimos las columnas altitud y fecha de alta a número y fecha, respectivamente.
+
+![Conjunto de datos tras el procesamiento inicial](images/ProcEstaciones1.png)
+
+4. Debido a que la columna "estacion\_subarea\_rural" solo tiene valores para columnas cuya "estacion\_tipo\_area" sea "Rural", vamos a unir estas dos columnas para dejarlo como una sola, mediante el carácter '-'. Debido a que ya tenemos el dato, eliminamos la columna "estacion\_subarea\_rural".
+
+![Conjunto de datos tras el proceso de transformación](images/ProcEstaciones2.png)
+
+El esqueleto RDF de este conjunto de datos queda como aparece en la siguiente imagen:
+
+![Esqueleto RDF del conjunto de datos de estaciones](images/EstacionesRDFSkeleton.png)
+
+
+#### Conjunto de magnitudes
+
+Por último, solo quedaría por procesar el conjunto de datos de magnitudes. Cargando los datos a partir del CSV no interpretaba correctamente el carácter $\mu$ de las unidades, por lo que lo he cargado a partir de una tabla de Excel. La previsualización del mismo se puede ver en la siguiente imagen:
+
+![Previsualización del conjunto de magnitudes](images/MagnitudesPreview.png)
+
+El procesamiento realizado a este conjunto únicamente implica dos pasos:
+
+1. Convertir las columnas de los códigos de la magnitud y de la técnica de medida a texto, debido a que al cargar desde Excel directamente lo renderiza de esta forma. Al cambiarlo, lo hacía con la marca decimal, por lo que para evitar esto, lo hago con python y la siguiente expresión: `return str(int(value))`.
+2. Modificar el caracter que simboliza el cubo y convertirlo en un '3', por si posteriormente causa problemas a la hora de convetir a Turtle, etc.
+
+![Conjunto de datos de magnitudes para el procesamiento](images/ProcMagnitudes.png)
+
+En este caso, el esqueleto RDF del conjunto queda como se puede ver en la imagen:
+
+![Esqueleto RDF del conjunto de datos de magnitudes](images/MagnitudesRDFSkeleton.png)
+
+
 
 ### Enlazado
 
-### Publicación de los datos
+El último paso en el procesamiento de los datos es el proceso de enlazado de los mismos, de tal forma que no se encuentren aislados del resto de datos de la web y puedan ser reutilizados y aprovechados por otros investigadores.
+
+Mediante la función de reconciliación de la extensión de RDF de OpenRefine, podemos reconciliar algunos de los campos de nuestros datos. Como por ejemplo los municipios donde se sitúan las estaciones o las magnitudes a medir.
+
+#### Reconciliación de municipios
+
+El primer campo a reconciliar será el de las columnas que hacen referencia a los municipios donde se encuentran las estaciones, con las entradas de dichos municipios en Wikidata. De esta forma, conseguimos que nuestros datos no se encuentren aislados y tengan referencias hacia el exterior, pudiendo así realizar consultas más complejas mediante SPARQL incluyendo datos de los municipios que proporciona esta fuente.
+
+Así, la reconciliación de los datos con Wikidata nos sugiere utilizar el typo "municipality of Spain". Si realizamos la reconciliación vemos que se asocian todos ellos salvo uno, "Rascafría (Puerto de Cotos)", que podemos asociar manualmente con Rascafría.
+
+![Reconciliación de municipios con los datos de Wikidata](images/MunicipiosWikidata.png)
+
+Tras la reconciliación y la obtención de la columna que nos indica la URI del recurso que ha asociado, obtenemos un conjunto como el que aparece en la siguiente imagen.
+
+![Conjunto de datos de estaciones tras el proceso de reconciliación](images/EstacionesReconciliadas.png)
+
+Con ello, podemos añadir esta URI a nuestro esqueleto RDF, asociando el recurso municipio que teníamos anteriormente (http://smartcities.linkeddata.es/airQuality/towns#) con esta nueva URI mediante la propiedad **owl:sameAs**.
+
+#### Reconciliación de las magnitudes
+
+También podemos utilizar Wikidata para reconciliar las magnitudes (elementos contaminantes) de nuestro conjunto a partir de su nombre (campo "descripcion\_magnitud"). Así, Wikidata nos recomienda utilizar el tipo "chemical compound".
+
+![Reconciliación de magnitudes con los datos de Wikidata](images/MagnitudesWikidata.png)
+
+En este caso, debido a que los nombres están en español, son pocos los que asocia automáticamente, pero no resulta difícil encontrarlos y asociarlos a mano, para finalizar la reconciliación.
+
+![Conjunto de datos de magnitudes tras el proceso de reconciliación](images/MagnitudesReconciliadas.png)
+
+De igual forma que en el caso de los municipios, podemos añadir a las magnitudes la propiedad **owl:sameAs** y enlazarlo así con los datos que contiene wikidata sobre cada una de estas magnitudes.
+
 
 ## Aplicación y explotación
 

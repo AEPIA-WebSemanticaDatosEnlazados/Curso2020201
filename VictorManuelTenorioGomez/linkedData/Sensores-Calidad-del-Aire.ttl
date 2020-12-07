@@ -1,0 +1,550 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002#6> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#6>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002#1> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#1>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#20> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#20>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#30> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#30>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#431> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#431>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#42> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#42>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004#44> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#44>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28007004#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28007004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28007004#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28007004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28007004#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28007004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28007004#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28007004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28009001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28009001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28009001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28009001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28009001#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28009001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28009001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28009001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28013002#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28013002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28013002#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28013002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28013002#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28013002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28013002#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28013002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28013002#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28013002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28014002#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28014002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28014002#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28014002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28014002#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28014002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28014002#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28014002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28016001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28016001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28016001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28016001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28016001#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28016001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28016001#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28016001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28016001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28016001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28045002#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28045002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28045002#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28045002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28045002#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28045002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28045002#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28045002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28047002#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28047002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28047002#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28047002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28047002#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28047002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28047002#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28047002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#20> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#20>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#30> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#30>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#431> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#431>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#42> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#42>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003#44> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#44>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28058004#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28058004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28058004#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28058004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28058004#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28058004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28058004#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28058004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28058004#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28058004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28065014#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28065014> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28065014#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28065014> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28065014#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28065014> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28065014#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28065014> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28065014#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28065014> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28067001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28067001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28067001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28067001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28067001#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28067001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28067001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28067001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28067001#6> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#6>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28067001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28067001#1> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#1>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28067001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28074007#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28074007> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28074007#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28074007> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28074007#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28074007> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28074007#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28074007> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28080003#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28080003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28080003#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28080003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28080003#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28080003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28080003#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28080003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28080003#6> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#6>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28080003> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#20> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#20>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#30> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#30>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#431> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#431>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#1> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#1>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#42> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#42>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005#44> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#44>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28102001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28102001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28102001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28102001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28102001#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28102001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28102001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28102001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#20> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#20>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#30> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#30>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#431> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#431>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#6> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#6>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#1> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#1>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#42> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#42>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001#44> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#44>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28123002#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28123002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28123002#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28123002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28123002#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28123002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28123002#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28123002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28133002#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28133002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28133002#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28133002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28133002#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28133002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28133002#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28133002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28133002#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28133002> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28148004#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28148004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28148004#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28148004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28148004#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28148004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28148004#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28148004> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001#6> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#6>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001#1> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#1>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28171001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28171001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28171001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28171001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28171001#10> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#10>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28171001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28171001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28171001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28171001#6> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#6>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28171001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28171001#1> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#1>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28171001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28180001#7> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#7>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28180001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28180001#8> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#8>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28180001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28180001#9> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#9>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28180001> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28180001#14> a sosa:Sensor;
+  sosa:Observes <http://smartcity.linkeddata.es/airQuality/magnitudes#14>;
+  sosa:isHostedBy <http://smartcity.linkeddata.es/airQuality/resources/stations/28180001> .
