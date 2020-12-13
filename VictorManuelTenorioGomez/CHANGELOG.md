@@ -28,4 +28,5 @@ Fichero utilizado para hacer tracking de los cambios en cada pull request realiz
 * Sección de aplicación
 * Sección de descripción del conjunto
 * Sección de conclusiones
+* Revisión de la memoria y cambios de redacción
 
