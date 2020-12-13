@@ -81,7 +81,7 @@ Tabla 2: Descripción de las columnas del conjunto de datos de estaciones
 | descripcion\_magnitud | string | Nombre del gas que mide  | N/A  |
 | codigo\_tecnica\_medida  | número | Código de la técnica de medida utilizada para la magnitud  | 2, 7, 8, 28, 48, 49 y 59 | 
 | descripcion\_tecnica\_medida  | string | Nombre de la técnica de medida  | N/A  |
-| unidad | string | Nombre abreviado de la unidad utilizada para la técnica de medida  | $mg/m^3$ o $\mu / m^3$ |
+| unidad | string | Nombre abreviado de la unidad utilizada para la técnica de medida  | mg/m³ o  μ/m³ |
 | descripcion\_unidad | string | Nombre (texto) de la unidad utilizada para la técnica de medida  | miligramos o microgramos por metro cúbico  |
 Tabla 3: Descripción de las columnas del conjunto de datos de mediciones
 
@@ -218,7 +218,7 @@ El esqueleto RDF de este conjunto de datos queda como aparece en la siguiente im
 
 #### Conjunto de magnitudes
 
-Por último, solo quedaría por procesar el conjunto de datos de magnitudes. Cargando los datos a partir del CSV no interpretaba correctamente el carácter $\mu$ de las unidades, por lo que lo he cargado a partir de una tabla de Excel. La previsualización del mismo se puede ver en la siguiente imagen:
+Por último, solo quedaría por procesar el conjunto de datos de magnitudes. Cargando los datos a partir del CSV no interpretaba correctamente el carácter μ de las unidades, por lo que lo he cargado a partir de una tabla de Excel. La previsualización del mismo se puede ver en la siguiente imagen:
 
 ![Previsualización del conjunto de magnitudes](images/MagnitudesPreview.png)
 
@@ -270,6 +270,45 @@ De igual forma que en el caso de los municipios, podemos añadir a las magnitude
 
 ## Aplicación y explotación
 
+Ahora que tenemos los datos transformados a datos enlazados y en formato RDF, podemos leerlos utilizando un programa en Java o Python para interpretar estos datos y hacerles queries complejas que nos permitan entenderlos mejor. En mi caso he realizado 3 aplicaciones distintas, todas ellas utilizando la librería rdflib de Python. He elegido Python por aprender otra librería para hacer queries a este tipo de datos, por la facilidad del lenguaje y por la fácil representación de los datos utilizando la librería matplotlib.
+
+El código de todas ellas puede encontrarse en el IPython Notebook en [app/application.ipynb](app/application.ipynb).
+
+### Representación de las estaciones en un mapa
+
+La primera y más sencilla de las aplicaciones es la representación de las estaciones sobre el mapa de la Comunidad de Madrid, a partir de las coordenadas que teníamos entre nuestros datos.
+
+Para ello, únicamente tenemos que seleccionar aquellas tripletas de nuestros datos que tienen las propiedades de latitud y longitud, pues tal y como tenemos el conjunto las estaciones son los únicos sujetos con estas propiedades.
+
+![Representación de las estaciones de medición sobre el mapa de la Comunidad de Madrid](app/localizacion-mapa.png "Representación de las estaciones de medición sobre el mapa de la Comunidad de Madrid")
+
+### Análisis de la correlación entre la población de un municipio y los datos de contaminación
+
+Otro análisis interesante que podemos realizar es si en los barrios con un mayor número de habitantes existen unos índices de contaminación mayores. Al menos para mí cabría esperar de alguna forma que sí, pues cuanta más población tenga un municipio, más gente se desplaza en coche cerca de la estación allí ubicada, y por tanto causa unos niveles de contaminación mayores.
+
+Para obtener la población que tiene un municipio, podemos hacer uso del campo que hemos reconciliado, la URI del recurso en WikiData, para hacer queries al SPARQL endpoint de la misma y obtener así la población. Primeramente tendremos que obtener dichas URIs: para ello podemos tanto recorrer el grafo de forma manual como realizar SPARQL queries al mismo. En el notebook asociado están desarrollados ambos métodos.
+
+Una vez obtenidas los identificadores de Wikidata de los recursos, realizamos las consultas a [su SPARQL endpoint](http://query.wikidata.org/sparql), más concretamente obtenemos las propiedades "wdt:P1082" (población) y "wdt:P1448" (nombre).
+
+Además de la población, necesitamos los datos de contaminación de la estación situada en el municipio en un momento concreto, he elegido un miércoles a las 6 de la tarde. En concreto vamos a analizar los elementos contaminantes O3, NO y NO2. Para ello construimos las URIs de dichas mediciones a partir del identificador del contaminante y la fecha y hora seleccionadas. Solo nos quedaría rellenar la URI con el identificador de la estación para todas las estaciones de nuestro conjunto y obtener los valores.
+
+En la siguiente figura se representan los resultados obtenidos:
+
+![Representación de los valores de presencia de O3, NO y NO2 frente a la población del municipio donde está situada la estación](app/pob-medida.png)
+
+Como vemos parece que mi suposición inicial no se cumple, y de hecho los valores más altos de estos contaminantes se encuentran en lugares con muy poca población.
+
+### Análisis del impacto del coronavirus en las medidas de contaminación
+
+También sería posible analizar el efecto del confinamiento debido a la pandemia de COVID sobre la calidad del aire de la comunidad: cabe esperar que, debido al confinamiento, la calidad del aire aumentase en cierta medida durante la segunda mitad del mes de marzo, pues existía un tráfico mucho menor de coches.
+
+Para obtener estos valores, he seleccionado una hora para cada día, las 6 de la tarde, ciertos contaminantes, los mismos que en el caso anterior O3, NO y NO2, y una estación, la de Alcorcón. Únicamente es necesario construir las URIs de las mediciones que queramos consultar en el grafo modificando el día del mes en el que nos encontremos. En la siguiente figura podemos ver los resultados del análisis:
+
+![Datos de contaminación durante el mes de marzo de 2020](app/medidas-mes.png "Datos de contaminación durante los meses de marzo de 2020")
+
+Como podemos ver, no existe una tendencia clara en los datos, y no diría que los niveles de los contaminantes analizados han disminuido durante el mes de marzo. Quizá analizando meses más adelantes se pudiera ver una tendencia a la baja, pero en el mes de marzon no parece haberla.
+
+
 ## Conclusiones
 
 ## Bibliografía
@@ -283,3 +322,5 @@ De igual forma que en el caso de los municipios, podemos añadir a las magnitude
 * [Geo (WGS84 lat/long) Vocabulary](https://www.w3.org/2003/01/geo/)
 * [Schema.org](https://schema.org/)
 * [Dublin Core Metadata Initiative](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
+* [Documentación de la librería RDFLib de Python](https://rdflib.readthedocs.io/en/stable/index.html)
+* [Documentación de la librería SPARQLWrapper de Python](https://sparqlwrapper.readthedocs.io/en/latest/main.html)
