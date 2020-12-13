@@ -319,6 +319,13 @@ Como podemos ver, no existe una tendencia clara en los datos, y no diría que lo
 
 ## Conclusiones
 
+Para mí la conclusión principal que he obtenido de la realización de esta práctica ha sido que el proceso de transformación de datos a partir de, en mi caso, un fichero a datos enlazados es tremendamente útil. Esto es sobre todo debido a que, tras la subida de los datos transformados a alguna plataforma que pueda alojarlos y el enlazado con otros conjuntos, creo que puede dar lugar a consultas muy complejas y que aporten mucha más información de la que podríamos obtener con los conjuntos de datos por separado. En concreto me ha parecido especialmente útil el enlazado con los recursos de Wikidata para poder obtener información adicional sobre los elementos del conjunto, ya que es lo que me ha parecido que sería muy complicado de hacer sin que los datos hayan sido convertidos previamente a datos enlazados.
+
+Por otro lado me ha parecido un proceso mucho más complejo de lo que parecía al ver la teoría. En concreto me ha parecido complejo el proceso de encontrar vocabularios relacionados que puedan servir para el conjunto que estoy intentando transformar, la utilización correcta de estos vocabularios, saber cuándo hay que crear nuevos términos, pero sobretodo la transformación de los datos para adecuarlos al vocabulario definido.
+
+De todas formas estoy bastante contento con el resultado que he obtenido, y creo que me ha servido enormemente para aprender y afianzar todo lo visto durante la teoría.
+
+
 ## Bibliografía
 
 * [Portal de datos abiertos de la Comunidad de Madrid](https://www.comunidad.madrid/gobierno/datos-abiertos)
@@ -330,5 +337,6 @@ Como podemos ver, no existe una tendencia clara en los datos, y no diría que lo
 * [Geo (WGS84 lat/long) Vocabulary](https://www.w3.org/2003/01/geo/)
 * [Schema.org](https://schema.org/)
 * [Dublin Core Metadata Initiative](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)
+* [Data Catalog Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat-2/)
 * [Documentación de la librería RDFLib de Python](https://rdflib.readthedocs.io/en/stable/index.html)
 * [Documentación de la librería SPARQLWrapper de Python](https://sparqlwrapper.readthedocs.io/en/latest/main.html)
