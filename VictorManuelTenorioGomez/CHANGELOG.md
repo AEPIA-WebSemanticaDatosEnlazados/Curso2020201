@@ -23,3 +23,8 @@ Fichero utilizado para hacer tracking de los cambios en cada pull request realiz
 * Procesamiento de los datos
 * Enlazado
 
+## 2020-12-13
+
+* Sección de aplicación
+* Sección de descripción del conjunto
+

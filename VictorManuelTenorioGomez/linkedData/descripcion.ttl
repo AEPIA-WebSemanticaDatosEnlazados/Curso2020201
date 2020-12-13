@@ -1,0 +1,73 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix : <http://smartcities.linkeddata.com/airQuality/datasets/> .
+
+:airQuality
+  a dcat:Catalog ;
+  dct:title "Calidad del aire en la Comunidad de Madrid"@es ,
+    "Air quality in the community of Madrid"@en ;
+  rdfs:label "Calidad del aire en la Comunidad de Madrid"@es ,
+    "Air quality in the community of Madrid"@en ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/es> ;
+  dct:description "El conjunto de datos de calidad del aire ofrece datos de magnitudes, estaciones, sensores de las estaciones y mediciones utilizando principalmente el vocabulario de la Semantic Sensor Network Ontology."@es ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dcat:keyword "AirQuality"@en, "CalidadDelAire"@es ;
+  dcat:dataset :mediciones, :magnitudes, :estaciones, :sensores ;
+  .
+
+
+
+:mediciones
+  a dcat:Dataset ;
+  dct:title "Mediciones de calidad del aire en la Comunidad de Madrid"@es ,
+    "Air quality measurements in the community of Madrid"@en ;
+  dcat:keyword "airQuality"@en, "calidadDelAire"@es , "mediciones"@es, "measurements"@en ;
+  dct:issued "2020-12-13"^^xsd:date ;
+  dct:modified "2020-12-13"^^xsd:date ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/es> ;
+  dct:description "Este conjunto representa las mediciones de calidad del aire en las estaciones situadas en la comunidad de Madrid de diversos elementos contaminantes."@es ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  .
+
+
+:magnitudes
+  a dcat:Dataset ;
+  dct:title "Magnitudes a medir por las estaciones de medición de calidad del aire en la Comunidad de Madrid"@es ,
+    "Measurable magnitudes in the air quality stations in the community of Madrid"@en ;
+  dcat:keyword "airQuality"@en, "calidadDelAire"@es , "magnitudes"@es, "magnitudes"@en ;
+  dct:issued "2020-12-13"^^xsd:date ;
+  dct:modified "2020-12-13"^^xsd:date ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/es> ;
+  dct:description "Este conjunto representa las magnitudes que pueden ser medidas por las estaciones de la Comunidad de Madrid, es decir, los contaminantes que se detectan en el aire."@es ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  .
+
+
+:estaciones
+  a dcat:Dataset ;
+  dct:title "Estaciones de medición de calidad del aire en la Comunidad de Madrid"@es ,
+    "Air quality measurement stations in the community of Madrid"@en ;
+  dcat:keyword "airQuality"@en, "calidadDelAire"@es , "estaciones"@es, "stations"@en ;
+  dct:issued "2020-12-13"^^xsd:date ;
+  dct:modified "2020-12-13"^^xsd:date ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/es> ;
+  dct:description "Este conjunto representa las estaciones de medición de datos de contaminación en la Comunidad de Madrid."@es ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  .
+
+
+:sensores
+  a dcat:Dataset ;
+  dct:title "Sensores de calidad del aire en la Comunidad de Madrid"@es ,
+    "Sensors to measure air quality in the community of Madrid"@en ;
+  dcat:keyword "airQuality"@en, "calidadDelAire"@es , "sensores"@es, "sensors"@en ;
+  dct:issued "2020-12-13"^^xsd:date ;
+  dct:modified "2020-12-13"^^xsd:date ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/es> ;
+  dct:description "El conjunto representa los datos de los sensores de medición situados en las estaciones de la Comunidad de Madrid, utilizados para obtener los datos de las mediciones."@es ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  .
+

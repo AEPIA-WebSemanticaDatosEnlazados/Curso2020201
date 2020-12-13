@@ -267,6 +267,14 @@ En este caso, debido a que los nombres están en español, son pocos los que aso
 
 De igual forma que en el caso de los municipios, podemos añadir a las magnitudes la propiedad **owl:sameAs** y enlazarlo así con los datos que contiene wikidata sobre cada una de estas magnitudes.
 
+### Descripción del conjunto
+
+Otra buena práctica cuando estamos transformando conjuntos de datos a datos enlazados es la de crear metadatos sobre el conjunto en sí mismo, es decir, describir cómo está estructurado, que conjuntos de datos lo conforman, donde se encuentran accesibles, etc. Para ello he decidido utilizar [el vocabulario DCAT](https://www.w3.org/TR/vocab-dcat-2/).
+
+La descripción realizada se puede encontrar en el fichero [linkedData/description.ttl](linkedData/description.ttl). En él, defino un catálogo general (individuo de la clase **dcat:Catalog**) donde van a estar el resto de conjuntos alojados, y le proporciono un título, una descripción, el lenguaje, licencia, algunas palabras clave y los conjuntos de datos en sí mismos con la propiedad **dcat:dataset**.
+
+Adicionalmente describo los 4 conjuntos de datos por separado, como individuos de la clase **dcat:Dataset**, y les proporciono una serie de metadatos como son el título, palabras clave, cuando han sido creados y modificados, el lenguaje, la descripción o la licencia.
+
 
 ## Aplicación y explotación
 
@@ -304,7 +312,7 @@ También sería posible analizar el efecto del confinamiento debido a la pandemi
 
 Para obtener estos valores, he seleccionado una hora para cada día, las 6 de la tarde, ciertos contaminantes, los mismos que en el caso anterior O3, NO y NO2, y una estación, la de Alcorcón. Únicamente es necesario construir las URIs de las mediciones que queramos consultar en el grafo modificando el día del mes en el que nos encontremos. En la siguiente figura podemos ver los resultados del análisis:
 
-![Datos de contaminación durante el mes de marzo de 2020](app/medidas-mes.png "Datos de contaminación durante los meses de marzo de 2020")
+![Datos de contaminación durante los meses de marzo de 2020](app/medidas-mes.png "Datos de contaminación durante los meses de marzo de 2020")
 
 Como podemos ver, no existe una tendencia clara en los datos, y no diría que los niveles de los contaminantes analizados han disminuido durante el mes de marzo. Quizá analizando meses más adelantes se pudiera ver una tendencia a la baja, pero en el mes de marzon no parece haberla.
 
