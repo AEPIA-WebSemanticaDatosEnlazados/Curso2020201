@@ -30,3 +30,7 @@ Fichero utilizado para hacer tracking de los cambios en cada pull request realiz
 * Sección de conclusiones
 * Revisión de la memoria y cambios de redacción
 
+## 2020-12-15
+
+* Cambios en la redacción de la memoria y resolución de typos
+
