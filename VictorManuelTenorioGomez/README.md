@@ -2,11 +2,11 @@
 
 ## Introducción
 
-La siguiente memoria describe el proceso de transformación de datos sobre calidad del aire y de estaciones de medición en la Comunidad de Madrid. Estos datos han sido obtenidos en el [portal de datos abiertos de la Comunidad de Madrid](https://www.comunidad.madrid/gobierno/datos-abiertos), el cual contiene conjuntos de datos de la comunidad de muy diversas tipologías.
+La siguiente memoria describe el proceso de transformación de datos sobre calidad del aire y estaciones de medición en la Comunidad de Madrid. Estos datos han sido obtenidos en el [portal de datos abiertos de la Comunidad de Madrid](https://www.comunidad.madrid/gobierno/datos-abiertos), el cual contiene conjuntos de datos de la comunidad de muy diversas tipologías.
 
-Por un lado, la transformación de los datos a datos enlazados, si posteriormente unimos estos datos con los de otros repositorios de información de datos enlazados como puede ser Wikidata, va a permitir la realización de consultas más complejas sobre este conjunto de datos. Así, sería posible consultar si los municipios con un mayor número de habitantes son los que mayor contaminación presentan como cabría esperar, por poner un ejemplo.
+Por un lado, la transformación de los datos a datos enlazados va a permitir la realización de consultas más complejas sobre este conjunto de datos, sobre todo si posteriormente unimos estos datos con los de otros repositorios de información de datos enlazados como puede ser Wikidata. Por poner un ejemplo, sería posible consultar si los municipios con un mayor número de habitantes son los que mayor contaminación presentan como cabría esperar.
 
-Por otro lado, las estadísticas de calidad del aire son especialmente importantes en el mundo en el que vivimos donde la contaminación y el cambio climático son problemas muy relevantes en la sociedad. Por ello, toda la información que podamos obtener sobre ellos y todas las consultas que podamos hacer que permitan aportar un poco de luz al problema son más que bienvenidas.
+Por otro lado, las estadísticas de calidad del aire son especialmente importantes en el mundo en el que vivimos, donde la contaminación y el cambio climático son problemas muy relevantes en la sociedad. Por ello, toda la información que podamos obtener sobre ellos y todas las consultas que podamos hacer que permitan aportar un poco de luz al problema son más que bienvenidas.
 
 ## Proceso de transformación
 
@@ -16,13 +16,13 @@ Los datos seleccionados se pueden dividir en dos conjuntos independientes, con u
 
 * [**Conjunto de datos de estaciones**](http://datos.comunidad.madrid/catalogo/dataset/calidad_aire_estaciones): describe las estaciones de medida de datos de calidad del aire presentes en la comunidad, incluyendo datos como la zona, el municipio, la fecha de alta o los gases que puede analizar cada estación. El conjunto se actualiza anualmente, y su última actualización data del 19 de mayo de 2020, por lo que parece que los datos están actualizados.
 * [**Conjunto de datos de medidas de calidad del aire**](http://datos.comunidad.madrid/catalogo/dataset/calidad_aire_datos_historico): contiene las medidas de calidad del aire desde el año 2005. Para cada medida, contiene datos sobre el lugar de la medición (estación y municipio), el gas medido y las mediciones para las 24 horas del día. Además, en la página web de los datos se encuentra [el siguiente documento en PDF](https://datos.comunidad.madrid/catalogo/dataset/a770d92c-c513-4974-b1a7-2b15be1dd91f/resource/f743eacc-5e89-4591-a0fc-4caebfe22557/download/descripcion-fichero-datos-de-contaminantes.pdf) que permite interpretar la información contenida en cada una de sus columnas.
-* **Conjunto de datos de magnitudes**: en el pdf del segundo conjunto de datos, más concretamente en la Tabla 3 del mismo, aparece un tercer conjunto de datos sobre magnitudes. En el mismo existen datos sobre los distintos gases que se pueden medir en las estaciones, unidades de medida y técnicas de medición. Creo que aporta mucha información interesante y completa los datos que quiero transformar. Por ejemplo, aporta la información sobre el nombre del gas que se está midiendo, ya que en el conjunto de datos de mediciones únicamente aparece el código de las mismas, por lo que creo que es razonable realizar el esfuerzo de transformar también este conjunto de datos en datos enlazados.
+* **Conjunto de datos de magnitudes**: en el pdf del segundo conjunto de datos, más concretamente en la Tabla 3 del mismo, aparece un tercer conjunto de datos sobre magnitudes. En el mismo existen datos sobre los distintos gases que se pueden medir en las estaciones, unidades de medida y técnicas de medición. Creo que aporta mucha información interesante y completa los datos que quiero transformar. Por ejemplo, aporta la información sobre el nombre del gas que se está midiendo, ya que en el conjunto de datos de mediciones únicamente aparece el código de las mismas, por lo que creo que es razonable transformar también este conjunto de datos en datos enlazados.
 
 En cuanto al acceso a los mismos, los dos primeros conjuntos se encuentran disponibles para descargar en el mismo portal en formato CSV y JSON, por lo que son fácilmente importables en herramientas de análisis y adecuación de datos como OpenRefine. En cuanto al tercero, se trata de una tabla en un PDF, pero dada su limitada extensión, es fácilmente exportable a formato Excel o CSV para su importación en las herramientas de análisis.
 
 ### Análisis de la licencia de los datos
 
-En primer lugar, analizaré la licencia que aplica sobre los conjuntos de datos seleccionados. En la página de ambos datasets, podemos ver que la licencia de los mismos es la de [**Atribución** de Creative Commons (Open Data)](https://creativecommons.org/licenses/by/4.0/legalcode.es), con el código **CC BY 4.0**. Esto significa que los datos son libres de ser utilizados por cualquier persona con fines los fines que se deseen (comerciales o no), y se pueden compartir con la licencia deseada (no necesariamente la misma), pero con la condición de que es necesario atribuir los datos al portal del que son obtenidos.
+En primer lugar, analizaré la licencia que aplica sobre los datos seleccionados. En la página de ambos conjuntos, podemos ver que la licencia de los mismos es la de [**Atribución** de Creative Commons (Open Data)](https://creativecommons.org/licenses/by/4.0/legalcode.es), con el código **CC BY 4.0**. Esto significa que los datos son libres de ser utilizados por cualquier persona con los fines que se deseen (comerciales o no), y se pueden compartir con la licencia deseada (no necesariamente la misma), pero con la condición de que es necesario atribuir los datos al portal del que son obtenidos.
 
 Aunque la licencia de los datos no incluya explícitamente la condición "Compartir igual", considero que lo más adecuado, ya que únicamente estoy transformando los datos a otro formato, es utilizar la misma licencia que tienen los datos de origen.
 
@@ -30,7 +30,7 @@ Aunque la licencia de los datos no incluya explícitamente la condición "Compar
 
 El primer paso para poder transformar los datos es el análisis de los mismos, para poder entender el conjunto y así obtener un mejor resultado final tras la transformación. Es necesario comprender qué información contiene cada una de las columnas de los datos para así ver cuál es su representación más adecuada en el mundo de los datos enlazados.
 
-Para el análisis de los datos, he utilizado por un lado LibreOffice Calc, dada su facilidad para obtener información sobre los datos de diferentes maneras, y por otro OpenRefine, debido a que será la herramienta que utilizaré para el posterior adecuamiento de los mismos y las facetas ofrecen una muy buena herramienta para su exploración, la detección de anomalías, etc. Cómo ya he comentado, tanto los datos de las estaciones como los de mediciones están disponibles en CSV, por lo que la carga en ambas herramientas es sencilla.
+Para el análisis de los datos, he utilizado por un lado LibreOffice Calc, dada su facilidad para obtener información sobre los datos de diferentes maneras, y por otro OpenRefine, debido a que será la herramienta que utilizaré para el posterior adecuamiento de los mismos y las facetas ofrecen una muy buena herramienta para su exploración, la detección de anomalías, etc. Cómo ya he comentado, todos los conjuntos de datos descritos están definidos en CSV o Excel, por lo que la carga en ambas herramientas es sencilla.
 
 A continuación, resumiré en tablas el significado y el rango que pueden tomar los valores de cada una de las columnas de nuestros tres conjuntos de datos.
 
@@ -70,7 +70,7 @@ Tabla 1: Descripción de las columnas del conjunto de datos de mediciones
 | estacion\_coord\_longitud  | string | Longitud de la estación  | 3º 13' 16'' W - 4º 23' 53,2'' W  |
 | estacion\_coord\_latitud  | string | Latitud de la estación  | 40º 01' 59,8'' N - 40º 54' 32,6'' N  |
 | estacion\_altitud  | número | Altitud de la estación  | 360 - 1870  |
-| estacion\_analizador\_\<siglas del contaminante\> | string | Representa si la estación tiene posibilidad de medir el gas que especifica la columna  | Sí o en blanco, si la estación puede medirlo o no, respectivamente  | 
+| estacion\_analizador\_\<siglas del contaminante\> | string | Representa si la estación tiene posibilidad de medir el gas que especifica la columna  | "Sí" o en blanco, si la estación puede medirlo o no, respectivamente  | 
 
 Tabla 2: Descripción de las columnas del conjunto de datos de estaciones
 
@@ -92,31 +92,31 @@ Es posible comprobar que estamos ante un conjunto de datos muy consistente, que 
 
 En cuanto al esquema de los mismos, en la página web no se puede encontrar un esquema propiamente dicho, y tampoco provienen de una base de datos relacional para que lo tengan implícito. De todas formas, no es difícil identificar cómo enlazar los tres conjuntos de datos:
 * Los conjuntos de magnitudes y de mediciones son fácilmente enlazables mediante los atributos "codigo\_magnitud" del primero y "magnitud" del segundo. No es necesario ningún procesamiento previo a estas columnas para realizar este enlazado.
-* En cuanto a los conjuntos de estaciones y mediciones, en realidad es necesario unir las mediciones con los sensores situados en las estaciones. Para ello, es posible utilizar una combinación de los campos "estacion\_codigo" y las magnitudes que puede medir del conjunto de estaciones para construir las URIs de los sensores, y hasta el último carácter '\_' del campo "punto\_muestreo" del conjunto de mediciones, que contiene tanto el código de la estación como el de la magnitud a la que pertenece. Para el segundo paso, será necesario que dividir esta columna en varias utilizando como delimitador el carácter '\_'.
+* En cuanto a los conjuntos de estaciones y mediciones, en realidad es necesario unir las mediciones con los sensores situados en las estaciones. Para ello, es posible utilizar una combinación de los campos "estacion\_codigo" y las magnitudes que puede medir del conjunto de estaciones para construir las URIs de los sensores, y hasta el último carácter '\_' del campo "punto\_muestreo" del conjunto de mediciones, que contiene tanto el código de la estación como el de la magnitud a la que pertenece.
 
 
 ### Estrategia de nombrado de recursos
 
-A continuación, definiré la estrategia que utilizaré para nombrar los recursos de este conjunto. El dominio que he elegido para las URIs de los recursos y los posibles términos ontológicos que se necesiten es el mismo utilizado en los ejemplos, http://smartcity.linkeddata.es, debido a que las medidas de contaminación considero que están muy relacionadas con el concepto de Smart Cities.
+A continuación, definiré la estrategia que utilizaré para nombrar los recursos de este conjunto. El dominio que he elegido para las URIs de los recursos y los posibles términos ontológicos que se necesiten es el mismo que el utilizado en los ejemplos, http://smartcity.linkeddata.es, debido a que las medidas de contaminación y los sensores de medición considero que están muy relacionadas con el concepto de Smart Cities.
 
 La estrategia a utilizar para nombrar los distintos elementos del vocabulario será la siguiente:
 
-* Para identificar los términos ontológicos, en caso de que sea necesario crear algún elemento por no encontrar otro concepto a reutilizar, utilizaré la '#'. La ruta de los mismos y el patrón para la construcción de las URIs será "http://smartcity.linkeddata.es/airQuality/ontology#\<nombre del término\>".
-* Para los identificar las estaciones utilizaré el carácter '/', debido a que, aunque no es un conjunto muy grande (24 estaciones) y no es dinámico (no tiene ningún parámetro que se actualice cada poco tiempo), utilizaré estos recursos posteriormente para referirme a los sensores. La ruta y el patrón se definirán como "http://smartcity.linkeddata.es/airQuality/resources/stations/\<Código de la estación\>".
-* Para las magnitudes voy a utilizar en su lugar el carácter '#', debido a que son pocos datos y no cambian a menudo. La URI para representarlas seguirá el patrón "http://smartcity.linkeddata.es/airQuality/resources/magnitudes#\<Código de la magnitud\>".
-* Para los datos de mediciones, utilizaré la '/', utilizando el punto de muestreo, la magnitud medida y la fecha de la medición. El patrón será "http://smartcity.linkeddata.es/airQuality/resources/measurement/\<Campo "punto\_muestreo" de la tabla sin la información sobre la técnica de medida, y que por tanto contiene información sobre la estación y sobre la magnitud a medir\>/\<Fecha y hora de la medición\>".
-* Para los datos de los sensores de las distintas magnitudes alojados en cada una de las estaciones, utilizaré la '#', debido a que son pocos sensores dentro de una estación. Así, el patrón de definición de las URIs será "http://smartcity.linkeddata.es/airQuality/resources/stations/\<Código de la estación\>#\<Código de la magnitud que mide\>".
-* En cuanto a los municipios y las zonas donde están ubicados, serán representados igualmente con la '#', con el patrón "http://smartcity.linkeddata.es/airQuality/resources/towns#\<Nombre del municipio\>" o "http://smartcity.linkeddata.es/airQuality/resources/zones#\<Nombre de la zona\>", respectivamente.
+* Para identificar los términos ontológicos, en caso de que sea necesario crear algún elemento por no encontrar otro concepto a reutilizar, utilizaré la '#'. La ruta de los mismos y el patrón para la construcción de las URIs será "http://smartcity.linkeddata.es/airQuality/ontology#<nombre del término\>".
+* Para los identificar las estaciones utilizaré el carácter '/', debido a que, aunque no es un conjunto muy grande (24 estaciones) y no es dinámico (no tiene ningún parámetro que se actualice cada poco tiempo), utilizaré estos recursos posteriormente para referirme a los sensores. La ruta y el patrón se definirán como "http://smartcity.linkeddata.es/airQuality/resources/stations/<Código de la estación\>".
+* Para las magnitudes voy a utilizar en su lugar el carácter '#', debido a que son pocos datos y no cambian a menudo. La URI para representarlas seguirá el patrón "http://smartcity.linkeddata.es/airQuality/resources/magnitudes#<Código de la magnitud\>".
+* Para los datos de mediciones, utilizaré la '/', utilizando el punto de muestreo, la magnitud medida y la fecha de la medición. El patrón será "http://smartcity.linkeddata.es/airQuality/resources/measurement/<Campo "punto\_muestreo" de la tabla sin la información sobre la técnica de medida, y que por tanto contiene información sobre la estación y sobre la magnitud a medir\>/\<Fecha y hora de la medición\>".
+* Para los datos de los sensores de las distintas magnitudes alojados en cada una de las estaciones, utilizaré la '#', debido a que son pocos sensores dentro de una estación. Así, el patrón de definición de las URIs será "http://smartcity.linkeddata.es/airQuality/resources/stations/<Código de la estación\>#\<Código de la magnitud que mide\>".
+* En cuanto a los municipios y las zonas donde están ubicados, serán representados igualmente con la '#', con los patrones "http://smartcity.linkeddata.es/airQuality/resources/towns#<Nombre del municipio\>" o "http://smartcity.linkeddata.es/airQuality/resources/zones#<Nombre de la zona\>", respectivamente.
 
 ### Desarrollo del vocabulario
 
-Los datos de mediciones de calidad del aire se ajustan a una red de sensores que miden el grado de presencia de ciertos elementos contaminantes en el aire. Por ello, he decidido utilizar la ontología estándar del W3C **Semantic Sensor Network Ontology (SSN)**, más concretamente la ontología derivada de la misma y que compone su núcleo **Sensor, Observation, Sample and Actuator (SOSA)**, que contiene todos los elementos ontológicos necesarios para la descripción de nuestros datos. El esquema utilizado para representar los datos de este conjunto se puede observar en la siguiente imagen:
+Los datos de mediciones de calidad del aire se ajustan a una red de sensores que miden el grado de presencia de ciertos elementos contaminantes en el aire. Por ello, he decidido utilizar la ontología estándar del W3C **Semantic Sensor Network Ontology (SSN)**, más concretamente la ontología derivada de la misma y que compone su núcleo **Sensor, Observation, Sample and Actuator (SOSA)**, que contiene muchos elementos ontológicos necesarios para la descripción de nuestros datos. El esquema utilizado para representar los datos de este conjunto se puede observar en la siguiente imagen:
 
 ![Vocabulario utilizado como soporte para el conjunto de datos de mediciones](ontology/ontology.jpg)
 
 Las equivalencias con nuestro conjunto de datos son las siguientes:
 
-* Las **mediciones** de datos de calidad del aire estarían representadas por individuos de la clase **sosa:Observation**. Estas tendrán asociadas
+* Las **mediciones** de datos de calidad del aire estarían representadas por individuos de la clase **sosa:Observation**. Estas tendrán asociadas:
 	* Un elemento **sosa:hasSimpleResult**, con el resultado de la medición (como **xsd^float**).
 	* Una validez descrita por la propiedad definida en nuestra ontología **isValidResult** que tomaría el valor de un rdfs:Literal debido a que puede tomar los valores 'V' para indicar que la medida es válida, 'T' que indica que la medición es válida temporalmente y 'N' que indica que no es válida.
 	* La fecha y hora de la medición, mediante la propiedad **sosa:resultTime** y objetos **xsd^^dateTime**.
@@ -126,9 +126,9 @@ Las equivalencias con nuestro conjunto de datos son las siguientes:
 	* El tipo de estación, utilizando la propiedad **tipoEstacion**.
 	* El tipo de zona donde está ubicada la estación mediante la propiedad **zonaEstacion**.
 	* Dirección mediante la propiedad **schema:address** y la clase **schema:PostalAddress**.
-	* Punto de coordenadas, descrito por las propiedades **geo:lat**, **geo:long** y **geo:alt** del vocabulario WGS84. Debido a que en el conjunto de datos vienen como los grados, minutos y segundos, he optado por utilizar **rdfs:Literal** para describir la latitud y la longitud, aunque normalmente se utilicen floats.
-* Los **sensores** para cada una de las magnitudes alojados por las distintas estaciones serán representados por **sosa:Sensor**. Estos estarán asociados a las observaciones, las magnitudes y las estaciones (Platform) mediante las propiedades estándar del vocabulario **sosa**.
-* Por último, las **magnitudes** a medir serán **sosa:ObservableProperty**. Estarán descritas por:
+	* Punto de coordenadas, descrito por las propiedades **geo:lat**, **geo:long** y **geo:alt** del vocabulario WGS84. Debido a que en el conjunto de datos vienen como los grados, minutos y segundos, he optado por utilizar **rdfs:Literal** de tipo string para describir la latitud y la longitud, aunque normalmente se utilicen floats.
+* Los **sensores** para cada una de las magnitudes alojados por las distintas estaciones serán representados por individuos de la clase **sosa:Sensor**. Estos estarán asociados a las observaciones, las magnitudes y las estaciones (Platform) mediante las propiedades estándar del vocabulario **sosa**.
+* Por último, las **magnitudes** a medir serán de la clase **sosa:ObservableProperty**. Estarán descritas por:
 	* Un título o nombre de la magnitud mediante la propiedad **dc:title**, representado por un **rdfs:Literal**.
 	* Una unidad de medida mediante la propiedad **om:hasUnit** de la **Ontology of units of Measure** ([link](https://github.com/HajoRijgersberg/OM)). Sin embargo, en dicha ontología no se encontraba la magnitud que más aparecía en nuestros datos, microgramos por metro cúbico, por lo que he definido mi propia clase **Unidad**. Esta tiene una **rdfs:label** que se asocia con un **rdfs:Literal** que indica el nombre de la unidad.
 	* Para las distintas técnicas de medición especificadas para las magnitudes no he podido encontrar una ontología que se ajustase de forma correcta a las mismas, por lo que he definido la clase **Tecnica** con la propiedad **hasTecnica**. Esta tiene un título (propiedad **dc:title**) que lo relaciona con un **rdfs:Literal**.
@@ -151,7 +151,7 @@ El mismo cuenta con 4991 filas, y en cada fila existen en realidad 24 observacio
 
 ![Conjunto tras la unión de las columnas de las medidas y la validez](images/ProcMediciones1.png)
 
-3. El siguiente paso es la transposición propiamente dicha. De esta forma existirán 24 registros por cada fila antigua, uno con la medición de cada hora. El nombre de la columna se mantiene en una columna nueva llamada 'hora', pues será utilizado para obtener la marca temporal de la medida.
+3. El siguiente paso es la transposición de las columnas con las mediciones. De esta forma existirán 24 registros por cada fila antigua, uno con la medición de cada hora. El nombre de la columna se mantiene en una columna nueva llamada 'hora', pues será utilizado para obtener la marca temporal de la medida.
 4. Separo la medida de la validez por el separador utilizado en el paso 1 ('-').
 
 ![Conjunto tras la trasposición de las columnas de las medidas](images/ProcMediciones2.png)
@@ -165,8 +165,8 @@ El mismo cuenta con 4991 filas, y en cada fila existen en realidad 24 observacio
 ![Conjunto tras la eliminación de columnas y la transformación a filas](images/ProcMediciones4.png)
 
 7. Para poder obtener las URIs tanto del sensor como del id que utilizaré para identificar cada medición, voy a utilizar la columna "punto\_muestreo", de la que no me interesa la última parte, que representa la técnica de medición, por lo que se realiza una transformación para eliminar desde la última '\_' hasta el final.
-8. Por último, para obtener la columna que utilizaré como identificador para construir las URIs de las mediciones ("\<Código de la estación\>/\<Fecha y hora de la medición\>), uno los campos de punto\_muestreo que se acaban de adaptar y de la marca temporal mediante el carácter '/' en una nueva columna.
-9. Para poder obtener la URI del sensor que realizó la magnitud, la cual tiene la forma "\<Código de la estación\>#\<Código de la magnitud\>", se puede aprovechar de nuevo la columna punto\_muestreo, reemplazando la '\_' por '#'.
+8. Por último, para obtener la columna que utilizaré como identificador para construir las URIs de las mediciones ("\<Código de la estación\>/\<Fecha y hora de la medición\>), uno los campos de "punto\_muestreo" que se acaba de adaptar y de la marca temporal mediante el carácter '/' en una nueva columna.
+9. Para poder obtener la URI del sensor que realizó la magnitud, la cual tiene la forma "\<Código de la estación\>#\<Código de la magnitud\>", se puede aprovechar de nuevo la columna "punto\_muestreo", reemplazando la '\_' por '#'.
 
 ![Conjunto de datos al finalizar el procesamiento](images/ProcMediciones5.png)
 
@@ -204,13 +204,13 @@ El identificador elegido en este caso, "\<Código de la estación\>#\<Código de
 
 ##### Procesamiento para obtener las estaciones
 
-1. Elimina todas las columnas relacionadas con sensores, debido a que ya no son necesarias.
+1. Elimino todas las columnas relacionadas con sensores, debido a que ya no son necesarias.
 2. Elimino las columnas con las coordenadas UTM ETRS89, debido a que utilizaré las coordenadas geográficas expresadas mediante la latitud y la longitud.
 3. Convierto las columnas altitud y fecha de alta a número y fecha, respectivamente.
 
 ![Conjunto de datos tras el procesamiento inicial](images/ProcEstaciones1.png)
 
-4. Debido a que la columna "estacion\_subarea\_rural" solo tiene valores para columnas cuya "estacion\_tipo\_area" sea "Rural", voy a unir estas dos columnas para dejarlo como una sola, mediante el carácter '-'. Debido a que ya tengo el dato en la unión, es posible la columna "estacion\_subarea\_rural".
+4. Debido a que la columna "estacion\_subarea\_rural" solo tiene valores para columnas cuya "estacion\_tipo\_area" sea "Rural", voy a unir estas dos columnas para dejarlo como una sola, mediante el carácter '-'. Debido a que ya tengo el dato en la unión, es posible eliminar la columna "estacion\_subarea\_rural".
 
 ![Conjunto de datos tras el proceso de transformación](images/ProcEstaciones2.png)
 
@@ -228,7 +228,7 @@ Por último, solo quedaría por procesar el conjunto de datos de magnitudes. Car
 El procesamiento realizado a este conjunto únicamente implica dos pasos:
 
 1. Convierto las columnas de los códigos de la magnitud y de la técnica de medida a texto, debido a que al cargar desde Excel directamente lo renderiza de esta forma. Al cambiarlo, lo hacía con la marca decimal, por lo que para evitar esto, lo hago con Python y la siguiente expresión: `return str(int(value))`.
-2. Modifico el carácter que simboliza el cubo y convertirlo en un '3', por si posteriormente causa problemas a la hora de convertir a Turtle, etc.
+2. Modifico el carácter que simboliza el cubo para convertirlo en un '3', por si posteriormente causa problemas a la hora de convertir a Turtle u otro formato.
 
 ![Conjunto de datos de magnitudes para el procesamiento](images/ProcMagnitudes.png)
 
@@ -246,9 +246,9 @@ Mediante la función de reconciliación de la extensión de RDF de OpenRefine, e
 
 #### Reconciliación de municipios
 
-El primer campo a reconciliar será el de las columnas que hacen referencia a los municipios donde se encuentran las estaciones, con las entradas de dichos municipios en Wikidata. De esta forma, nuestros datos no se encuentren aislados y tienen referencias hacia el exterior, pudiendo así realizar consultas más complejas mediante SPARQL incluyendo datos de los municipios que proporciona esta fuente.
+El primer campo a reconciliar será el de las columnas que hacen referencia a los municipios donde se encuentran las estaciones, con las entradas de dichos municipios en Wikidata. De esta forma, será posible así realizar consultas más complejas mediante SPARQL incluyendo datos de los municipios que proporciona esta fuente.
 
-Así, la reconciliación de los datos con Wikidata sugiere utilizar el typo "municipality of Spain". Si realizo la reconciliación se asocian todos ellos salvo uno, "Rascafría (Puerto de Cotos)", que es posible asociar manualmente con Rascafría.
+Así, la reconciliación de los datos con Wikidata sugiere utilizar el tipo "municipality of Spain". Si realizo la reconciliación se asocian todos ellos salvo uno, "Rascafría (Puerto de Cotos)", que es posible asociar manualmente con Rascafría.
 
 ![Reconciliación de municipios con los datos de Wikidata](images/MunicipiosWikidata.png)
 
@@ -268,7 +268,7 @@ En este caso, debido a que los nombres están en español, son pocos los que aso
 
 ![Conjunto de datos de magnitudes tras el proceso de reconciliación](images/MagnitudesReconciliadas.png)
 
-De igual forma que en el caso de los municipios, es posible añadir a las magnitudes la propiedad **owl:sameAs** y enlazarlo así con los datos que contiene wikidata sobre cada una de estas magnitudes.
+De igual forma que en el caso de los municipios, es posible añadir a las magnitudes la propiedad **owl:sameAs** y enlazarlo así con los datos que contiene Wikidata sobre cada una de estas magnitudes.
 
 ### Descripción del conjunto
 
@@ -276,7 +276,7 @@ Otra buena práctica cuando se transforman conjuntos de datos a datos enlazados 
 
 La descripción realizada se puede encontrar en el fichero [linkedData/descripcion.ttl](linkedData/descripcion.ttl). En él, defino un catálogo general (individuo de la clase **dcat:Catalog**) donde van a estar el resto de conjuntos alojados, y le proporciono un título, una descripción, el lenguaje, licencia, algunas palabras clave y los conjuntos de datos en sí mismos con la propiedad **dcat:dataset**.
 
-Adicionalmente describo los 4 conjuntos de datos por separado, como individuos de la clase **dcat:Dataset**, y les proporciono una serie de metadatos como son el título, palabras clave, cuando han sido creados y modificados, el lenguaje, la descripción o la licencia.
+Adicionalmente describo los 4 conjuntos de datos por separado, como individuos de la clase **dcat:Dataset**, y les proporciono una serie de metadatos como son el título, palabras clave, cuándo han sido creados y modificados, el lenguaje, la descripción o la licencia.
 
 
 ## Aplicación y explotación
@@ -297,9 +297,9 @@ Para ello, únicamente es necesario que seleccionar aquellas tripletas de nuestr
 
 Otro análisis interesante que es posible realizar es si en los barrios con un mayor número de habitantes existen unos índices de contaminación mayores. Al menos para mí cabría esperar de alguna forma que sí, pues cuanta más población tenga un municipio, más gente se desplaza en coche cerca de la estación allí ubicada, y por tanto causa unos niveles de contaminación mayores.
 
-Para obtener la población que tiene un municipio, es posible utilizar el campo que he reconciliado, la URI del recurso en WikiData, para hacer queries al SPARQL endpoint de la misma y obtener así la población. En primer lugar tendré que obtener dichas URIs: para ello es posible tanto recorrer el grafo de forma manual como realizar SPARQL queries al mismo. En el notebook asociado están desarrollados ambos métodos.
+Para obtener la población que tiene un municipio, es posible utilizar el campo que he reconciliado, la URI del recurso en Wikidata, para hacer queries al SPARQL endpoint de la misma y obtener así la población. En primer lugar tendré que obtener dichas URIs: para ello es posible tanto recorrer el grafo de forma manual como realizar SPARQL queries al mismo. En el notebook asociado están desarrollados ambos métodos.
 
-Una vez obtenidas los identificadores de Wikidata de los recursos, realizo las consultas a [su SPARQL endpoint](http://query.wikidata.org/sparql), más concretamente se obtienen las propiedades "wdt:P1082" (población) y "wdt:P1448" (nombre).
+Una vez obtenidas los identificadores de Wikidata de los recursos, realizo las consultas a [su SPARQL endpoint](http://query.wikidata.org/sparql), más concretamente se obtienen las propiedades **wdt:P1082** (población) y **wdt:P1448** (nombre).
 
 Además de la población, son necesarios los datos de contaminación de la estación situada en el municipio en un momento concreto, he elegido un miércoles a las 6 de la tarde. En concreto voy a analizar los elementos contaminantes O3, NO y NO2. Para ello construyo las URIs de dichas mediciones a partir del identificador del contaminante y la fecha y hora seleccionadas. Solo quedaría rellenar la URI con el identificador de la estación para todas las estaciones de nuestro conjunto y obtener los valores.
 
@@ -317,7 +317,7 @@ Para obtener estos valores, he seleccionado una hora para cada día, las 6 de la
 
 ![Datos de contaminación durante los meses de marzo de 2020](app/medidas-mes.png "Datos de contaminación durante los meses de marzo de 2020")
 
-Como se puede ver, no existe una tendencia clara en los datos, y no diría que los niveles de los contaminantes analizados han disminuido durante el mes de marzo. Quizá analizando meses más adelantes se pudiera ver una tendencia a la baja, pero en el mes de marzo no parece haberla.
+Como se puede ver, no existe una tendencia clara en los datos, y no diría que los niveles de los contaminantes analizados han disminuido durante el mes de marzo. Quizá analizando meses más adelante se pudiera ver una tendencia a la baja, pero en el mes de marzo no parece haberla.
 
 
 ## Conclusiones
