@@ -90,12 +90,14 @@ Se identifica algún caso conflictivo, como expresar el texto con el indicativo 
 -Tramo Edad: nos encontramos con una serie de rangos establecidos de edades para identificar cada caso, y el valor "DESCONOCIDA" para las personas a las que no se pudo determinar su edad en el momento de registrar el accidente (un 7.6% de los casos).
 Para poder trabajar con mayores posibilidades en las consultas finales, se podría añadir campos creados a partir de éste. Con la edad mínima y máxima, por ejemplo, realizaríamos consultas más simplificadas sobre rangos de edades mayores, etc.
 
+
 Licencia de uso de los datos:
 El conjunto de datos se ha obtenido del Portal de datos abiertos del Ayuntamiento de Madrid, por lo que son de uso público y abierto para su explotación.
 
 ![Screenshot](Imagenes/Licencia_dataset.jpg)
 
 Las condiciones de uso de la licencia estipulan : "Las condiciones generales permiten la reutilización de los documentos para fines comerciales y no comerciales. Se entiende por reutilización el uso de documentos que obran en poder del Ayuntamiento de Madrid, siempre que dicho uso no constituya una actividad administrativa pública."
+
 Dada la naturaleza de este trabajo, el objetivo es favorecer la reutilización de los datos mediante una transformación a la web semántica y enlazarlos con otros datos de interés. Su uso, por tanto, quedaría igualmente enmarcado en el campo de los datos abiertos y siempre con la idea de ser utilizados de forma transparente y gratuita por otros.
 
 
