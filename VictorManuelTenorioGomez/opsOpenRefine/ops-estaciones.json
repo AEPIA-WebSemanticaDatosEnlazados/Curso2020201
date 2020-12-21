@@ -1,0 +1,503 @@
+[
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_NO",
+    "description": "Remove column estacion_analizador_NO"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_NO2",
+    "description": "Remove column estacion_analizador_NO2"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_PM10",
+    "description": "Remove column estacion_analizador_PM10"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_PM2_5",
+    "description": "Remove column estacion_analizador_PM2_5"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_O3",
+    "description": "Remove column estacion_analizador_O3"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_TOL",
+    "description": "Remove column estacion_analizador_TOL"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_BEN",
+    "description": "Remove column estacion_analizador_BEN"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_XIL",
+    "description": "Remove column estacion_analizador_XIL"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_CO",
+    "description": "Remove column estacion_analizador_CO"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_SO2",
+    "description": "Remove column estacion_analizador_SO2"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_HCT",
+    "description": "Remove column estacion_analizador_HCT"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_analizador_HNM",
+    "description": "Remove column estacion_analizador_HNM"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_coord_UTM_ETRS89_y",
+    "description": "Remove column estacion_coord_UTM_ETRS89_y"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_coord_UTM_ETRS89_x",
+    "description": "Remove column estacion_coord_UTM_ETRS89_x"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estacion_fecha_alta",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column estacion_fecha_alta using expression value.toDate()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estacion_altitud",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column estacion_altitud using expression value.toNumber()"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estacion_tipo_area",
+    "expression": "join ([cells['estacion_tipo_area'].value,cells['estacion_subarea_rural'].value],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column estacion_tipo_area using expression join ([cells['estacion_tipo_area'].value,cells['estacion_subarea_rural'].value],'-')"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_subarea_rural",
+    "description": "Remove column estacion_subarea_rural"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "geo",
+          "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "sosa",
+          "uri": " http://www.w3.org/ns/sosa/"
+        }
+      ],
+      "baseUri": "http://smartcities.linkeddata.es/airQuality/resources/stations/",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "estacion_codigo",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://schema.org/location",
+              "curie": "schema:location",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "estacion_municipio",
+                "expression": "\"http://smartcities.linkeddata.es/airQuality/resources/towns#\" + value.replace(' ', '')",
+                "isRowNumberCell": false,
+                "links": [
+                  {
+                    "uri": "http://schema.org/containedInPlace",
+                    "curie": "schema:containedInPlace",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "columnName": "zona_calidad_aire_descripcion",
+                      "expression": "\"http://smartcities.linkeddata.es/airQuality/resources/zone/\"+value.replace(' ','').substring(4)",
+                      "isRowNumberCell": false,
+                      "links": [],
+                      "rdfTypes": [
+                        {
+                          "uri": "http://schema.org/Place",
+                          "curie": "schema:Place"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "rdfTypes": [
+                  {
+                    "uri": "http://schema.org/Place",
+                    "curie": "schema:Place"
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://smartcities.linkeddata.es/airQuality/ontology#tipoEstacion",
+              "curie": "http://smartcities.linkeddata.es/airQuality/ontology#tipoEstacion",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_tipo_estacion",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://smartcities.linkeddata.es/airQuality/ontology#fechaAlta",
+              "curie": "http://smartcities.linkeddata.es/airQuality/ontology#fechaAlta",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_fecha_alta",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#date",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://smartcities.linkeddata.es/airQuality/ontology#tipoLocalizacion",
+              "curie": "http://smartcities.linkeddata.es/airQuality/ontology#tipoLocalizacion",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_tipo_area",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://schema.org/Address",
+              "curie": "schema:Address",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_direccion_postal",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+              "curie": "geo:long",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_coord_longitud",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+              "curie": "geo:lat",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_coord_latitud",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#alt",
+              "curie": "geo:alt",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_altitud",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#double",
+                "isRowNumberCell": false
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/Platform",
+              "curie": "sosa:Platform"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estacion_municipio",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wdreconcile.toolforge.org/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q2074737",
+        "name": "municipality of Spain"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column estacion_municipio to type Q2074737"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "estacion_municipio",
+    "similarValue": "Rascafría (Puerto de Cotos)",
+    "judgment": "matched",
+    "match": {
+      "id": "Q985042",
+      "name": "Rascafría",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Rascafría (Q985042) for cells containing \"Rascafría (Puerto de Cotos)\" in column estacion_municipio"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "estacion_municipio",
+    "expression": "grel:\"http://www.wikidata.org/entity/\" + cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "municipio_wikidata",
+    "columnInsertIndex": 3,
+    "description": "Create column municipio_wikidata at index 3 based on column estacion_municipio using expression grel:\"http://www.wikidata.org/entity/\" + cell.recon.match.id"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "geo",
+          "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "sosa",
+          "uri": " http://www.w3.org/ns/sosa/"
+        }
+      ],
+      "baseUri": "http://smartcity.linkeddata.es/airQuality/resources/stations/",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "estacion_codigo",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://schema.org/location",
+              "curie": "schema:location",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "estacion_municipio",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/resources/towns#\" + value.replace(' ', '')",
+                "isRowNumberCell": false,
+                "links": [
+                  {
+                    "uri": "http://schema.org/containedInPlace",
+                    "curie": "schema:containedInPlace",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "columnName": "zona_calidad_aire_descripcion",
+                      "expression": "\"http://smartcity.linkeddata.es/airQuality/resources/zone/\"+value.replace(' ','').substring(4)",
+                      "isRowNumberCell": false,
+                      "links": [],
+                      "rdfTypes": [
+                        {
+                          "uri": "http://schema.org/Place",
+                          "curie": "schema:Place"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "uri": "http://www.w3.org/2002/07/owl#sameAs",
+                    "curie": "owl:sameAs",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "columnName": "municipio_wikidata",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "links": [],
+                      "rdfTypes": []
+                    }
+                  }
+                ],
+                "rdfTypes": [
+                  {
+                    "uri": "http://schema.org/Place",
+                    "curie": "schema:Place"
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion",
+              "curie": "http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_tipo_estacion",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta",
+              "curie": "http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_fecha_alta",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#date",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion",
+              "curie": "http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_tipo_area",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://schema.org/Address",
+              "curie": "schema:Address",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_direccion_postal",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+              "curie": "geo:long",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_coord_longitud",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+              "curie": "geo:lat",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_coord_latitud",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2003/01/geo/wgs84_pos#alt",
+              "curie": "geo:alt",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "estacion_altitud",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#double",
+                "isRowNumberCell": false
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/Platform",
+              "curie": "sosa:Platform"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "op": "core/transpose-columns-into-rows",
+    "startColumnName": "estacion_analizador_NO",
+    "columnCount": -1,
+    "ignoreBlankCells": true,
+    "fillDown": false,
+    "separator": null,
+    "keyColumnName": "magnitud",
+    "valueColumnName": "analiza",
+    "description": "Transpose cells in columns starting with estacion_analizador_NO into rows in two new columns named magnitud and analiza"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "magnitud",
+    "expression": "grel:substring(value, 20)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column magnitud using expression grel:substring(value, 20)"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "magnitud",
+    "expression": "jython:value_map={\n  'NO': '7',\n  'NO2': '8',\n  'PM10': '10',\n  'PM2_5': '9',\n  'O3': '14',\n  'SO2': '1',\n  'CO': '6',\n  'TOL': '20',\n  'BEN': '30',\n  'XIL': '431',\n  'HCT': '42',\n  'HNM': '44'\n}\nreturn value_map[value]",
+    "onError": "store-error",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column magnitud using expression jython:value_map={\n  'NO': '7',\n  'NO2': '8',\n  'PM10': '10',\n  'PM2_5': '9',\n  'O3': '14',\n  'SO2': '1',\n  'CO': '6',\n  'TOL': '20',\n  'BEN': '30',\n  'XIL': '431',\n  'HCT': '42',\n  'HNM': '44'\n}\nreturn value_map[value]"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "zona_calidad_aire_descripcion",
+    "description": "Remove column zona_calidad_aire_descripcion"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_municipio",
+    "description": "Remove column estacion_municipio"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_fecha_alta",
+    "description": "Remove column estacion_fecha_alta"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_tipo_area",
+    "description": "Remove column estacion_tipo_area"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_tipo_estacion",
+    "description": "Remove column estacion_tipo_estacion"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_subarea_rural",
+    "description": "Remove column estacion_subarea_rural"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_direccion_postal",
+    "description": "Remove column estacion_direccion_postal"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_coord_UTM_ETRS89_x",
+    "description": "Remove column estacion_coord_UTM_ETRS89_x"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_coord_UTM_ETRS89_y",
+    "description": "Remove column estacion_coord_UTM_ETRS89_y"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_coord_longitud",
+    "description": "Remove column estacion_coord_longitud"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_coord_latitud",
+    "description": "Remove column estacion_coord_latitud"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion_altitud",
+    "description": "Remove column estacion_altitud"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "analiza",
+    "description": "Remove column analiza"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "estacion_codigo",
+    "description": "Fill down cells in column estacion_codigo"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "sosa",
+          "uri": "http://www.w3.org/ns/sosa/"
+        }
+      ],
+      "baseUri": "http://smartcity.linkeddata.es/airQuality/resources/stations/",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "estacion_codigo",
+          "expression": "value + '#' + cells['magnitud'].value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/isHostedBy",
+              "curie": "sosa:isHostedBy",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "estacion_codigo",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "links": [],
+                "rdfTypes": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/ns/sosa/Observes",
+              "curie": "sosa:Observes",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "magnitud",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/magnitudes#\" + value",
+                "isRowNumberCell": false,
+                "links": [],
+                "rdfTypes": []
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/Sensor",
+              "curie": "sosa:Sensor"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  }
+]

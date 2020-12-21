@@ -1,0 +1,564 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "codigo_tecnica_medida",
+    "expression": "jython:return str(int(value))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column codigo_tecnica_medida using expression jython:return str(int(value))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "codigo_magnitud",
+    "expression": "jython:return str(int(value))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column codigo_magnitud using expression jython:return str(int(value))"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "unidad",
+    "expression": "jython:return value.replace('³','3')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column unidad using expression jython:return value.replace('³','3')"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "om",
+          "uri": "http://www.ontology-of-units-of-measure.org/resource/om-2/"
+        },
+        {
+          "name": "sosa",
+          "uri": "http://www.w3.org/ns/sosa/"
+        },
+        {
+          "name": "ssn",
+          "uri": "http://www.w3.org/ns/ssn/"
+        },
+        {
+          "name": "dc",
+          "uri": "http://purl.org/dc/elements/1.1/"
+        }
+      ],
+      "baseUri": "http://smartcity.linkeddata.es/airQuality/resources/magnitudes#",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "codigo_magnitud",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://purl.org/dc/elements/1.1/title",
+              "curie": "dc:title",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "descripcion_magnitud",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica",
+              "curie": "http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "codigo_tecnica_medida",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/tecnicas#\" + value",
+                "isRowNumberCell": false,
+                "links": [
+                  {
+                    "uri": "http://purl.org/dc/elements/1.1/title",
+                    "curie": "dc:title",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "descripcion_tecnica_medida",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  }
+                ],
+                "rdfTypes": [
+                  {
+                    "uri": "http://smartcity.linkeddata.es/airQuality/ontology#Tecnica",
+                    "curie": "http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit",
+              "curie": "om:hasUnit",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "unidad",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/unidades#\"+value",
+                "isRowNumberCell": false,
+                "links": [
+                  {
+                    "uri": "http://purl.org/dc/elements/1.1/title",
+                    "curie": "dc:title",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "descripcion_unidad",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  }
+                ],
+                "rdfTypes": [
+                  {
+                    "uri": "http://smartcity.linkeddata.es/airQuality/ontology#Unidad",
+                    "curie": "http://smartcity.linkeddata.es/airQuality/ontology#Unidad"
+                  }
+                ]
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/ObservableProperty",
+              "curie": "sosa:ObservableProperty"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  },
+  {
+    "op": "core/recon",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "config": {
+      "mode": "standard-service",
+      "service": "https://wdreconcile.toolforge.org/en/api",
+      "identifierSpace": "http://www.wikidata.org/entity/",
+      "schemaSpace": "http://www.wikidata.org/prop/direct/",
+      "type": {
+        "id": "Q11173",
+        "name": "chemical compound"
+      },
+      "autoMatch": true,
+      "columnDetails": [],
+      "limit": 0
+    },
+    "description": "Reconcile cells in column descripcion_magnitud to type Q11173"
+  },
+  {
+    "op": "core/recon-clear-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Hidrocarburos totales",
+    "description": "Clear recon data for cells containing \"Hidrocarburos totales\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-clear-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Hidrocarburos no metánicos",
+    "description": "Clear recon data for cells containing \"Hidrocarburos no metánicos\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-clear-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "MetaParaXileno",
+    "description": "Clear recon data for cells containing \"MetaParaXileno\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-clear-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Partículas en suspensión < PM2,5",
+    "description": "Clear recon data for cells containing \"Partículas en suspensión < PM2,5\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-clear-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Partículas en suspensión <PM10",
+    "description": "Clear recon data for cells containing \"Partículas en suspensión <PM10\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Óxidos de nitrógeno",
+    "judgment": "matched",
+    "match": {
+      "id": "Q424418",
+      "name": "nitrogen oxide",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item nitrogen oxide (Q424418) for cells containing \"Óxidos de nitrógeno\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Ozono",
+    "judgment": "matched",
+    "match": {
+      "id": "Q36933",
+      "name": "ozone",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item ozone (Q36933) for cells containing \"Ozono\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Dióxido de azufre",
+    "judgment": "matched",
+    "match": {
+      "id": "Q5282",
+      "name": "sulfur dioxide",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item sulfur dioxide (Q5282) for cells containing \"Dióxido de azufre\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Monóxido de carbono",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2025",
+      "name": "carbon monoxide",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item carbon monoxide (Q2025) for cells containing \"Monóxido de carbono\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Monóxido de nitrógeno",
+    "judgment": "matched",
+    "match": {
+      "id": "Q207843",
+      "name": "nitric oxide (radical)",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item nitric oxide (radical) (Q207843) for cells containing \"Monóxido de nitrógeno\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Dióxido de nitrógeno",
+    "judgment": "matched",
+    "match": {
+      "id": "Q207895",
+      "name": "nitrogen dioxide",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item nitrogen dioxide (Q207895) for cells containing \"Dióxido de nitrógeno\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Tolueno",
+    "judgment": "matched",
+    "match": {
+      "id": "Q15779",
+      "name": "toluene",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item toluene (Q15779) for cells containing \"Tolueno\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Black Carbon",
+    "judgment": "matched",
+    "match": {
+      "id": "Q3233590",
+      "name": "Black carbon",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item Black carbon (Q3233590) for cells containing \"Black Carbon\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/recon-judge-similar-cells",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "descripcion_magnitud",
+    "similarValue": "Benceno",
+    "judgment": "matched",
+    "match": {
+      "id": "Q2270",
+      "name": "benzene",
+      "types": [
+        ""
+      ],
+      "score": 100
+    },
+    "shareNewTopics": false,
+    "description": "Match item benzene (Q2270) for cells containing \"Benceno\" in column descripcion_magnitud"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "descripcion_magnitud",
+    "expression": "grel:\"http://wikidata.org/entity/\" + cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "magnitud_wikidata",
+    "columnInsertIndex": 2,
+    "description": "Create column magnitud_wikidata at index 2 based on column descripcion_magnitud using expression grel:\"http://wikidata.org/entity/\" + cell.recon.match.id"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "om",
+          "uri": "http://www.ontology-of-units-of-measure.org/resource/om-2/"
+        },
+        {
+          "name": "sosa",
+          "uri": "http://www.w3.org/ns/sosa/"
+        },
+        {
+          "name": "ssn",
+          "uri": "http://www.w3.org/ns/ssn/"
+        },
+        {
+          "name": "dc",
+          "uri": "http://purl.org/dc/elements/1.1/"
+        }
+      ],
+      "baseUri": "http://smartcity.linkeddata.es/airQuality/resources/magnitudes#",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "codigo_magnitud",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://purl.org/dc/elements/1.1/title",
+              "curie": "dc:title",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "descripcion_magnitud",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica",
+              "curie": "http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "codigo_tecnica_medida",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/tecnicas#\" + value",
+                "isRowNumberCell": false,
+                "links": [
+                  {
+                    "uri": "http://purl.org/dc/elements/1.1/title",
+                    "curie": "dc:title",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "descripcion_tecnica_medida",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  }
+                ],
+                "rdfTypes": [
+                  {
+                    "uri": "http://smartcity.linkeddata.es/airQuality/ontology#Tecnica",
+                    "curie": "http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit",
+              "curie": "om:hasUnit",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "unidad",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/unidades#\"+value",
+                "isRowNumberCell": false,
+                "links": [
+                  {
+                    "uri": "http://purl.org/dc/elements/1.1/title",
+                    "curie": "dc:title",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "descripcion_unidad",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  }
+                ],
+                "rdfTypes": [
+                  {
+                    "uri": "http://smartcity.linkeddata.es/airQuality/ontology#Unidad",
+                    "curie": "http://smartcity.linkeddata.es/airQuality/ontology#Unidad"
+                  }
+                ]
+              }
+            },
+            {
+              "uri": "http://www.w3.org/2002/07/owl#sameAs",
+              "curie": "owl:sameAs",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "magnitud_wikidata",
+                "expression": "value",
+                "isRowNumberCell": false,
+                "links": [],
+                "rdfTypes": []
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/ObservableProperty",
+              "curie": "sosa:ObservableProperty"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  }
+]

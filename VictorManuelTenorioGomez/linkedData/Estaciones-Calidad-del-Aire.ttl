@@ -1,0 +1,369 @@
+@prefix schema: <http://schema.org/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sosa: <\u0020http://www.w3.org/ns/sosa/> .
+
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28005002> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "C.E.I.P. Manuel Azaña, Avda. del Ejército, 5";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#AlcaládeHenares>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2000-03-16T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 5.95E2;
+  geo:lat "40°28'45,0\"N";
+  geo:long "03°22'40,0\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#AlcaládeHenares> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares>;
+  owl:sameAs <http://www.wikidata.org/entity/Q46940> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28006004> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Parque de Andalucía, C/ Pintor Murillo";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Alcobendas>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2000-01-19T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 6.88E2;
+  geo:lat "40°32'25,8\"N";
+  geo:long "03°38'42,7\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Alcobendas> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares>;
+  owl:sameAs <http://www.wikidata.org/entity/Q487679> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28007004> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Colegio Blas de Otero, Avda. del Oeste, 4";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Alcorcón>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2008-09-11T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 6.93E2;
+  geo:lat "40°20'30,9\"N";
+  geo:long "03°50'01,4\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Alcorcón> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur>;
+  owl:sameAs <http://www.wikidata.org/entity/Q10372> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28009001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Parque Europa, C/ Humilladero con C/ Francisco Quevedo";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Algete>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2007-03-31T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 8.0E2;
+  geo:lat "40°35'59,1''N";
+  geo:long "03°30'11,8''W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Algete> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares>;
+  owl:sameAs <http://www.wikidata.org/entity/Q472604> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28013002> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Polideportivo Municipal Agustín Marañón, C/ Moreras (C/ Primero de Mayo, 4)";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Aranjuez>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2001-10-06T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 5.01E2;
+  geo:lat "40°01'59,8''N";
+  geo:long "03°35'29,1''W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Aranjuez> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur>;
+  owl:sameAs <http://www.wikidata.org/entity/Q486792> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28014002> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Punto Limpio, C/ Río Tajuña, 5";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#ArgandadelRey>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-04-25T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Industrial";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 5.86E2;
+  geo:lat "40°18'02,9\"N";
+  geo:long "03°27'32,0\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#ArgandadelRey> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares>;
+  owl:sameAs <http://www.wikidata.org/entity/Q497692> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28016001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Instalaciones del Canal de Isabel II";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#ElAtazar>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-08-22T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Rural-Remota";
+  geo:alt 9.95E2;
+  geo:lat "40°54'32,6\"N";
+  geo:long "03°28'04,4\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#ElAtazar> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/5SierraNorte>;
+  owl:sameAs <http://www.wikidata.org/entity/Q1772153> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/5SierraNorte> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28045002> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Auditorio Municipal, C/ Molino de Viento, s/n";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#ColmenarViejo>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2001-10-06T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 9.05E2;
+  geo:lat "40°39'52,7''N";
+  geo:long "03°46'26,0''W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#ColmenarViejo> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/4UrbanaNoroeste>;
+  owl:sameAs <http://www.wikidata.org/entity/Q55480> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/4UrbanaNoroeste> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28047002> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Colegio Público Rosa Chacel, C/ Santa Teresa de Jesús, 12";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#ColladoVillalba>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-05-31T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 8.73E2;
+  geo:lat "40°37'59,2\"N";
+  geo:long "04°00'51,1\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#ColladoVillalba> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/4UrbanaNoroeste>;
+  owl:sameAs <http://www.wikidata.org/entity/Q735759> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28049003> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Polideportivo Municipal Valle Aguado, Avda. José Gárate, 8 (C/ Perú, 17)";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Coslada>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2007-06-05T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 6.21E2;
+  geo:lat "40°25'49,7\"N";
+  geo:long "03°32'32,3\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Coslada> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares>;
+  owl:sameAs <http://www.wikidata.org/entity/Q164197> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28058004> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "C/ Grecia, 3 (trasera)";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Fuenlabrada>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2000-05-01T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Industrial";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 6.99E2;
+  geo:lat "40°16'53,5\"N";
+  geo:long "03°48'03,4\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Fuenlabrada> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur>;
+  owl:sameAs <http://www.wikidata.org/entity/Q54902> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28065014> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "C.E.I.P. Mariana Pineda, Avda. de las Ciudades, 33";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Getafe>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-10-31T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 6.67E2;
+  geo:lat "40°18'52,5\"N";
+  geo:long "03°43'00,7\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Getafe> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur>;
+  owl:sameAs <http://www.wikidata.org/entity/Q8802> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28067001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Camino de Chozas, s/n";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#GuadalixdelaSierra>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-10-31T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Rural-Regional";
+  geo:alt 8.53E2;
+  geo:lat "40°46'50,3\"N";
+  geo:long "03°42'07,8\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#GuadalixdelaSierra> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/5SierraNorte>;
+  owl:sameAs <http://www.wikidata.org/entity/Q55482> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28074007> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "C.E.P.A. Rosalía de Castro, C/ Roncal (Avda. de la Mancha, 50)";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Leganés>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2000-05-01T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Urbana";
+  geo:alt 6.76E2;
+  geo:lat "40°20'23,2\"N";
+  geo:long "03°45'16,3\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Leganés> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur>;
+  owl:sameAs <http://www.wikidata.org/entity/Q77433> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28080003> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Campo de golf, C/ Isaac Albéniz";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Majadahonda>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2001-10-06T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 3.6E2;
+  geo:lat "40°26'46,3''N";
+  geo:long "03°52'08,4''W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Majadahonda> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/4UrbanaNoroeste>;
+  owl:sameAs <http://www.wikidata.org/entity/Q427505> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28092005> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Parque Liana";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Móstoles>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2000-05-01T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 6.6E2;
+  geo:lat "40°19'27,2\"N";
+  geo:long "03°52'36,3\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Móstoles> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur>;
+  owl:sameAs <http://www.wikidata.org/entity/Q187826> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28102001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Camino forestal de acceso al repetidor de telefonía";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#OruscodeTajuña>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-09-29T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Rural-Remota";
+  geo:alt 8.0E2;
+  geo:lat "40°17'15,3\"N";
+  geo:long "03°13'16,0\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#OruscodeTajuña> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/7CuencadelTajuña>;
+  owl:sameAs <http://www.wikidata.org/entity/Q520988> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/7CuencadelTajuña> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28120001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Centro de Visitantes Peñalara, Ctra. M-604, km 42 (Puerto de Cotos, Rascafría)";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Rascafría(PuertodeCotos)>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2019-01-01T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Rural-Remota";
+  geo:alt 1.87E3;
+  geo:lat "40°49'30,4\"N";
+  geo:long "03°57'40,3\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Rascafría(PuertodeCotos)>
+  a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/5SierraNorte>;
+  owl:sameAs <http://www.wikidata.org/entity/Q985042> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/5SierraNorte> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28123002> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Polideportivo Cerro del Telégrafo, C/ Juncal (Avda. Los Almendros, 1)";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Rivas-Vaciamadrid>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-08-02T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 6.08E2;
+  geo:lat "40°21'35,1\"N";
+  geo:long "03°32'34,3\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Rivas-Vaciamadrid> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares>;
+  owl:sameAs <http://www.wikidata.org/entity/Q644481> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#SanMartíndeValdeiglesias>
+  a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/6CuencadelAlberche>;
+  owl:sameAs <http://www.wikidata.org/entity/Q1751908> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28133002> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "C/ Depósito s/n";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#SanMartíndeValdeiglesias>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-08-24T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Rural-Regional";
+  geo:alt 5.49E2;
+  geo:lat "40°22'03,9\"N";
+  geo:long "04°23'53,2\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/6CuencadelAlberche> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28148004> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Parque del Ocio";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#TorrejóndeArdoz>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2005-01-01T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 5.97E2;
+  geo:lat "40°26'58,4\"N";
+  geo:long "03°28'39,5\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#TorrejóndeArdoz> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/2CorredordelHenares>;
+  owl:sameAs <http://www.wikidata.org/entity/Q489839> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28161001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Colegio Público Pedro Antonio de Alarcón, C/ Artemisa, 5";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#Valdemoro>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-07-27T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 6.15E2;
+  geo:lat "40°11'06,9\"N";
+  geo:long "03°40'49,0\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#Valdemoro> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur>;
+  owl:sameAs <http://www.wikidata.org/entity/Q840373> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/zone/3UrbanaSur> a schema:Place .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#VilladelPrado> a schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/6CuencadelAlberche>;
+  owl:sameAs <http://www.wikidata.org/entity/Q320398> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28171001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "Hospital Virgen de la Poveda, C/ Alejandro Peris Barrios, km. 5";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#VilladelPrado>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-06-14T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Fondo";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Rural-Remota";
+  geo:alt 5.1E2;
+  geo:lat "40°14'55,4\"N";
+  geo:long "04°16'32,4\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/stations/28180001> a <http://www.w3.org/ns/sosa/Platform>;
+  schema:Address "I.E.S. Nuestra Señora de la Victoria de Lepanto, C/ Luis de Requesens, 1-3";
+  schema:location <http://smartcity.linkeddata.es/airQuality/resources/towns#VillarejodeSalvanés>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#fechaAlta> "2006-04-25T00:00Z"^^<http://www.w3.org/2001/XMLSchema#date>;
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoEstacion> "Tráfico";
+  <http://smartcity.linkeddata.es/airQuality/ontology#tipoLocalizacion> "Suburbana";
+  geo:alt 7.64E2;
+  geo:lat "40°10'02,0\"N";
+  geo:long "03°16'36,0\"W" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/towns#VillarejodeSalvanés> a
+    schema:Place;
+  schema:containedInPlace <http://smartcity.linkeddata.es/airQuality/resources/zone/7CuencadelTajuña>;
+  owl:sameAs <http://www.wikidata.org/entity/Q1641598> .

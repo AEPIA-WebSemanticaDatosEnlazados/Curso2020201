@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/"
+	xmlns:sosa="http://www.w3.org/ns/sosa/"
+	xmlns:ssn="http://www.w3.org/ns/ssn/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#1">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Dióxido de azufre</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#38">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Fluorescencia ultravioleta</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#1">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#38"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#1">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q5282"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#6">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Monóxido de carbono</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#48">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Espectrometría infrarroja no dispersiva</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#6">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#48"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#mg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>miligramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#6">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#mg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q2025"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#7">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Monóxido de nitrógeno</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#8">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Quimioluminiscencia</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#7">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#7">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q207843"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#8">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Dióxido de nitrógeno</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#8">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Quimioluminiscencia</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#8">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#8">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q207895"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#9">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Partículas en suspensión &lt; PM2,5</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#49">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Absorción beta</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#9">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#49"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#9">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#10">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Partículas en suspensión &lt;PM10</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#49">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Absorción beta</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#10">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#49"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#10">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#12">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Óxidos de nitrógeno</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#8">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Quimioluminiscencia</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#12">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#8"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#12">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q424418"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#14">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Ozono</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#6">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Absorción ultravioleta</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#14">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#6"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#14">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q36933"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#20">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Tolueno</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#59">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Cromatografía de gases</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#20">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#59"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#20">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q15779"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#22">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Black Carbon</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#7">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Absorción de luz</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#22">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#7"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#22">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q3233590"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#30">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Benceno</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#59">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Cromatografía de gases</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#30">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#59"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#30">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+	<owl:sameAs rdf:resource="http://wikidata.org/entity/Q2270"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#42">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Hidrocarburos totales</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#2">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Ionización llama</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#42">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#mg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>miligramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#42">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#mg/m3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#44">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>Hidrocarburos no metánicos</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#2">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Ionización llama</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#44">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#2"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#mg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>miligramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#44">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#mg/m3"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#431">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+	<dc:title>MetaParaXileno</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/tecnicas#59">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Tecnica"/>
+	<dc:title>Cromatografía de gases</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#431">
+	<hasTecnica xmlns="http://smartcity.linkeddata.es/airQuality/ontology#" rdf:resource="http://smartcity.linkeddata.es/airQuality/tecnicas#59"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3">
+	<rdf:type rdf:resource="http://smartcity.linkeddata.es/airQuality/ontology#Unidad"/>
+	<dc:title>microgramos por metro cúbico</dc:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://smartcity.linkeddata.es/airQuality/resources/magnitudes#431">
+	<om:hasUnit rdf:resource="http://smartcity.linkeddata.es/airQuality/unidades#μg/m3"/>
+</rdf:Description>
+
+</rdf:RDF>

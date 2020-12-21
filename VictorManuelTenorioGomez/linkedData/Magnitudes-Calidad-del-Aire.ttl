@@ -1,0 +1,121 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#1> a sosa:ObservableProperty;
+  dc:title "Dióxido de azufre";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#38>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q5282> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#38> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Fluorescencia ultravioleta" .
+
+<http://smartcity.linkeddata.es/airQuality/unidades#μg/m3> a <http://smartcity.linkeddata.es/airQuality/ontology#Unidad>;
+  dc:title "microgramos por metro cúbico" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#6> a sosa:ObservableProperty;
+  dc:title "Monóxido de carbono";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#48>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#mg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q2025> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#48> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Espectrometría infrarroja no dispersiva" .
+
+<http://smartcity.linkeddata.es/airQuality/unidades#mg/m3> a <http://smartcity.linkeddata.es/airQuality/ontology#Unidad>;
+  dc:title "miligramos por metro cúbico" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#7> a sosa:ObservableProperty;
+  dc:title "Monóxido de nitrógeno";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#8>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q207843> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#8> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Quimioluminiscencia" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#8> a sosa:ObservableProperty;
+  dc:title "Dióxido de nitrógeno";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#8>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q207895> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#9> a sosa:ObservableProperty;
+  dc:title "Partículas en suspensión < PM2,5";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#49>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#49> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Absorción beta" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#10> a sosa:ObservableProperty;
+  dc:title "Partículas en suspensión <PM10";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#49>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#12> a sosa:ObservableProperty;
+  dc:title "Óxidos de nitrógeno";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#8>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q424418> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#14> a sosa:ObservableProperty;
+  dc:title "Ozono";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#6>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q36933> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#6> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Absorción ultravioleta" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#20> a sosa:ObservableProperty;
+  dc:title "Tolueno";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#59>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q15779> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#59> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Cromatografía de gases" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#22> a sosa:ObservableProperty;
+  dc:title "Black Carbon";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#7>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q3233590> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#7> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Absorción de luz" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#30> a sosa:ObservableProperty;
+  dc:title "Benceno";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#59>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3>;
+  owl:sameAs <http://wikidata.org/entity/Q2270> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#42> a sosa:ObservableProperty;
+  dc:title "Hidrocarburos totales";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#2>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#mg/m3> .
+
+<http://smartcity.linkeddata.es/airQuality/tecnicas#2> a <http://smartcity.linkeddata.es/airQuality/ontology#Tecnica>;
+  dc:title "Ionización llama" .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#44> a sosa:ObservableProperty;
+  dc:title "Hidrocarburos no metánicos";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#2>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#mg/m3> .
+
+<http://smartcity.linkeddata.es/airQuality/resources/magnitudes#431> a sosa:ObservableProperty;
+  dc:title "MetaParaXileno";
+  <http://smartcity.linkeddata.es/airQuality/ontology#hasTecnica> <http://smartcity.linkeddata.es/airQuality/tecnicas#59>;
+  om:hasUnit <http://smartcity.linkeddata.es/airQuality/unidades#μg/m3> .
+
+<http://smartcity.linkeddata.es/airQuality/unidades#μg/m3> a <http://smartcity.linkeddata.es/airQuality/ontology#Unidad>;
+  dc:title "microgramos por metro cúbico" .

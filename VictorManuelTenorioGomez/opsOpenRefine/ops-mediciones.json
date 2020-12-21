@@ -1,0 +1,768 @@
+[
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h01",
+    "expression": "join ([coalesce(cells['h01'].value,'0'),coalesce(cells['v01'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h01 using expression join ([coalesce(cells['h01'].value,'0'),coalesce(cells['v01'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h02",
+    "expression": "join ([coalesce(cells['h02'].value,'0'),coalesce(cells['v02'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h02 using expression join ([coalesce(cells['h02'].value,'0'),coalesce(cells['v02'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h03",
+    "expression": "join ([coalesce(cells['h03'].value,'0'),coalesce(cells['v03'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h03 using expression join ([coalesce(cells['h03'].value,'0'),coalesce(cells['v03'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h04",
+    "expression": "join ([coalesce(cells['h04'].value,'0'),coalesce(cells['v04'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h04 using expression join ([coalesce(cells['h04'].value,'0'),coalesce(cells['v04'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h05",
+    "expression": "join ([coalesce(cells['h05'].value,'0'),coalesce(cells['v05'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h05 using expression join ([coalesce(cells['h05'].value,'0'),coalesce(cells['v05'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h06",
+    "expression": "join ([coalesce(cells['h06'].value,'0'),coalesce(cells['v06'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h06 using expression join ([coalesce(cells['h06'].value,'0'),coalesce(cells['v06'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h07",
+    "expression": "join ([coalesce(cells['h07'].value,'0'),coalesce(cells['v07'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h07 using expression join ([coalesce(cells['h07'].value,'0'),coalesce(cells['v07'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h08",
+    "expression": "join ([coalesce(cells['h08'].value,'0'),coalesce(cells['v08'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h08 using expression join ([coalesce(cells['h08'].value,'0'),coalesce(cells['v08'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h09",
+    "expression": "join ([coalesce(cells['h09'].value,'0'),coalesce(cells['v09'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h09 using expression join ([coalesce(cells['h09'].value,'0'),coalesce(cells['v09'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h10",
+    "expression": "join ([coalesce(cells['h10'].value,'0'),coalesce(cells['v10'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h10 using expression join ([coalesce(cells['h10'].value,'0'),coalesce(cells['v10'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h11",
+    "expression": "join ([coalesce(cells['h11'].value,'0'),coalesce(cells['v11'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h11 using expression join ([coalesce(cells['h11'].value,'0'),coalesce(cells['v11'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h12",
+    "expression": "join ([coalesce(cells['h12'].value,'0'),coalesce(cells['v12'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h12 using expression join ([coalesce(cells['h12'].value,'0'),coalesce(cells['v12'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h13",
+    "expression": "join ([coalesce(cells['h13'].value,'0'),coalesce(cells['v13'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h13 using expression join ([coalesce(cells['h13'].value,'0'),coalesce(cells['v13'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h14",
+    "expression": "join ([coalesce(cells['h14'].value,'0'),coalesce(cells['v14'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h14 using expression join ([coalesce(cells['h14'].value,'0'),coalesce(cells['v14'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h15",
+    "expression": "join ([coalesce(cells['h15'].value,'0'),coalesce(cells['v15'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h15 using expression join ([coalesce(cells['h15'].value,'0'),coalesce(cells['v15'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h16",
+    "expression": "join ([coalesce(cells['h16'].value,'0'),coalesce(cells['v16'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h16 using expression join ([coalesce(cells['h16'].value,'0'),coalesce(cells['v16'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h17",
+    "expression": "join ([coalesce(cells['h17'].value,'0'),coalesce(cells['v17'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h17 using expression join ([coalesce(cells['h17'].value,'0'),coalesce(cells['v17'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h18",
+    "expression": "join ([coalesce(cells['h18'].value,'0'),coalesce(cells['v18'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h18 using expression join ([coalesce(cells['h18'].value,'0'),coalesce(cells['v18'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h19",
+    "expression": "join ([coalesce(cells['h19'].value,'0'),coalesce(cells['v19'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h19 using expression join ([coalesce(cells['h19'].value,'0'),coalesce(cells['v19'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h20",
+    "expression": "join ([coalesce(cells['h20'].value,'0'),coalesce(cells['v20'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h20 using expression join ([coalesce(cells['h20'].value,'0'),coalesce(cells['v20'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h21",
+    "expression": "join ([coalesce(cells['h21'].value,'0'),coalesce(cells['v21'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h21 using expression join ([coalesce(cells['h21'].value,'0'),coalesce(cells['v21'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h22",
+    "expression": "join ([coalesce(cells['h22'].value,'0'),coalesce(cells['v22'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h22 using expression join ([coalesce(cells['h22'].value,'0'),coalesce(cells['v22'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h23",
+    "expression": "join ([coalesce(cells['h23'].value,'0'),coalesce(cells['v23'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h23 using expression join ([coalesce(cells['h23'].value,'0'),coalesce(cells['v23'].value,'0')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "h24",
+    "expression": "join ([coalesce(cells['h24'].value,'0'),coalesce(cells['v24'].value,'0')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column h24 using expression join ([coalesce(cells['h24'].value,'0'),coalesce(cells['v24'].value,'0')],'-')"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "punto_muestreo",
+    "guessCellType": false,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": "_",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column punto_muestreo by separator"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "punto_muestreo 2",
+    "description": "Remove column punto_muestreo 2"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "punto_muestreo 3",
+    "description": "Remove column punto_muestreo 3"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "punto_muestreo 1",
+    "newColumnName": "codigo_estacion",
+    "description": "Rename column punto_muestreo 1 to codigo_estacion"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v01",
+    "description": "Remove column v01"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v02",
+    "description": "Remove column v02"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v03",
+    "description": "Remove column v03"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v04",
+    "description": "Remove column v04"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v05",
+    "description": "Remove column v05"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v06",
+    "description": "Remove column v06"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v07",
+    "description": "Remove column v07"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v08",
+    "description": "Remove column v08"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v09",
+    "description": "Remove column v09"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v10",
+    "description": "Remove column v10"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v11",
+    "description": "Remove column v11"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v12",
+    "description": "Remove column v12"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v13",
+    "description": "Remove column v13"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v14",
+    "description": "Remove column v14"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v15",
+    "description": "Remove column v15"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v16",
+    "description": "Remove column v16"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v17",
+    "description": "Remove column v17"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v18",
+    "description": "Remove column v18"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v19",
+    "description": "Remove column v19"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v20",
+    "description": "Remove column v20"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v21",
+    "description": "Remove column v21"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v22",
+    "description": "Remove column v22"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v23",
+    "description": "Remove column v23"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "v24",
+    "description": "Remove column v24"
+  },
+  {
+    "op": "core/transpose-columns-into-rows",
+    "startColumnName": "h01",
+    "columnCount": 24,
+    "ignoreBlankCells": false,
+    "fillDown": false,
+    "separator": null,
+    "keyColumnName": "hora",
+    "valueColumnName": "medida",
+    "description": "Transpose cells in 24 column(s) starting with h01 into rows in two new columns named hora and medida"
+  },
+  {
+    "op": "core/column-split",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "medida",
+    "guessCellType": false,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "-",
+    "regex": false,
+    "maxColumns": 0,
+    "description": "Split column medida by separator"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "medida 2",
+    "newColumnName": "validez",
+    "description": "Rename column medida 2 to validez"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "medida 1",
+    "newColumnName": "medida",
+    "description": "Rename column medida 1 to medida"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "hora",
+    "expression": "grel:substring(value, 1)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column hora using expression grel:substring(value, 1)"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "ano",
+    "description": "Fill down cells in column ano"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "mes",
+    "description": "Fill down cells in column mes"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "dia",
+    "description": "Fill down cells in column dia"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "ano",
+    "expression": "join ([coalesce(cells['ano'].value,''),coalesce(cells['mes'].value,''),coalesce(cells['dia'].value,''),coalesce(cells['hora'].value,'')],'-')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ano using expression join ([coalesce(cells['ano'].value,''),coalesce(cells['mes'].value,''),coalesce(cells['dia'].value,''),coalesce(cells['hora'].value,'')],'-')"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "ano",
+    "expression": "grel:value.toDate(\"yyyy-M-dd-kk\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column ano using expression grel:value.toDate(\"yyyy-M-dd-kk\")"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "mes",
+    "description": "Remove column mes"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "dia",
+    "description": "Remove column dia"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "hora",
+    "description": "Remove column hora"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "ano",
+    "newColumnName": "marcaTemporal",
+    "description": "Rename column ano to marcaTemporal"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "provincia",
+    "description": "Remove column provincia"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "municipio",
+    "description": "Remove column municipio"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "estacion",
+    "description": "Remove column estacion"
+  },
+  {
+    "op": "core/column-removal",
+    "columnName": "codigo_estacion",
+    "description": "Remove column codigo_estacion"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "punto_muestreo",
+    "description": "Fill down cells in column punto_muestreo"
+  },
+  {
+    "op": "core/fill-down",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "magnitud",
+    "description": "Fill down cells in column magnitud"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "punto_muestreo",
+    "expression": "grel:value.substring(0,lastIndexOf(value,'_'))",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column punto_muestreo using expression grel:value.substring(0,lastIndexOf(value,'_'))"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "baseColumnName": "punto_muestreo",
+    "expression": "grel:value + '/' + cells['marcaTemporal'].value",
+    "onError": "set-to-blank",
+    "newColumnName": "id",
+    "columnInsertIndex": 2,
+    "description": "Create column id at index 2 based on column punto_muestreo using expression grel:value + '/' + cells['marcaTemporal'].value"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "record-based"
+    },
+    "columnName": "punto_muestreo",
+    "expression": "grel:value.replace('_','#')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column punto_muestreo using expression grel:value.replace('_','#')"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "sosa",
+          "uri": "http://www.w3.org/ns/sosa/"
+        }
+      ],
+      "baseUri": "http://smartcity.linkeddata.es/airQuality/resources/measurements/",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "id",
+          "expression": "value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/madeBySensor",
+              "curie": "sosa:madeBySensor",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "codigo_sensor",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/resources/stations/\"+value",
+                "isRowNumberCell": false,
+                "links": [],
+                "rdfTypes": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/ns/sosa/observedProperty",
+              "curie": "sosa:observedProperty",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "magnitud",
+                "expression": "\"http://smartcity.linkeddata.es/airQuality/resources/magnitudes#\"+value",
+                "isRowNumberCell": false,
+                "links": [],
+                "rdfTypes": []
+              }
+            },
+            {
+              "uri": "http://www.w3.org/ns/sosa/resultTime",
+              "curie": "sosa:resultTime",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "marcaTemporal",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://www.w3.org/ns/sosa/hasSimpleResult",
+              "curie": "sosa:hasSimpleResult",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "medida",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#double",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://smartcity.linkeddata.es/airQuality/ontology#isValid",
+              "curie": "http://smartcity.linkeddata.es/airQuality/ontology#isValid",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "validez",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://www.w3.org/ns/sosa/Observation",
+              "curie": "sosa:Observation"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
+  }
+]

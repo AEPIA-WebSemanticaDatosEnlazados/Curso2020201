@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://smartcities.linkeddata.es/airQuality/ontology#"
+     xml:base="http://smartcities.linkeddata.es/airQuality/ontology"
+     xmlns:om="http://www.ontology-of-units-of-measure.org/resource/om-2/"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://smartcities.linkeddata.es/airQuality/ontology">
+        <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/address -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/address"/>
+    
+
+
+    <!-- http://schema.org/containedInPlace -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/containedInPlace"/>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#fechaAlta -->
+
+    <owl:ObjectProperty rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#fechaAlta">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:comment xml:lang="en">Date when the measurement station started working</rdfs:comment>
+        <rdfs:comment xml:lang="es">Fecha de comienzo de funcionamiento de una estación de medición</rdfs:comment>
+        <skos:definition xml:lang="en">Date when the measurement station started working</skos:definition>
+        <skos:definition xml:lang="es">Fecha de comienzo de funcionamiento de una estación de medición</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#hasTecnica -->
+
+    <owl:ObjectProperty rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#hasTecnica">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <schema:rangeIncludes rdf:resource="http://smartcities.linkeddata.es/airQuality/ontology#Tecnica"/>
+        <rdfs:comment xml:lang="es">Describe la técnica utilizada para la medición de cierta magnitud</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes the technique utilized to measure certain magnitude</rdfs:comment>
+        <skos:definition xml:lang="es">Describe la técnica utilizada para la medición de cierta magnitud</skos:definition>
+        <skos:definition xml:lang="en">Describes the technique utilized to measure certain magnitude</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#isValid -->
+
+    <owl:ObjectProperty rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#isValid">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">Describe si una observación tiene un resultado válido (V), temporalmente válido (T), o inválido (N).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes if an observation has a valid (V), a temporally valid (T) or an invalid (N) result</rdfs:comment>
+        <skos:definition xml:lang="es">Describe si una observación tiene un resultado válido (V), temporalmente válido (T), o inválido (N).</skos:definition>
+        <skos:definition xml:lang="en">Describes if an observation has a valid (V), a temporally valid (T) or an invalid (N) result</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#tipoEstacion -->
+
+    <owl:ObjectProperty rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#tipoEstacion">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:comment xml:lang="es">El tipo de una determinada estación de medida. Puede ser &apos;Trafico&apos;, &apos;Industrial&apos; o &apos;Fondo&apos;</rdfs:comment>
+        <rdfs:comment xml:lang="en">The type of a measurement station. It could be &quot;Trafico&quot;, &quot;Industrial&quot; o &quot;Fondo&quot;</rdfs:comment>
+        <skos:definition xml:lang="es">El tipo de una determinada estación de medida. Puede ser &apos;Trafico&apos;, &apos;Industrial&apos; o &apos;Fondo&apos;</skos:definition>
+        <skos:definition xml:lang="en">The type of a measurement station. It could be &quot;Trafico&quot;, &quot;Industrial&quot; o &quot;Fondo&quot;</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#tipoLocalizacion -->
+
+    <owl:ObjectProperty rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#tipoLocalizacion">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">La zona donde una estación está ubicada</rdfs:comment>
+        <rdfs:comment xml:lang="en">The zone where the station is located</rdfs:comment>
+        <skos:definition xml:lang="es">La zona donde una estación está ubicada</skos:definition>
+        <skos:definition xml:lang="en">The zone where the station is located</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#zonaEstacion -->
+
+    <owl:ObjectProperty rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#zonaEstacion">
+        <schema:domainIncludes rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <schema:rangeIncludes rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="es">Tipo de zona donde la estación está ubicada</rdfs:comment>
+        <rdfs:comment xml:lang="en">Type of zone where the station is located</rdfs:comment>
+        <skos:definition xml:lang="es">Tipo de zona donde la estación está ubicada</skos:definition>
+        <skos:definition xml:lang="en">Type of zone where the station is located</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/hasNumericalValue"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#alt -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="http://schema.org/Place"/>
+    
+
+
+    <!-- http://schema.org/PostalAddress -->
+
+    <owl:Class rdf:about="http://schema.org/PostalAddress"/>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#Tecnica -->
+
+    <owl:Class rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#Tecnica"/>
+    
+
+
+    <!-- http://smartcities.linkeddata.es/airQuality/ontology#Unidad -->
+
+    <owl:Class rdf:about="http://smartcities.linkeddata.es/airQuality/ontology#Unidad"/>
+    
+
+
+    <!-- http://www.ontology-of-units-of-measure.org/resource/om-2/Unit -->
+
+    <owl:Class rdf:about="http://www.ontology-of-units-of-measure.org/resource/om-2/Unit"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Literal -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
