@@ -12,7 +12,7 @@ facilitase más detalles sobre cada título. Se simplificará el trabajo (se con
 
 ### A. FUENTE DE DATOS
 
-Se ha utilizado la lista el ranking TSPDT’s 1,000 Greatest Films que se puede encontrar en el siguiente enlace en formato Microsoft Excel: https://www.theyshootpictures.com/resources/1000GreatestFilms.xls (se ha incluido en la carpeta "Anexos"). Esta lista se actualiza con carácter anual y es utilizada frecuentemente por los medios de comunicación.
+Se ha utilizado la lista el ranking TSPDT’s 1,000 Greatest Films que se puede encontrar en el siguiente enlace en formato Microsoft Excel: https://www.theyshootpictures.com/resources/1000GreatestFilms.xls. Esta lista se actualiza con carácter anual y es utilizada frecuentemente por los medios de comunicación.
 
 ### B. ANÁLISIS DE LOS DATOS
 
@@ -48,9 +48,12 @@ Solo se ha considerado una propiedad (presente en la lista de datos original), e
 
 ### E. PROCESO DE TRANSFORMACIÓN
 
-- En primer lugar se ha procedido a un filtrado de datos utilizado la herramienta "Facet > Numeric facet" de LODRefine sobre la columna "Year" para seleccionar y eliminar todas las películas anteriores al año 2000. Ver An1.jpg en la carpeta de anexos.
+- En primer lugar se ha procedido a un filtrado de datos utilizado la herramienta "Facet > Numeric facet" de LODRefine sobre la columna "Year" para seleccionar y eliminar todas las películas anteriores al año 2000. 
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An1.jpg)
+
 - A continuación se han eliminado todas las columnas diferentes a "Year" y "Title". La idea es que la información de cada una de las películas provenga del enlazado con una base de conocimiento. 
-- Para facilitar el siguiente proceso de reconciling se han transformado los datos de la columna "Title", reemplazando ',The' y ',A' por '' (espacio vacío). Esta operación se ha realizado dos veces (una sobre cada artículo) sobre la columna "Title" con la herramienta "Edit cells > Transform" utilizando las siguientes expresiones de lenguaje GREL: value.replace(',The', '') y value.replace(',A', ''). Ver An2.jpg en la carpeta de anexos.
+- Para facilitar el siguiente proceso de reconciling se han transformado los datos de la columna "Title", reemplazando ',The' y ',A' por '' (espacio vacío). Esta operación se ha realizado dos veces (una sobre cada artículo) sobre la columna "Title" con la herramienta "Edit cells > Transform" utilizando las siguientes expresiones de lenguaje GREL: value.replace(',The', '') y value.replace(',A', '').
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An2.jpg)
 
 ### F. ENLAZADO
 
@@ -58,21 +61,26 @@ Siguiendo los ejemplos del curso y que la extensión de DBpedia ya estaba inclui
 - Antes de eliminar ", The" y ", A", 65 títulos fueron identificados correctamente. Para 28 de ellos, no se encontró equivalencia.
 - Al eliminar los artículos, la situación mejoró, pudiéndose identificar 70 títulos. El problema se dio al intentar identificar los 23 títulos restantes, siendo inviable su clasificación manual ya sea por falta de respuesta de DBpedia o de opciones correctas.
 
-Antes de continuar, después de investigar un poco sobre servicios activos, se decidió gestionar el mismo proceso con la base de conocimiento Wikidata. Como primer paso, se añadió el servicio a la lista predifinida. Para ello, dentro de la pantalla "Reconcile > Start reconciling > Add standard Service" se utilizó https://wikidata.reconci.link/en/api. A continuación se seleccionó el type: Film (Q11424). Ver An3.jpg.
+Antes de continuar, después de investigar un poco sobre servicios activos, se decidió gestionar el mismo proceso con la base de conocimiento Wikidata. Como primer paso, se añadió el servicio a la lista predifinida. Para ello, dentro de la pantalla "Reconcile > Start reconciling > Add standard Service" se utilizó https://wikidata.reconci.link/en/api. A continuación se seleccionó el type: Film (Q11424).
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An3.jpg)
 - Con esta opción se consiguiço identificar sin problema los 93 títulos, aunque en algún caso hubo que gestionar el proceso de match manualmente porque la primera opción propuesta no era la adecuada.
 
 Al no haber utilizado DBpedia, la extracción de enlaces no estaba asistida por LODRefine, por ello hubo que consultar la documentación de Wikidata (accesible aquí: https://wikidata.reconci.link/) para ver cómo poder generar los enlaces en una columna. Se detalla a continuación el proceso seguido:
 - Lo primero es añadir una columna basada en la que se han enlazado los datos utilizando sobre la columna Title "Edit column > Add column based on this column".
-- Una vez dentro, se añade la expresión en GREL cell.recon.match.id que nos dará las referencias únicas de Wikidata (del tipo QXXXXXX). Ver An4.jpg
+- Una vez dentro, se añade la expresión en GREL cell.recon.match.id que nos dará las referencias únicas de Wikidata (del tipo QXXXXXX).
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An4.jpg)
 - Se nombra a la columna como WikiRef.
-- Con la herramienta "Edit cells > Transform" y la expresión GREL: 'https://www.wikidata.org/wiki/'+value las celdas quedan transformadas a los enlaces de Wikidata. Ver An5.jpg.
+- Con la herramienta "Edit cells > Transform" y la expresión GREL: 'https://www.wikidata.org/wiki/'+value las celdas quedan transformadas a los enlaces de Wikidata.
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An5.jpg)
 - Finalmente se decidió cambiar el nombre de la columna Title a "Film".
 
 El último paso ha consistido en utilizar la extensión RDF (ya integrada en LODRefine) para editar la estructura del RDF, generar los enlaces correctamente y poder exportarlos en formato Turtle. Se detalla el proceso a continuación:
-- Se utiliza la herramienta "Edit RDF Skeletonn" para definir dos tripletas de acuerdo a los apartados anteriores 2C y 2D. Ver An6.jpg.
-- Se comprueba que los enlaces generados son correctos en "Preview". Ver An7.jpg.
+- Se utiliza la herramienta "Edit RDF Skeletonn" para definir dos tripletas de acuerdo a los apartados anteriores 2C y 2D.
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An6.jpg)
+- Se comprueba que los enlaces generados son correctos en "Preview".
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An1.jpg)
 - Finalmente, se genera el archivo Turtle a través de "Export > RDF as Turtle".
-- Se nombra al archivo como "Films_S21". Accesible en la carpeta Anexos.
+- Se nombra al archivo como "Films_S21", disponible aquí: https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/Films_S21.ttl
 
 ### E. PUBLICACIÓN
 
