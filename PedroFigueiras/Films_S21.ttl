@@ -1,0 +1,376 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix onto: <http://example.com/ontology/year#> .
+
+
+<http://example.com/movies/In+the+Mood+for+Love> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1056853> .
+
+<http://example.com/movies/Mulholland+Drive> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q272608> .
+
+<http://example.com/movies/Yi+yi> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q704513> .
+
+<http://example.com/movies/There+Will+Be+Blood> a rdf:Title ;
+	onto:releasedIn "2007" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q244315> .
+
+<http://example.com/movies/Spirited+Away> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q155653> .
+
+<http://example.com/movies/Caché> a rdf:Title ;
+	onto:releasedIn "2005" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q383173> .
+
+<http://example.com/movies/The+Tree+of+Life> a rdf:Title ;
+	onto:releasedIn "2011" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q244257> .
+
+<http://example.com/movies/Eternal+Sunshine+of+the+Spotless+Mind> a rdf:Title ;
+	onto:releasedIn "2004" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q208269> .
+
+<http://example.com/movies/Tropical+Malady> a rdf:Title ;
+	onto:releasedIn "2004" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q594131> .
+
+<http://example.com/movies/City+of+God> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q220741> .
+
+<http://example.com/movies/Tie+Xi+Qu%3A+West+of+the+Tracks> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q3576744> .
+
+<http://example.com/movies/Uncle+Boonmee+Who+Can+Recall+His+Past+Lives> a rdf:Title ;
+	onto:releasedIn "2010" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q553901> .
+
+<http://example.com/movies/Dogville> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q327681> .
+
+<http://example.com/movies/Brokeback+Mountain> a rdf:Title ;
+	onto:releasedIn "2005" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q160618> .
+
+<http://example.com/movies/Platform> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q197412> .
+
+<http://example.com/movies/Werckmeister+Harmonies> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q509169> .
+
+<http://example.com/movies/A+separation> a rdf:Title ;
+	onto:releasedIn "2011" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q640561> .
+
+<http://example.com/movies/Lost+in+Translation> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q107270> .
+
+<http://example.com/movies/The+Turin+horse> a rdf:Title ;
+	onto:releasedIn "2011" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1336326> .
+
+<http://example.com/movies/Russian+Ark> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q59721> .
+
+<http://example.com/movies/WALL-E> a rdf:Title ;
+	onto:releasedIn "2008" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q104905> .
+
+<http://example.com/movies/Talk+to+Her> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q478780> .
+
+<http://example.com/movies/Crouching+Tiger%2C+Hidden+Dragon> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q273978> .
+
+<http://example.com/movies/The+Gleaners+%26+I> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q2493884> .
+
+<http://example.com/movies/The+White+Ribbon> a rdf:Title ;
+	onto:releasedIn "2009" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q158023> .
+
+<http://example.com/movies/The+Death+of+Mr.+Lazarescu> a rdf:Title ;
+	onto:releasedIn "2005" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1197442> .
+
+<http://example.com/movies/Punch-Drunk+Love> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q580716> .
+
+<http://example.com/movies/Elephant> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q400018> .
+
+<http://example.com/movies/Melancholia> a rdf:Title ;
+	onto:releasedIn "2011" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q165699> .
+
+<http://example.com/movies/Oldboy> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q475693> .
+
+<http://example.com/movies/A.I.+Artificial+Intelligence> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q221113> .
+
+<http://example.com/movies/Inland+Empire> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q862058> .
+
+<http://example.com/movies/The+Lives+of+Others> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q153882> .
+
+<http://example.com/movies/Grizzly+Man> a rdf:Title ;
+	onto:releasedIn "2005" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1067409> .
+
+<http://example.com/movies/No+Country+for+Old+Men> a rdf:Title ;
+	onto:releasedIn "2007" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q183081> .
+
+<http://example.com/movies/Songs+from+the+Second+Floor> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q2301516> .
+
+<http://example.com/movies/Pan%27s+Labyrinth> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q216006> .
+
+<http://example.com/movies/Royal+Tenenbaums%2C+The> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q935105> .
+
+<http://example.com/movies/Amélie> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q484048> .
+
+<http://example.com/movies/Colossal+Youth> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q5149118> .
+
+<http://example.com/movies/In+Vanda%27s+Room> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q3015409> .
+
+<http://example.com/movies/Silent+Light> a rdf:Title ;
+	onto:releasedIn "2007" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q494306> .
+
+<http://example.com/movies/4+Months%2C+3+Weeks+and+2+Days> a rdf:Title ;
+	onto:releasedIn "2007" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q238245> .
+
+<http://example.com/movies/La+Ci%C3%A9naga> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q3214034> .
+
+<http://example.com/movies/Children+of+Men> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q221090> .
+
+<http://example.com/movies/Zodiac> a rdf:Title ;
+	onto:releasedIn "2007" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q218172> .
+
+<http://example.com/movies/Before+Sunset> a rdf:Title ;
+	onto:releasedIn "2004" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q652186> .
+
+<http://example.com/movies/Still+Life> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1371155> .
+
+<http://example.com/movies/Dark+Knight%2C+The> a rdf:Title ;
+	onto:releasedIn "2008" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q163872> .
+
+<http://example.com/movies/The+son> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1196918> .
+
+<http://example.com/movies/Goodbye%2C+Dragon+Inn> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q3110692> .
+
+<http://example.com/movies/Distant> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1361018> .
+
+<http://example.com/movies/Holy+Motors> a rdf:Title ;
+	onto:releasedIn "2012" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q304739> .
+
+<http://example.com/movies/Amour> a rdf:Title ;
+	onto:releasedIn "2012" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q637820> .
+
+<http://example.com/movies/Mad+Max%3A+Fury+Road> a rdf:Title ;
+	onto:releasedIn "2015" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1757288> .
+
+<http://example.com/movies/Blissfully+Yours> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1987132> .
+
+<http://example.com/movies/Memento> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q190525> .
+
+<http://example.com/movies/Syndromes+and+a+Century> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q3508807> .
+
+<http://example.com/movies/Headless+Woman%2C+The> a rdf:Title ;
+	onto:releasedIn "2008" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q2636960> .
+
+<http://example.com/movies/Nostalgia+for+the+Light> a rdf:Title ;
+	onto:releasedIn "2010" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q2010699> .
+
+<http://example.com/movies/Y+tu+mam%C3%A1+tambi%C3%A9n> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q128848> .
+
+<http://example.com/movies/Synecdoche%2C+New+York> a rdf:Title ;
+	onto:releasedIn "2008" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q860479> .
+
+<http://example.com/movies/Dancer+in+the+Dark> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q110365> .
+
+<http://example.com/movies/History+of+Violence%2C+A> a rdf:Title ;
+	onto:releasedIn "2005" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q300439> .
+
+<http://example.com/movies/Let+the+Right+One+In> a rdf:Title ;
+	onto:releasedIn "2008" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q144756> .
+
+<http://example.com/movies/Piano+Teacher%2C+The> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q159690> .
+
+<http://example.com/movies/Irréversible> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q754745> .
+
+<http://example.com/movies/Once+Upon+a+Time+in+Anatolia> a rdf:Title ;
+	onto:releasedIn "2011" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1707497> .
+
+<http://example.com/movies/Requiem+for+a+Dream> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q487181> .
+
+<http://example.com/movies/Host%2C+The> a rdf:Title ;
+	onto:releasedIn "2006" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q488222> .
+
+<http://example.com/movies/Avatar> a rdf:Title ;
+	onto:releasedIn "2009" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q24871> .
+
+<http://example.com/movies/Lord+of+the+Rings%3A+The+Fellowship+of+the+Ring%2C+The> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q127367> .
+
+<http://example.com/movies/New+World%2C+The> a rdf:Title ;
+	onto:releasedIn "2005" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q28193> .
+
+<http://example.com/movies/Moulin+Rouge%21> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q193573> .
+
+<http://example.com/movies/Sideways> a rdf:Title ;
+	onto:releasedIn "2004" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q675937> .
+
+<http://example.com/movies/Hunger> a rdf:Title ;
+	onto:releasedIn "2008" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q814334> .
+
+<http://example.com/movies/Code+Unknown> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q553879> .
+
+<http://example.com/movies/Million+Dollar+Baby> a rdf:Title ;
+	onto:releasedIn "2004" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q184255> .
+
+<http://example.com/movies/Memories+of+Murder> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q488169> .
+
+<http://example.com/movies/Amores+perros> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q474098> .
+
+<http://example.com/movies/Commune+%28Paris%2C+1871%29%2C+La> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q3207641> .
+
+<http://example.com/movies/Intruder%2C+The> a rdf:Title ;
+	onto:releasedIn "2004" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q2018199> .
+
+<http://example.com/movies/Inglourious+Basterds> a rdf:Title ;
+	onto:releasedIn "2009" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q153723> .
+
+<http://example.com/movies/As+I+Was+Moving+Ahead+Occasionally+I+Saw+Brief+Glimpses+of+Beauty> a rdf:Title ;
+	onto:releasedIn "2000" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q15052373> .
+
+<http://example.com/movies/2046> a rdf:Title ;
+	onto:releasedIn "2004" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q164702> .
+
+<http://example.com/movies/Diving+Bell+and+the+Butterfly%2C+The> a rdf:Title ;
+	onto:releasedIn "2007" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q472600> .
+
+<http://example.com/movies/Ten> a rdf:Title ;
+	onto:releasedIn "2002" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q920374> .
+
+<http://example.com/movies/Saraband> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q1141100> .
+
+<http://example.com/movies/Spring%2C+Summer%2C+Autumn%2C+Winter%E2%80%A6+and+Spring> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q494871> .
+
+<http://example.com/movies/Kill+Bill+Vol.+1> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q165325> .
+
+<http://example.com/movies/Lord+of+the+Rings%3A+The+Return+of+the+King%2C+The> a rdf:Title ;
+	onto:releasedIn "2003" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q131074> .
+
+<http://example.com/movies/In+Praise+of+Love> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q3032174> .
+
+<http://example.com/movies/Fat+Girl> a rdf:Title ;
+	onto:releasedIn "2001" ;
+	owl:sameAs <https://www.wikidata.org/wiki/Q59503> .
