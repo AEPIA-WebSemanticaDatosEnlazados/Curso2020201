@@ -103,10 +103,10 @@ Dada la naturaleza de este trabajo, el objetivo es favorecer la reutilización d
 c) Estrategia de nombrado:
 
 Para definir la estrategia de nombrado, en primer lugar elegimos la forma de las URIs que vamos a emplear. Para la definición de las ontología a emplear en el mapping usaré almohadilla (#), ya que de esta manera se podrá acceder a todos los términos disponibles en cada vocabulario. En el caso de los identificadores únicos de cada persona implicada en un accidente (columna 'ID') se empleará la barra inclinada (/), debido a que contamos con muchos registros en el dataset.
-El dominio seleccionado para la definición de nuestros recursos es: http://example.org/
-La ruta de las URIs será: http://example.org/resources/
-El patrón para los recursos a definir es http://example.org/resource/<identificador>; en el caso de los términos ontológicos que haya que definir será http://example.org/ontology/accidents#<término>
-Para los recursos que identifican a cada persona se utilizará el patrón 
+El dominio seleccionado para la definición de nuestros recursos es: 'http://example.org/'.
+La ruta de las URIs será: 'http://example.org/resources/'.
+El patrón para los recursos a definir es 'http://example.org/resource/<identificador>'; en el caso de los términos ontológicos que haya que definir será 'http://example.org/ontology/accidents#<término>'.
+Para los recursos que identifican a cada persona se utilizará el patrón 'http://example.org/resource/PersonInAccident/<identificador>', mientras que para los accidentes será 'http://example.org/resource/Accident/<identificador>'.
 En algunos casos los términos a utilizar para definir las propiedades implica usar '/', ya que se trata de vocabularios muy extensos, como es el caso de dbpedia-owl o schema.
 
 d) Desarrollo del vocabulario:
@@ -180,6 +180,9 @@ Usando OpenRefine se ha realizado el enlazado de los datos con Wikidata en los c
 
 - Distrito: la reconciliación de los datos en este caso se produce al 100%, pudiéndose enlazar los 21 valores posibles de distritos de la ciudad de Madrid
 En base a los datos reconciliados podemos crear una columna con la referencia en wikidata, mediante la expresión en grel: 'https://www.wikidata.org/wiki/'+ cell.recon.match.id
+
+![Screenshot](Imagenes/wikidata.jpg)
+
 - Lugar accidente 1: una vez separados los datos del campo original 'Lugar accidente' podemos enlazar estos datos, obteniendo una reconciliación del 47% en este caso para los 2263 valores posibles. Este porcentaje se puede mejorar progresivamente seleccionando las sugerencias de OpenRefine en las calles con una reconciliación en duda.
 - Lugar accidente 2: al reconciliar estos datos se obtiene un 39% de los 1771 valores existentes, lo que podemos asociar a que hay más calles secundarias en este campo, las cuales no se referencian en wikidata.
 
