@@ -35,7 +35,7 @@ Adicionalmente, la información del día de la semana ya está disponible en otr
 
 -DISTRITO: incluye el nombre del distrito de la ciudad de Madrid. Este campo se podría usar con un servicio de reconcilicación posteriormente para realizar el enlazado de datos, ya que nos podría aportar algún tipo de información relevante de cada lugar y que no está presente en el dataset original, como su población, localización,etc.
 
--LUGAR ACCIDENTE: en este campo se destina a la información de la calle, o cruce de dos calles, donde tuvo lugar el accidente. A la hora de transformar el dataset, este campo debería ser tratado para separar las dos calles en el caso de que el accidente corresponda a un cruce. En estos casos se separan con un guión en la columna original. En los accidentes cuya localización se exprese con una sola calle encontramos al final el texto "NUM", indicando que en el campo siguiente ("Nº"), veremos un valor numérico asociado al número de la calle.
+-LUGAR ACCIDENTE: este campo se destina a la información de la calle, o cruce de dos calles, donde tuvo lugar el accidente. A la hora de transformar el dataset, este campo debería ser tratado para separar las dos calles en el caso de que el accidente corresponda a un cruce. En estos casos se separan con un guión en la columna original. En los accidentes cuya localización se exprese con una sola calle encontramos al final el texto "NUM", indicando que en el campo siguiente ("Nº"), veremos un valor numérico asociado al número de la calle.
 También podemos encontrarnos con el texto "KM." al final, indicando que se trata de un accidente en una vía o carretera, no en una calle. En estos casos el campo "Nº" presentará un valor numérico
 
 -Nº: el número de la calle donde se ubica el accidente, cuando proceda al no corresponder a un cruce. Si aplicamos una faceta numérica a este campo combinada con un faceta de texto que nos permitan filtrar y seleccionar registros, vemos que hay 494 valores no-numéricos y que deberíamos convertir para homogeneizar la información. Corresponden a valores vacíos de accidentes en cruces, cuyo valor debería ser 0, como vemos en el resto de casos con registros de accidentes en dos calles.
@@ -73,15 +73,15 @@ Se identifica algún caso conflictivo, como expresar el texto con el indicativo 
 
 -CPSV Seca Y Limpia: vía seca y limpia. Campo de estado de la vía con posibles valores SI o NO
 
--Nº VICTIMAS: número de víctimas del accidente, el cual es diferente de los implicados. Este valor se repite en cada fila asocida a un mismo parte, y muestra el total de heridos leves, graves o muertos. Cada fila de por sí ya no estaría aportando esta información y en mayor detalle, al incluir campos para identificar el tipo de persona y la lesividad. Pero este campo puede resultar interesante para simplificar posibles consultas en las que queramos filtrar de alguna manera los accidentes por las personas implicadas.
+-Nº VICTIMAS: número de víctimas del accidente, el cual es diferente de los implicados. Este valor se repite en cada fila asocida a un mismo parte, y muestra el total de heridos leves, graves o muertos. Cada fila de por sí ya nos estaría aportando esta información y en mayor detalle, al incluir campos para identificar el tipo de persona y la lesividad. Pero este campo puede resultar interesante para simplificar posibles consultas en las que queramos filtrar de alguna manera los accidentes por las personas implicadas.
 
 -TIPO ACCIDENTE: se especifica a qué tipo de accidente corresponde el registro, con una serie de valores posibles prefijados (colisión doble, múltiple, etc.) Al analizar este campo con una faceta de texto se encuentran 130 valores correspondientes a "OTRAS CAUSAS" y ningún registro vacío. Habría que tener en cuenta ésto en posibles transformaciones o consultas, por ejemplo de agrupación por tipo de accidentes, para que no desvirtue el resultado.
 
--Tipo Vehículo: se identifica el tipo de vehículo afectado en el accidente, de nuevo mediante una serie de valores prefijados (turismo, furgoneta,etc.). El contenido de este campo está relacionado con el siguiente ("TIPO PERSONA"), ya que el vehículo debería estar identificado en las filas correspondientes a conductores, y puede estar identificado en el caso de viajeros o testigos. En los casos de peatones sólo deberíamos encontrarnos con el valor "NO ASIGNADO", aunque se obervan 3 filas con valor incorrecto, y que se deberían corregir ya que se deben seguramemte a errores en la introducción de datos
+-Tipo Vehículo: se identifica el tipo de vehículo afectado en el accidente, de nuevo mediante una serie de valores prefijados (turismo, furgoneta,etc.). El contenido de este campo está relacionado con el siguiente ("TIPO PERSONA"), ya que el vehículo debería estar identificado en las filas correspondientes a conductores, y puede estar identificado en el caso de viajeros o testigos. En los casos de peatones sólo deberíamos encontrarnos con el valor "NO ASIGNADO", aunque se obervan 3 filas con valor incorrecto. Aunque se deberían corregir, ya que se deben seguramemte a errores en la introducción de datos, no supone un problema ya que no cambia el tipo de consultas que se querrían hacer para el caso de los peatones (no tendría sentido querer saber algo del tipo de vehículo, salvo para detectar estos valores inesperados). Además puede que ese información corresponda a alguna particularidad en el accidente que desconocemos.
 
 ![Screenshot](Imagenes/Peaton_vehiculo.jpg)
 
--TIPO PERSONA: observamos el tipo de persona implicada en el accidente, con los valores posibles: conductor, peatón, testigo o viajero. Siguiendo con el análisis del campo anterior, al filtrar por viajeros nos encontramos con 15 valores "NO ASIGNADO" en el tipo de vehículo. No queda claro si son errores ya que aparentemente al identificar a una persona como viajero se indica que se encontraba en un vehículo en el momento del accidente, pero tal vez las circunstancias del accidente (vehículo parado, retirado del lugar, etc.) requerían identificarlo así. Tal vez se les podría asignar el valor más común en los casos de viajeros("TURISMO"), por dejar el campo totalmente estandarizado, pero podríamos estar perdiendo información real.
+-TIPO PERSONA: observamos el tipo de persona implicada en el accidente, con los valores posibles: conductor, peatón, testigo o viajero. Siguiendo con el análisis del campo anterior, al filtrar por viajeros nos encontramos con 15 valores "NO ASIGNADO" en el tipo de vehículo. No queda claro si son errores ya que aparentemente al identificar a una persona como viajero se indica que se encontraba en un vehículo en el momento del accidente, pero tal vez las circunstancias del accidente (vehículo parado, retirado del lugar, etc.) requerían identificarlo así. Se les podría asignar el valor más común en los casos de viajeros("TURISMO"), por dejar el campo totalmente estandarizado, pero podríamos estar perdiendo información real.
 
 -SEXO: identificación del sexo de la persona, con los valores: hombre, mujer o no asignado. Al estudiar los posibles valores vemos que hay casi un 5% de casos sin identificar (valor "NO ASIGNADO"). Como se ha visto en campos anteriores, habrá que tenerlo en cuenta a la hora de devolver resultados en las consultas para no mostrar información desvirtuada (por ejemplo, un porcentaje irreal de accidentes leves en mujeres), si no queremos recurrir a eliminar de nuestro dataset directamente estos datos con información sesgada.
 
@@ -100,5 +100,95 @@ Las condiciones de uso de la licencia estipulan : "Las condiciones generales per
 
 Dada la naturaleza de este trabajo, el objetivo es favorecer la reutilización de los datos mediante una transformación a la web semántica y enlazarlos con otros datos de interés. Su uso, por tanto, quedaría igualmente enmarcado en el campo de los datos abiertos y siempre con la idea de ser utilizados de forma transparente y gratuita por otros.
 
+c) Estrategia de nombrado:
 
+Para definir la estrategia de nombrado, en primer lugar elegimos la forma de las URIs que vamos a emplear. Para la definición de las ontología a emplear en el mapping usaré almohadilla (#), ya que de esta manera se podrá acceder a todos los términos disponibles en cada vocabulario. En el caso de los identificadores únicos de cada persona implicada en un accidente (columna 'ID') se empleará la barra inclinada (/), debido a que contamos con muchos registros en el dataset.
+El dominio seleccionado para la definición de nuestros recursos es: 'http://example.org/'.
+La ruta de las URIs será: 'http://example.org/resources/'.
+El patrón para los recursos a definir es 'http://example.org/resource/<identificador>'; en el caso de los términos ontológicos que haya que definir será 'http://example.org/ontology/accidents#<término>'.
+Para los recursos que identifican a cada persona se utilizará el patrón 'http://example.org/resource/PersonInAccident/<identificador>', mientras que para los accidentes será 'http://example.org/resource/Accident/<identificador>'.
+En algunos casos los términos a utilizar para definir las propiedades implica usar '/', ya que se trata de vocabularios muy extensos, como es el caso de dbpedia-owl o schema.
+
+d) Desarrollo del vocabulario:
+
+Primero se establecen las relaciones directas con la columna ID, es decir todos los campos que describen a una persona implicada en el accidente.
+Para la definición de las URIs de cada individuo implicado en un accidente usaremos la expresión en grel: "PersonInAccident/"+value
+En el caso de las URIs de cada Nº de parte: "Accident/"+value
+A continuación fijamos las relaciones entre un nùmero de parte y sus campos asociados, que muestran las características que tuvo un accidente dado. Mediante la edición del RDF Skeleton establecemos dichas relaciones, mediante los términos y vocabularios implicados. Los términos a emplear serán en la medida de lo posible reutilizados de vocabularios ya existentes.
+
+![Screenshot](Imagenes/skeleton.jpg)
+
+Una vez creado el mapping del conjunto de datos, podemos observar el esquema resultante mediante un visualizador de Turtle. En el siguiente ejemplo vemos un recurso 'Accidente' con dos recursos 'Personas' aspciados, junto con todos sus parámetros y valores establecidos. Los términos específicos asociados a la ontología 'ont' que he definido los he omitido en la visualización, ya que dicha ontología no está publicada, al igual que la relación 'owl:sameas' del distrito con wikidata, la cual entorpecía la visión del esquema principal.
+
+![Screenshot](Imagenes/esquema.jpg)
+
+e) Proceso de transformación:
+
+Mediante la herramienta OpenRefine se han realizado una serie de transformaciones sobre los datos originales para adecuarlos a su uso posterior.
+A continuación se detallan los campos que han sufrido algún tratamiento de datos, para adecuarlos a la estructura deseada.
+
+-FECHA: el objetivo es separar el contenido de este campo para poder darle utilidad posterior.
+En primer lugar se separan los distintos valores que contiene en varias columnas (Split into several columns...) de información mediante el espacio separador que delimita los diferentes campos. A continuación, de las nuevas columnas creadas, eliminamos la que contiene el día de la semana, ya que este campo ya se encuentra en el dataset. El siguiente paso es renombrar las columnas creadas (MES, DIA_MES, AÑO, HORA, HUSO HORARIO) para poder referenciarlas mejor. Las columnas 'HORA' y 'HUSO_HORARIO' se mantienen a pesar de no aportar información ya que en siguientes años pueden contener datos reales.
+Creamos una nueva columna 'FECHA' a partir de la coumna 'MES' mediante grel, concatenando la información de dia, mes, año para poder reconstruir correctamente la fecha:
+
+value+" "+cells["DIA_MES"].value+" "+cells["AÑO"].value
+
+Por último, se aplica una transformación común a fecha para cambiar el formato de esta nueva columna 'FECHA' y se reordenan las columnas para una mejor visualización.
+
+![Screenshot](Imagenes/Tratamiento_Fecha.jpg)
+
+-RANGO HORARIO: para poder contar con la información por separado del rango horario, se aplica una separación en varias columnas por el separador " ". Después de borrar las dos columnas de los textos "DE" y "A" y renombrar las otras dos columnas obtenidas, contamos con las horas de inicio y fin por separado. Así se podrán realizar consultas de acontecimientos en rangos mayores de tiempo, usando las horas inicial y final que se deseen.
+
+![Screenshot](Imagenes/Tratamiento_RangoHorario.jpg)
+
+-LUGAR ACCIDENTE: en los casos en los que este campo presenta la intersección entre las dos calles donde se produjo el accidente, el orden en que se muestran las calles puede no ser el mismo. Para normalizar la información de este campo aplicamos una agrupación y edición (Cluster and edit...). Aplicamos todos los cambios que sugiere Openrefine, ya que no afectan más que a los casos descritos (intersección entre dos calles)
+
+![Screenshot](Imagenes/Tratamiento_Lugar.jpg)
+
+Para disponer de la información de las calles separadas aplicamos a continuación la división de la columna por el separador " - ". De este modo contamos con información mejor estructurada. Así sabemos por ejemplo, qué accidentes están referenciados a una sóla calle, usando la columna 'LUGAR DEL ACCIDENTE 2' y observando los casos en los que esté vacía. Además esta operación nos permitirá aplicar posteriormente un posible enlazado de estos datos mediante un proceso de reconciliación.
+Aplicamos a las dos columnas creadas una transformación común para colapsar los espacios en blanco consecutivos, presentes en la mayoría de valores. Así podemos crear dos nuevas columnas, que luego uniremos para crear la columna 'TIPO VALOR', para mostrar el valor "NUM", "KM" o vacío según corresponda al accidente en cuestión. Estos valores ("NUM", "KM") sólo aparecen en la primera calle que se indica, y en estos casos además no hay segunda calle indicada.
+Para crear las columnas 'KM' y 'NUM', a partir de la columna 'LUGAR DEL ACCIDENTE 1', y unirlas posteriormente usamos grel:
+
+columna 'KM': endsWith(value," KM. ")
+columna 'NUM': endsWith(value," NUM ")
+columna 'TIPO VALOR', a partir de la columna 'NUM': value+cells["KM"].value
+
+Para finalizar, reemplazamos los valores " NUM " y " KM. " de la columna 'LUGAR DEL ACCIDENTE 1', para limpiar los datos ante un posible enlazado posterior mediante la reconciliación de las calles.
+
+![Screenshot](Imagenes/Tratamiento_Lugar_2.jpg)
+
+-Nº: para corregir los valores no numéricos de este campo, aplicamos un filtro de texto para seleccionar las celdas con valor "   " y las reemplazmos por un 0. Después se aplica una transformación común a número para asegurar que todo esta correcto. Si aplicamos ahora una faceta numérica observamos que ya no hay valores no numéricos. De este modo estandarizamos los casos de accidentes con el valor 0, que corresponden a accidentes en los que no se anotó un número por carecer de sentido o por otro motivo.
+
+- Nº PARTE: para poder trabajar con un identificador único en cada fila que nos permita realizar correctamente la estrategia de nombrado y el mapeado de los datos, creamos una nueva columna llamada 'ID'. Esta columna la creamos en base a ala columna 'Nº PARTE', aplicando el código en grel: cell+value. A continuación limpiamos el texto central que se genera ("com.google.refine.expr.CellTuple"), reemplazándolo por texto vacío. Por último se reemplazan las barras inclinadas por barra baja ("/" por "_"), tanto en la columna 'ID' como en 'Nº PARTE', para evitar posibles confusiones en el esquema RDF a la hora de aplicar la estrategia de nombrado.
+
+![Screenshot](Imagenes/Columna_ID.jpg)
+
+-Tramo Edad: al igual que en el caso del rango horario, separamos el campo por sus espacios y obtenemos la edad mínimaa y máxima, una vez eliminadas las columnas irrelevantes.
+En el caso del tramo de edad "DE MAS DE 74 AÑOS" tenemos que filtrar y editar los valores obtenidos en la columna 'EDAD MINIMA', para poner un valor de 75 en estas celdas, donde nos encontramos con el valor "MAS". Para terminar creamos una nueva columna basada en el campo 'EDAD MAXIMA' que habíamos creado anteriormente para poner el valor null si el tramo de edad es de más de 74 años:
+
+if (cells["EDAD MINIMA"].value==75,null,value)
+
+Así se podrán seleccionar los rangos de edades sobre los que consultar información, directamente en el campo original 'Tramo Edad' o con tramos mayores de edades usando estas dos nuevas columnas.
+
+![Screenshot](Imagenes/Tratamiento_TramoEdad.jpg)
+
+Para finalizar el proceso de transformación, se eliminan los espacios en blanco innecesarios en las columnas 'Tipo vehículo', 'TIPO PERSONA', 'SEXO' y 'LESIVIDAD'. Para ello utilizamos la transformación común correspondiente en la edición de celdas.
+
+f) Enlazado:
+
+Usando OpenRefine se ha realizado el enlazado de los datos con Wikidata en los campos que se detallan a continuación:
+
+- Distrito: la reconciliación de los datos en este caso se produce al 100%, pudiéndose enlazar los 21 valores posibles de distritos de la ciudad de Madrid
+En base a los datos reconciliados podemos crear una columna con la referencia en wikidata, mediante la expresión en grel: 'https://www.wikidata.org/wiki/'+ cell.recon.match.id
+
+![Screenshot](Imagenes/wikidata.jpg)
+
+- Lugar accidente 1: una vez separados los datos del campo original 'Lugar accidente' podemos enlazar estos datos, obteniendo una reconciliación del 47% en este caso para los 2263 valores posibles. Este porcentaje se puede mejorar progresivamente seleccionando las sugerencias de OpenRefine en las calles con una reconciliación en duda.
+- Lugar accidente 2: al reconciliar estos datos se obtiene un 39% de los 1771 valores existentes, lo que podemos asociar a que hay más calles secundarias en este campo, las cuales no se referencian en wikidata.
+
+![Screenshot](Imagenes/Enlazado.jpg)
+
+A partir de los datos enlazados podemos obtener dos nuevas columnas (Add columns from reconciled values...) con la información del área que ocupa cada distrito, expresada en kilómetros cuadrados, y con su población. Dicha información puede resultar útil para realizar consultas de ranking de incidencias por distrito atendiendo a su tamaño o población, por ejemplo en qué distrito se producen más accidentes mortales por kilómetro cuadrado. Sabemos que los datos de la columna 'Distrito' están totalmente reconciliados, por lo que en todas las filas obtendremos un valor de área y población válido. Una vez creadas las dos nuevas columnas, se renombran a 'POBLACION' y 'AREA' para una mejor identificación.
+
+![Screenshot](Imagenes/Poblacion_Area.jpg)
 
