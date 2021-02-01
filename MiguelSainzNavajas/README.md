@@ -4,6 +4,7 @@ Este trabajo consistirá en la generación de datos enlazados en formato RDF, a 
 Una vez transformados a RDF los datos podrán ser consultados para obtener información relevante.
 
 
+
 2.PROCESO DE TRANSFORMACIÓN
 
 a) Selección de la fuente de datos:
@@ -194,6 +195,7 @@ A partir de los datos enlazados podemos obtener dos nuevas columnas (Add columns
 ![Screenshot](Imagenes/Poblacion_Area.jpg)
 
 
+
 3.APLICACIÓN Y EXPLOTACIÓN
 
 El tipo de RDF generado para nuestro dataset permite realizar consultas focalizadas en el tipo de accidente y sus características, y por otra parte en los individuos implicados en dichos accidentes. La estructura del grafo que he buscado generar muestra esta disposición, con las URIs aplicadas a los identificadores clave del conjunto de datos: el ID de cada individuo y el Nº de parte del accidente en cuestión. Al relacionar estos campos y realizar el proceso de mapeado del resto de columnas en base a ellos, podemos proceder a realizar consultas a la información con la precisión y el control deseados. Adicionalmente el enlazado realizado en los datos de los distritos y las calles de Madrid nos permite acceder a la información detallada en wikidata, además de contar con campos de información adicional agregados al dataset con los que no contábamos en principio.
@@ -258,11 +260,13 @@ Podemos comprobar si en el caso de accidentes graves, es decir con lesividad 'HG
 ![Screenshot](Imagenes/Consulta6_heridos_result.jpg)
 
 
+
 4.CONCLUSIONES
 
 Después de observar los ejemplos se comprueba la gran utilidad que nos aporta la creación de un conjunto estructurado de datos, y su construcción en RDF posterior. Las posibilidades que nos da esta visón y acceso a la información mediante grafos abarcan todo tipo de análisis posteriores, al poder plasmar las relaciones en los datos con nuestro conocimiento de ellos y a nuestra propia manera. Además, el hecho de poder enlazar nuevos datos y cruzar fuentes diversas mediante los sistemas de reconciliación hacen que el campo de la web semántica tenga el potencial de llevarnos a análizar la información a niveles que de otra manera serían muy difíciles de alcanzar.
 
 En mi caso, las consultas se han basado principalmente en datos de accidentes mortales, ya que suponen un claro ejemplo de análisis de la información generada en RDF para poder entender eventos críticos, como son las causas que conllevan la pérdida de vidas en dichos accidentes que se produjeron en Madrid. Estas consultas representan un tipo de análisis concreto, pero no son más que una posible vía de explotar el conocimiento que conllevan estos datos. Con el conocimiento y el control de personal experto, se podrían obtener otros factores para determinar cómo mejorar la circulación en la ciudad, identificando por ejemplo zonas, calles, tipos de personas, etc... en las que se dan un cierto tipo de circunstancias que llevan a que se produzca un accidente.
+
 
 
 5.BIBLIOGRAFÍA
