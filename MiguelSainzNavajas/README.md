@@ -207,6 +207,7 @@ A continuación se pueden observar las definiciones de los vocabularios que se h
 En esta primera consulta se muestra cómo acceder a un conjunto de datos específicos según los criterios que deseemos. Vamos a obtener las URIs de las mujeres que murieron en accidente como acompañantes en algún vehículo, es decir: personas con sexo 'MUJER' que desempeñaron el rol de 'VIAJERO' en el accidente con el estado de lesión 'MT'. Obtenemos 2 casos, lo que ya nos aporta información con la que realizar un primer análisis, por ejemplo al comparar con el total de muertes que se produjeron (37).
 
 ![Screenshot](Imagenes/Consulta1.jpg)
+
 ![Screenshot](Imagenes/Consulta1_result.jpg)
 
 - Ejemplo 2:
@@ -214,6 +215,7 @@ En esta primera consulta se muestra cómo acceder a un conjunto de datos especí
 En este caso obtendremos los identificadores y las edades mínimas que tenían todas las mujeres que murieron en accidente. La consulta nos devuelve 13 resultados, pudiendo observar por ejemplo que sólo uno de ellos supuso la muerte de una menor de edad.
 
 ![Screenshot](Imagenes/Consulta2.jpg)
+
 ![Screenshot](Imagenes/Consulta2_result.jpg)
 
 - Ejemplo 3:
@@ -221,6 +223,7 @@ En este caso obtendremos los identificadores y las edades mínimas que tenían t
 Este tipo de ejemplo corresponde a un posible informe de resultados completo de incidencias que se quisiera consultar. El objetivo de esta consulta es obtener la lista completa de personas que murieron en accidente. Los campos que vamos a pedir a la consulta son el sexo de la persona y el rol que tuvo en el accidente. En la imagen con los resultados vemos la parte inicial de la lista.
 
 ![Screenshot](Imagenes/Consulta3.jpg)
+
 ![Screenshot](Imagenes/Consulta3_result.jpg)
 
 - Ejemplo 4:
@@ -228,6 +231,7 @@ Este tipo de ejemplo corresponde a un posible informe de resultados completo de 
 Siguiendo con el caso anterior vamos a completar la lista con el rango de edad que tenía cada persona, ya que puede resultar interesante analizar en cada caso la edad de la víctima. Podemos comprobar, por ejemplo, si los casos de peatones atropellados corresponden a gente de edad avanzada, que suele tener un mayor grado de lesividad y peores reflejos para intentar reaccionar a tiempo de evitar al accidente o mitigarlo. En los resultados las edades están bastante repartidas, pero sí se observan más casos de gente mayor. Esta tendencia se comprueba en mayor grado si se rebaja el factor de le lesividad del accidentado a heridos graves.
 
 ![Screenshot](Imagenes/Consulta4.jpg)
+
 ![Screenshot](Imagenes/Consulta4_result.jpg)
 
 - EJemplo 5:
@@ -236,6 +240,7 @@ Para poder realizar un análisis más específico con la lista anterior, esta co
 Esta consulta muestra unos datos muy interesantes para analizar. Podemos comprobar que ninguna mujer murió en accidente siendo conductora, o dicho de otra manera, todos los casos en los que alguién murió al volante correspondían a hombres. Teniendo en cuenta que dentro de las 37 muertes que hubo, 17 corresponden a conductores en colisiones, podemos asociarlas a excesos de velocidad. Este tipo de accidentes suelen estar relacionados más con los hombres, y es lo que se ratifica con los resultados obtenidos.
 
 ![Screenshot](Imagenes/Consulta5.jpg)
+
 ![Screenshot](Imagenes/Consulta5_result.jpg)
 
 - EJemplo 6:
@@ -243,11 +248,13 @@ Esta consulta muestra unos datos muy interesantes para analizar. Podemos comprob
 En este último ejemplo voy a realizar el análisis de los accidentes mortales por distrito, para intentar ver si hay zonas que destaquen por su alta accidentalidad. La consulta estará agrupada en este caso por el distrito y ordenada descendéntemente según la cantidad. Para poder visualizar mejor los resultados, a la hora de imprimir por pantalla se aplican las propiedades 'getLocalName' al distrito y 'getInt' a la cuenta de casos. En los resultados podemos comprobar que sí existen ciertas zonas de la ciudad donde se concentran los accidentes mortales.
 
 ![Screenshot](Imagenes/Consulta6.jpg)
+
 ![Screenshot](Imagenes/Consulta6_result.jpg)
 
 Podemos comprobar si en el caso de accidentes graves, es decir con lesividad 'HG', también se produce la misma tendencia. Comprobamos que no se mantiene la misma concentración de accidentes, estando en este caso más distribuídos. Pero se pueden extraer ciertos análisis llamativos al comparar estas dos consultas, como el hecho de que en el distrito 'Centro' de Madrid no se produjo ningún accidente mortal pero sin embargo está en el puesto número 1 en cuanto a cantidad de heridos graves en accidentes.
 
 ![Screenshot](Imagenes/Consulta6_heridos.jpg)
+
 ![Screenshot](Imagenes/Consulta6_heridos_result.jpg)
 
 
