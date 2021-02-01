@@ -7657,5 +7657,559 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Text transform on cells in column LUGAR ACCIDENTE using expression value.trim()"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "DISTRITO",
+    "expression": "grel:'https://www.wikidata.org/wiki/'+ cell.recon.match.id",
+    "onError": "set-to-blank",
+    "newColumnName": "Distrito en Wikidata",
+    "columnInsertIndex": 13,
+    "description": "Create column Distrito en Wikidata at index 13 based on column DISTRITO using expression grel:'https://www.wikidata.org/wiki/'+ cell.recon.match.id"
+  },
+  {
+    "op": "rdf-extension/save-rdf-schema",
+    "schema": {
+      "prefixes": [
+        {
+          "name": "schema",
+          "uri": "http://schema.org/"
+        },
+        {
+          "name": "dg",
+          "uri": "https://w3id.org/dingo#"
+        },
+        {
+          "name": "owl",
+          "uri": "http://www.w3.org/2002/07/owl#"
+        },
+        {
+          "name": "datex",
+          "uri": "http://vocab.datex.org/terms#"
+        },
+        {
+          "name": "pext",
+          "uri": "http://www.ontotext.com/proton/protonext#"
+        },
+        {
+          "name": "dbpedia_ageRange",
+          "uri": "http://dbpedia.org/ontology/ageRange"
+        },
+        {
+          "name": "rdfs",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#"
+        },
+        {
+          "name": "txn",
+          "uri": "http://lod.taxonconcept.org/ontology/txn.owl#"
+        },
+        {
+          "name": "onto",
+          "uri": "http://example.org/ontology/accidents#"
+        },
+        {
+          "name": "dicom",
+          "uri": "http://purl.org/healthcarevocab/v1#"
+        },
+        {
+          "name": "qb",
+          "uri": "http://purl.org/linked-data/cube#"
+        },
+        {
+          "name": "ncal",
+          "uri": "http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#"
+        },
+        {
+          "name": "dbpedia_district",
+          "uri": "http://dbpedia.org/ontology/district"
+        },
+        {
+          "name": "rdf",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        },
+        {
+          "name": "dbpedia_population",
+          "uri": "http://dbpedia.org/ontology/populationTotal"
+        },
+        {
+          "name": "dcterms",
+          "uri": "http://purl.org/dc/terms/"
+        },
+        {
+          "name": "time",
+          "uri": "http://www.w3.org/2006/time#"
+        },
+        {
+          "name": "event",
+          "uri": "http://purl.org/NET/c4dm/event.owl#"
+        },
+        {
+          "name": "obo",
+          "uri": "http://purl.obolibrary.org/obo#"
+        },
+        {
+          "name": "foaf",
+          "uri": "http://xmlns.com/foaf/0.1/"
+        },
+        {
+          "name": "sdmx-dimension",
+          "uri": "http://purl.org/linked-data/sdmx/2009/dimension#"
+        }
+      ],
+      "baseUri": "http://example.org/resource/",
+      "rootNodes": [
+        {
+          "nodeType": "cell-as-resource",
+          "columnName": "ID",
+          "expression": "\"PersonInAccident/\"+value",
+          "isRowNumberCell": false,
+          "links": [
+            {
+              "uri": "https://w3id.org/dingo#PersonRole",
+              "curie": "dg:PersonRole",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "TIPO PERSONA",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://lod.taxonconcept.org/ontology/txn.owl#Sex",
+              "curie": "txn:Sex",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "SEXO",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://schema.org/Car",
+              "curie": "schema:Car",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "Tipo Vehiculo",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://vocab.datex.org/terms#injuryStatus",
+              "curie": "datex:injuryStatus",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "LESIVIDAD",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://dbpedia.org/ontology/ageRange",
+              "curie": "dbpedia_ageRange:ageRange",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "Tramo Edad",
+                "expression": "value",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://purl.obolibrary.org/obo#OBI_0002556",
+              "curie": "obo:OBI_0002556",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "EDAD MINIMA",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://purl.obolibrary.org/obo#OBI_0002557",
+              "curie": "obo:OBI_0002557",
+              "target": {
+                "nodeType": "cell-as-literal",
+                "columnName": "EDAD MAXIMA",
+                "expression": "value",
+                "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                "isRowNumberCell": false
+              }
+            },
+            {
+              "uri": "http://schema.org/Report",
+              "curie": "schema:Report",
+              "target": {
+                "nodeType": "cell-as-resource",
+                "columnName": "Nº PARTE",
+                "expression": "\"Accident/\"+value",
+                "isRowNumberCell": false,
+                "links": [
+                  {
+                    "uri": "http://schema.org/Date",
+                    "curie": "schema:Date",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "FECHA",
+                      "expression": "value",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#date",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.w3.org/2006/time#monthOfYear",
+                    "curie": "time:monthOfYear",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "MES",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.ontotext.com/proton/protonext#DayOfMonth",
+                    "curie": "pext:DayOfMonth",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "DIA_MES",
+                      "expression": "value",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.w3.org/2006/time#year",
+                    "curie": "time:year",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "AÑO",
+                      "expression": "value",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/NET/c4dm/event.owl#time",
+                    "curie": "event:time",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "HORA",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.w3.org/2006/time#hasBeginning",
+                    "curie": "time:hasBeginning",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "HORA INICIAL",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.w3.org/2006/time#hasEnd",
+                    "curie": "time:hasEnd",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "HORA FINAL",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.ontotext.com/proton/protonext#TimeZone",
+                    "curie": "pext:TimeZone",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "HUSO HORARIO",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/healthcarevocab/v1#TimeRange",
+                    "curie": "dicom:TimeRange",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "RANGO HORARIO",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.semanticdesktop.org/ontologies/2007/04/02/ncal#Weekday",
+                    "curie": "ncal:Weekday",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "DIA SEMANA",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://dbpedia.org/ontology/district",
+                    "curie": "dbpedia_district:district",
+                    "target": {
+                      "nodeType": "cell-as-resource",
+                      "columnName": "DISTRITO",
+                      "expression": "value",
+                      "isRowNumberCell": false,
+                      "links": [
+                        {
+                          "uri": "http://www.w3.org/2002/07/owl#sameAs",
+                          "curie": "owl:sameAs",
+                          "target": {
+                            "nodeType": "cell-as-resource",
+                            "columnName": "Distrito en Wikidata",
+                            "expression": "value",
+                            "isRowNumberCell": false,
+                            "links": [],
+                            "rdfTypes": []
+                          }
+                        }
+                      ],
+                      "rdfTypes": []
+                    }
+                  },
+                  {
+                    "uri": "http://dbpedia.org/ontology/populationTotal",
+                    "curie": "dbpedia_population:populationTotal",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "POBLACION",
+                      "expression": "value",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/linked-data/sdmx/2009/dimension#refArea",
+                    "curie": "sdmx-dimension:refArea",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "AREA",
+                      "expression": "value",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#double",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://schema.org/Place",
+                    "curie": "schema:Place",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "LUGAR ACCIDENTE",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.ontotext.com/proton/protonext#StreetName",
+                    "curie": "pext:StreetName",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "LUGAR ACCIDENTE 1",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#StreetName2",
+                    "curie": "onto:StreetName2",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "LUGAR ACCIDENTE 2",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://purl.org/linked-data/cube#dimension",
+                    "curie": "qb:dimension",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "TIPO VALOR",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#num_km",
+                    "curie": "onto:num_km",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "Nº",
+                      "expression": "value",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPFAgranizo",
+                    "curie": "onto:CPFAgranizo",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPFA Granizo",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPFAhielo",
+                    "curie": "onto:CPFAhielo",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPFA Hielo",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPFAlluvia",
+                    "curie": "onto:CPFAlluvia",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPFA Lluvia",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPFAniebla",
+                    "curie": "onto:CPFAniebla",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPFA Niebla",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPFAseco",
+                    "curie": "onto:CPFAseco",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPFA Seco",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPFAnieve",
+                    "curie": "onto:CPFAnieve",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPFA Nieve",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPSVmojada",
+                    "curie": "onto:CPSVmojada",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPSV Mojada",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPSVaceite",
+                    "curie": "onto:CPSVaceite",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPSV Aceite",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPSVbarro",
+                    "curie": "onto:CPSVbarro",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPSV Barro",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPSVgrava",
+                    "curie": "onto:CPSVgrava",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPSV Grava Suelta",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPSVhielo",
+                    "curie": "onto:CPSVhielo",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPSV Hielo",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#CPSVseca",
+                    "curie": "onto:CPSVseca",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "CPSV Seca Y Limpia",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://www.ontotext.com/proton/protonext#Accident",
+                    "curie": "pext:Accident",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "TIPO ACCIDENTE",
+                      "expression": "value",
+                      "isRowNumberCell": false
+                    }
+                  },
+                  {
+                    "uri": "http://example.org/ontology/accidents#n_victimas",
+                    "curie": "onto:n_victimas",
+                    "target": {
+                      "nodeType": "cell-as-literal",
+                      "columnName": "* Nº VICTIMAS",
+                      "expression": "value",
+                      "valueType": "http://www.w3.org/2001/XMLSchema#int",
+                      "isRowNumberCell": false
+                    }
+                  }
+                ],
+                "rdfTypes": [
+                  {
+                    "uri": "http://purl.org/NET/c4dm/event.owl#event",
+                    "curie": "event:event"
+                  }
+                ]
+              }
+            }
+          ],
+          "rdfTypes": [
+            {
+              "uri": "http://xmlns.com/foaf/0.1/Person",
+              "curie": "foaf:Person"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "Save RDF schema skeleton"
   }
 ]
