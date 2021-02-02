@@ -1,7 +1,9 @@
-1.INTRODUCCIÓN:
+1.INTRODUCCIÓN
 
 Este trabajo consistirá en la generación de datos enlazados en formato RDF, a partir de un conjunto de datos estructurado relativo a los accidentes sucedidos en la ciudad de Madrid. Para ello se realizará un análisis y preparación de los datos, todo ello orientado a una explotación posterior de los mismos mediante Sparql. Así mismo se definirá una ontología adecuada al dominio de los datos y se llevará a cabo el enlazado con otros conjuntos de datos.
 Una vez transformados a RDF los datos podrán ser consultados para obtener información relevante.
+
+
 
 2.PROCESO DE TRANSFORMACIÓN
 
@@ -191,4 +193,93 @@ En base a los datos reconciliados podemos crear una columna con la referencia en
 A partir de los datos enlazados podemos obtener dos nuevas columnas (Add columns from reconciled values...) con la información del área que ocupa cada distrito, expresada en kilómetros cuadrados, y con su población. Dicha información puede resultar útil para realizar consultas de ranking de incidencias por distrito atendiendo a su tamaño o población, por ejemplo en qué distrito se producen más accidentes mortales por kilómetro cuadrado. Sabemos que los datos de la columna 'Distrito' están totalmente reconciliados, por lo que en todas las filas obtendremos un valor de área y población válido. Una vez creadas las dos nuevas columnas, se renombran a 'POBLACION' y 'AREA' para una mejor identificación.
 
 ![Screenshot](Imagenes/Poblacion_Area.jpg)
+
+
+
+3.APLICACIÓN Y EXPLOTACIÓN
+
+El tipo de RDF generado para nuestro dataset permite realizar consultas focalizadas en el tipo de accidente y sus características, y por otra parte en los individuos implicados en dichos accidentes. La estructura del grafo que he buscado generar muestra esta disposición, con las URIs aplicadas a los identificadores clave del conjunto de datos: el ID de cada individuo y el Nº de parte del accidente en cuestión. Al relacionar estos campos y realizar el proceso de mapeado del resto de columnas en base a ellos, podemos proceder a realizar consultas a la información con la precisión y el control deseados. Adicionalmente el enlazado realizado en los datos de los distritos y las calles de Madrid nos permite acceder a la información detallada en wikidata, además de contar con campos de información adicional agregados al dataset con los que no contábamos en principio.
+Para desarrollar el proceso de consulta a los datos generados en formato RDF se utilizará la plataforma Eclipse (IDE de Java), empleando el marco de trabajo de Jena para realizar las consultas SPARQL.
+A continuación se pueden observar las definiciones de los vocabularios que se han utilizado como prefijos en las consultas de ejemplo desarrolladas.
+
+![Screenshot](Imagenes/vocabs.jpg)
+
+- Ejemplo 1:
+
+En esta primera consulta se muestra cómo acceder a un conjunto de datos específicos según los criterios que deseemos. Vamos a obtener las URIs de las mujeres que murieron en accidente como acompañantes en algún vehículo, es decir: personas con sexo 'MUJER' que desempeñaron el rol de 'VIAJERO' en el accidente con el estado de lesión 'MT'. Obtenemos 2 casos, lo que ya nos aporta información con la que realizar un primer análisis, por ejemplo al comparar con el total de muertes que se produjeron (37).
+
+![Screenshot](Imagenes/Consulta1.jpg)
+
+![Screenshot](Imagenes/Consulta1_result.jpg)
+
+- Ejemplo 2:
+
+En este caso obtendremos los identificadores y las edades mínimas que tenían todas las mujeres que murieron en accidente. La consulta nos devuelve 13 resultados, pudiendo observar por ejemplo que sólo uno de ellos supuso la muerte de una menor de edad.
+
+![Screenshot](Imagenes/Consulta2.jpg)
+
+![Screenshot](Imagenes/Consulta2_result.jpg)
+
+- Ejemplo 3:
+
+Este tipo de ejemplo corresponde a un posible informe de resultados completo de incidencias que se quisiera consultar. El objetivo de esta consulta es obtener la lista completa de personas que murieron en accidente. Los campos que vamos a pedir a la consulta son el sexo de la persona y el rol que tuvo en el accidente. En la imagen con los resultados vemos la parte inicial de la lista.
+
+![Screenshot](Imagenes/Consulta3.jpg)
+
+![Screenshot](Imagenes/Consulta3_result.jpg)
+
+- Ejemplo 4:
+
+Siguiendo con el caso anterior vamos a completar la lista con el rango de edad que tenía cada persona, ya que puede resultar interesante analizar en cada caso la edad de la víctima. Podemos comprobar, por ejemplo, si los casos de peatones atropellados corresponden a gente de edad avanzada, que suele tener un mayor grado de lesividad y peores reflejos para intentar reaccionar a tiempo de evitar al accidente o mitigarlo. En los resultados las edades están bastante repartidas, pero sí se observan más casos de gente mayor. Esta tendencia se comprueba en mayor grado si se rebaja el factor de le lesividad del accidentado a heridos graves.
+
+![Screenshot](Imagenes/Consulta4.jpg)
+
+![Screenshot](Imagenes/Consulta4_result.jpg)
+
+- EJemplo 5:
+
+Para poder realizar un análisis más específico con la lista anterior, esta consulta nos devolverá los resultados agrupados por sexo, rol de la persona y rango de edad. Obtendremos también la cantidad de casos para cada grupo, ordenando la tabla de datos resultante por el número de casos de manera descendente.
+Esta consulta muestra unos datos muy interesantes para analizar. Podemos comprobar que ninguna mujer murió en accidente siendo conductora, o dicho de otra manera, todos los casos en los que alguién murió al volante correspondían a hombres. Teniendo en cuenta que dentro de las 37 muertes que hubo, 17 corresponden a conductores en colisiones, podemos asociarlas a excesos de velocidad. Este tipo de accidentes suelen estar relacionados más con los hombres, y es lo que se ratifica con los resultados obtenidos.
+
+![Screenshot](Imagenes/Consulta5.jpg)
+
+![Screenshot](Imagenes/Consulta5_result.jpg)
+
+- EJemplo 6:
+
+En este último ejemplo voy a realizar el análisis de los accidentes mortales por distrito, para intentar ver si hay zonas que destaquen por su alta accidentalidad. La consulta estará agrupada en este caso por el distrito y ordenada descendéntemente según la cantidad. Para poder visualizar mejor los resultados, a la hora de imprimir por pantalla se aplican las propiedades 'getLocalName' al distrito y 'getInt' a la cuenta de casos. En los resultados podemos comprobar que sí existen ciertas zonas de la ciudad donde se concentran los accidentes mortales.
+
+![Screenshot](Imagenes/Consulta6.jpg)
+
+![Screenshot](Imagenes/Consulta6_result.jpg)
+
+Podemos comprobar si en el caso de accidentes graves, es decir con lesividad 'HG', también se produce la misma tendencia. Comprobamos que no se mantiene la misma concentración de accidentes, estando en este caso más distribuídos. Pero se pueden extraer ciertos análisis llamativos al comparar estas dos consultas, como el hecho de que en el distrito 'Centro' de Madrid no se produjo ningún accidente mortal pero sin embargo está en el puesto número 1 en cuanto a cantidad de heridos graves en accidentes.
+
+![Screenshot](Imagenes/Consulta6_heridos.jpg)
+
+![Screenshot](Imagenes/Consulta6_heridos_result.jpg)
+
+
+
+4.CONCLUSIONES
+
+Después de observar los ejemplos se comprueba la gran utilidad que nos aporta la creación de un conjunto estructurado de datos, y su construcción en RDF posterior. Las posibilidades que nos da esta visón y acceso a la información mediante grafos abarcan todo tipo de análisis posteriores, al poder plasmar las relaciones en los datos con nuestro conocimiento de ellos y a nuestra propia manera. Además, el hecho de poder enlazar nuevos datos y cruzar fuentes diversas mediante los sistemas de reconciliación hacen que el campo de la web semántica tenga el potencial de llevarnos a análizar la información a niveles que de otra manera serían muy difíciles de alcanzar.
+
+En mi caso, las consultas se han basado principalmente en datos de accidentes mortales, ya que suponen un claro ejemplo de análisis de la información generada en RDF para poder entender eventos críticos, como son las causas que conllevan la pérdida de vidas en dichos accidentes que se produjeron en Madrid. Estas consultas representan un tipo de análisis concreto, pero no son más que una posible vía de explotar el conocimiento que conllevan estos datos. Con el conocimiento y el control de personal experto, se podrían obtener otros factores para determinar cómo mejorar la circulación en la ciudad, identificando por ejemplo zonas, calles, tipos de personas, etc... en las que se dan un cierto tipo de circunstancias que llevan a que se produzca un accidente.
+
+
+
+5.BIBLIOGRAFÍA
+
+- Portal de datos abiertos de Madrid: https://datos.madrid.es/portal/site/egob/
+- OpenRefine: https://openrefine.org/
+- Repositorio de funciones en GREL: https://github.com/OpenRefine/OpenRefine/wiki/General-Refine-Expression-Language
+- Linked Open Vocabularies (LOV): https://lov.linkeddata.es/dataset/lov/
+- Turtle (visualizador de grafos RDF): http://linkeddata3.dia.fi.upm.es/turtled-master/
+- Eclipse (IDE de desarrollo en Java): https://www.eclipse.org/
+- Jena (documentación general): https://jena.apache.org/documentation/
+- SPARQL (documentación general): https://www.w3.org/TR/sparql11-query/
+
+
+
 
