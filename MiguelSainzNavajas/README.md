@@ -49,7 +49,7 @@ Se identifica algún caso conflictivo, como expresar el texto con el indicativo 
 
 ![Screenshot](Imagenes/Ejemplo_Valores_N.jpg)
 
-- º PARTE: indica el número de parte del accidente, expresado con el formato AAAA/número secuencial. Este campo lo podremos utilizar como el clave para identificar cada accidente de manera única. Cada registro de accidente puede tener varias filas, que corresponden a diferentes victimas o testigos.
+- Nº PARTE: indica el número de parte del accidente, expresado con el formato AAAA/número secuencial. Este campo lo podremos utilizar como el clave para identificar cada accidente de manera única. Cada registro de accidente puede tener varias filas, que corresponden a diferentes victimas o testigos.
 
 - CPFA Granizo: granizo en el momento del accidente. Campo de condiciones ambientales con posibles valores SI o NO
 
