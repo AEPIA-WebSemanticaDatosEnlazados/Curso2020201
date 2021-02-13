@@ -92,10 +92,26 @@ Resulta el siguiente dataset:
 
 2.3.- Estrategia de nombrado de recursos
 
-‘#’ para términos ontológicos
-‘/’ para individuos
+Usaremos ‘#’ para términos ontológicos.
+
+Usaremos ‘/’ para individuos.
+
 Dominio: https://raif-clima.datosenlazados.es
+
 Ontología: https://raif-clima.datosenlazados.es/ontology#
+
 Recursos: https://raif-clima.datosenlazados.es/recursos/
+
 Estaciones: https://raif-clima.datosenlazados.es/recursos/estaciones
+
+2.4.- Desarrollo del vocabulario
+
+Usaremos la siguiente ontología, que parece que se puede ajustar bastante bien a los datos que tenemos:
+
+The Aemet Network of Ontologies
+
+que tiene el siguiente grafo conceptual:
+
+![grafo ontologia AEMET](imagenes/grafo_ontologia_AEMET.png)
+
 
