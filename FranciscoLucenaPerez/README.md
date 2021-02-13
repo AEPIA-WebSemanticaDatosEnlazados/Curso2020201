@@ -44,9 +44,13 @@ Los requisitos de selección de la fuente de datos serán:
 
 2.2.- Análisis de datos
 Al descomprimir el zip, disponemos de 3 tipos de ficheros:
+
 •	Datos: Clim_Diario_2020.xml, Clim_Diario_2019.xml … Cargaremos sólo 2020, por agilidad en los procesos y capacidad de computación.
+
 •	Descripción de los campos: Descripcion_Campos.xml.
+
 •	Datos sobre las estaciones: Identificacion_EstacionesClima.xml.
+
 En la descripción de los campos, los nombres no coinciden completamente con los campos que después encontramos en el fichero de datos, pero son fácilmente reconocibles:
 
 ![descripcion campos](imagenes/descripcion_campos.png)
