@@ -53,5 +53,33 @@ Al descomprimir el zip, disponemos de 3 tipos de ficheros:
 •	Datos sobre las estaciones: Identificacion_EstacionesClima.xml.
 
 En la descripción de los campos, los nombres no coinciden completamente con los campos que después encontramos en el fichero de datos, pero son fácilmente reconocibles:
-
 ![descripcion campos](imagenes/descripcion_campos.png)
+
+Al importar de xml de datos (Clim_Diario_2020.xml), aparecen 20 líneas en blanco por cada registro (hay 20 campos). Las eliminamos con herramientas de OpenRefine.
+![Filas en blanco](imagenes/filas_en_blanco.png)
+
+Cambiamos el nombre de las columnas, porque al cargar, OpenRefine les ha antepuesto el primer tag que aparece en el xml.
+![Cambio de nombre](imagenes/cambio_nombre.png)
+
+Transformamos las columnas que son números en numéricas. Son todas las columnas menos el código de estación y la fecha de anotación del registro.
+
+Obtenemos los siguientes tipos de datos:
+![descripcion fichero datos](imagenes/campos_en_fichero_datos.png)
+
+Con las facetas, podemos analizar para una columna, sus valores máximos, mínimos, nulos, etc.
+Añadimos una columna, unión de COD_EST y FECHA para tener un identificador único de cada registro.
+![Identificador unico](imagenes/identificador_unico.png)
+
+Finalmente, utilizando el fichero de datos de estaciones (Identificacion_EstacionesClima.xml), añadimos estos datos a nuestro dataset, uniendo por código de estación:
+
+NOMBRE	PROVINCIA	LATITUD	ALTITUD	LONGITUD	MUNICIPIO
+
+Expresión para join con otro dataset, por identificador de estación:
+
+cell.cross("Datos enlazados.Identificacion_EstacionesClima","ID_EST").cells["NOMBRE"].value[0]
+![Se añade nombre de la estación](imagenes/dataset.png)
+
+Resulta el siguiente dataset:
+![dataset](imagenes/dataset.png)
+
+
