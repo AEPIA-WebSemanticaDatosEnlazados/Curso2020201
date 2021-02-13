@@ -10,10 +10,15 @@ La transformación a datos enlazados permitirá la explotación de los mismos.
 2.1.- Selección de la fuente de datos
 Estos datos se obtienen del portal de la Junta de Andalucía de datos abiertos (https://www.juntadeandalucia.es/datosabiertos/portal/dataset/raif-clima).
 Los requisitos de selección de la fuente de datos serán:
+
   2.1.1.- Escenario real: datos climáticos de la red de estaciones agroclimáticas de Andalucía.
+  
   2.1.2.- Disponibilidad de los datos: 
+  
   2.1.2.1.- Datos en un formato procesable automáticamente: los datos están comprimidos en un .zip, que contiene ficheros .xml.
+  
   2.1.2.2.- Licencia. Reconocimiento 4.0 Internacional (CC BY 4.0) 
+  
   This is a human-readable summary of (and not a substitute for) the license. Advertencia. 
   Usted es libre de:
   •	Compartir — copiar y redistribuir el material en cualquier medio o formato
