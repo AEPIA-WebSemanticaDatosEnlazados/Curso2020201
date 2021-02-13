@@ -35,4 +35,4 @@ Al descomprimir el zip, disponemos de 3 tipos de ficheros:
 •	Datos sobre las estaciones: Identificacion_EstacionesClima.xml.
 En la descripción de los campos, los nombres no coinciden completamente con los campos que después encontramos en el fichero de datos, pero son fácilmente reconocibles:
 
-![descripcion campos]()
+![descripcion campos](imagenes/descripcion_campos.png)
