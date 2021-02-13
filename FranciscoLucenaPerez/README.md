@@ -90,4 +90,12 @@ Resulta el siguiente dataset:
 
 ![dataset](imagenes/dataset.png)
 
+2.3.- Estrategia de nombrado de recursos
+
+‘#’ para términos ontológicos
+‘/’ para individuos
+Dominio: https://raif-clima.datosenlazados.es
+Ontología: https://raif-clima.datosenlazados.es/ontology#
+Recursos: https://raif-clima.datosenlazados.es/recursos/
+Estaciones: https://raif-clima.datosenlazados.es/recursos/estaciones
 
