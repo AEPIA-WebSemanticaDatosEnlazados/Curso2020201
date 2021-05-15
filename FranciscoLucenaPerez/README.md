@@ -114,4 +114,7 @@ que tiene el siguiente grafo conceptual:
 
 ![grafo ontologia AEMET](imagenes/grafo_ontologia_AEMET.png)
 
+Definimos el mapeo entre el esquema de nuestros datos y la ontología que hemos definido. Hemos definido un campo único, mediante el nombre de la estación y la fecha, al que llamaremos observación. Para la definición de su URI usaremos la siguiente expresión: "observacion"+valor. Además de los datos recogidos en la estación, pondremos de manifisto que esta estación pertenece a un municipio, que a su vez pertence a una provincia. Implementamos estas relaciones editando el RDF Skeleton. Queda el siguiente esquema:
+![grafo ontologia AEMET](imagenes/RDF_schema_alignment1.png)
+![grafo ontologia AEMET](imagenes/RDF_schema_alignment2.png)
 
