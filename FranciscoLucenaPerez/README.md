@@ -115,6 +115,38 @@ que tiene el siguiente grafo conceptual:
 ![grafo ontologia AEMET](imagenes/grafo_ontologia_AEMET.png)
 
 Definimos el mapeo entre el esquema de nuestros datos y la ontología que hemos definido. Hemos definido un campo único, mediante el nombre de la estación y la fecha, al que llamaremos observación. Para la definición de su URI usaremos la siguiente expresión: "observacion"+valor. Además de los datos recogidos en la estación, pondremos de manifisto que esta estación pertenece a un municipio, que a su vez pertence a una provincia. Implementamos estas relaciones editando el RDF Skeleton. Queda el siguiente esquema:
+
 ![grafo ontologia AEMET](imagenes/RDF_schema_alignment1.png)
 ![grafo ontologia AEMET](imagenes/RDF_schema_alignment2.png)
+
+2.5.- El proceso de transformación de datos lo hemos llevado a cabo al realizar el análisis de datos, transformando los datos según fuera necesario.
+
+2.6.- Enlazados de datos
+
+Llevamos a cabo el enlazado de datos a través de la herramienta de reconciliación de OpenRefine; previamente, añadimos el servicio de reconciliacion de DBPedia español (https://es.dbpedia.org/sparql). Marcamos entonces la reconciliación por tipo Municipality en la herramienta de conciliación:
+
+![grafo ontologia AEMET](imagenes/reconcile.png)
+
+Conseguimos enlazar un 66% de los campos, pero la herramienta permite enlazar algunos valores de forma individual. Por ejemplo, se queda Níjar sin enlazar, pero podemos enlazar sólo por ese valor, a partir de una lista de sugerencias que ofrece la herramienta:
+
+![grafo ontologia AEMET](imagenes/reconcile3.png)
+
+Algunos valores también se quedan sin enlazar porque el valor del campo es nulo:
+
+![grafo ontologia AEMET](imagenes/reconcile4.png)
+
+Efectivamente, cuando transformamos datos e hicimos join por el código de estación con el fichero de estaciones, podemos observar que hay datos que no vienen:
+
+![grafo ontologia AEMET](imagenes/reconcile5.png)
+
+Finalmente, añadimos una columna a nuestro dataset con las url encontradas:
+
+![grafo ontologia AEMET](imagenes/reconcile6.png)
+
+A partir de esta columna, llevamos a cabo el enlazado de datos propiamente dicho, editando de nuevo el RDF Skeleton. Debemos generar la relación owl:sameAs que indica que el individuo de nuestro dataset (nombre_est en esta caso), es el mismo individuo que el encontrado en DPpedia:
+
+![grafo ontologia AEMET](imagenes/reconcile7.png)
+
+![grafo ontologia AEMET](imagenes/reconcile8.png)
+
 
