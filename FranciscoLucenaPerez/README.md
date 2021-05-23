@@ -151,6 +151,7 @@ A partir de esta columna, llevamos a cabo el enlazado de datos propiamente dicho
 
 
 3.- Aplicación y explotación.
+
 La solución desarrollada aporta información sobre el municipio en que se encuentra la estación. Se podrían obtener datos por ejemplo de la media de precipitaciones registrada en la estación meteorológica de un municipio, sabiendo además, por ejemplo, la población existente en ese municipio. 
 
 Podemos codificar un programa en R (.Rmd), para hacer consultas sobre el dataset:
