@@ -150,3 +150,26 @@ A partir de esta columna, llevamos a cabo el enlazado de datos propiamente dicho
 ![enlazado de datos](imagenes/reconcile8.png)
 
 
+3.- Aplicación y explotación.
+La solución desarrollada aporta información sobre el municipio en que se encuentra la estación. Se podrían obtener datos por ejemplo de la media de precipitaciones registrada en la estación meteorológica de un municipio, sabiendo además, por ejemplo, la población existente en ese municipio. 
+
+Las consultas sparql serían del tipo
+'PREFIX schema: <http://schema.org/>
+  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  PREFIX owl: <http://www.w3.org/2002/07/owl#>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+  PREFIX onto: <https://raif-clima.datosenlazados.es/ontology#>
+  PREFIX aemet: <http://aemet.linkeddata.es/ontology/>
+  PREFIX esdbpr : <http://es.dbpedia.org/resource/>
+  SELECT ?SumaDeLluvia 
+  where {?Nombre_est aemet:nombreEstacion owl:sameAs>http://es.dbpedia.org/resource/}'
+
+PREFIX
+esdbpr : <http://es.dbpedia.org/resource/>
+SELECT ?person WHERE{
+?person
+rdf:type dbpedia owl:Scientist
+?person
+dbpedia owl:country esdbpr:España .
+}
