@@ -161,7 +161,11 @@ Además, en el dataset tenemos latitud y longitud de las estaciones meteorológi
 ggmap, según se expone en el tema 12 de la asignatura. Tendremos entonces una representación visual de, por ejemplo, el municipio spbre el que estemos calculando la media de precipitaciones.
 
 5.- Bibliografía
+
 5.1.- Material de la asignatura (MUIIA: Web semántica y datos enlazados)
+
 5.2.- Datos obtenidos del portal de la Junta de Andalucía de datos abiertos: https://www.juntadeandalucia.es/datosabiertos/portal/dataset/raif-clima
+
 5.3.- Ontología AEMET: http://aemet.linkeddata.es/ontology/
+
 
