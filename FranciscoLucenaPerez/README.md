@@ -152,7 +152,7 @@ A partir de esta columna, llevamos a cabo el enlazado de datos propiamente dicho
 
 3.- Aplicación y explotación.
 
-La solución desarrollada aporta información sobre el municipio en que se encuentra la estación. Se podrían obtener datos por ejemplo de la media de precipitaciones registrada en la estación meteorológica de un municipio, sabiendo además, por ejemplo, la población existente en ese municipio. 
+Con los datos transformados a datos enlazados en formato rdf, se pueden hacer consultas complejas sobre los datos, mediante SPARQL. la solución desarrollada aporta información sobre el municipio en que se encuentra la estación. Se podrían obtener datos por ejemplo de la media de precipitaciones registrada en la estación meteorológica de un municipio, sabiendo además, por ejemplo, la población existente en ese municipio. 
 
 Podemos codificar un programa en R (.Rmd), para hacer consultas sobre el dataset:
 
@@ -160,6 +160,11 @@ Podemos codificar un programa en R (.Rmd), para hacer consultas sobre el dataset
 
 Además, en el dataset tenemos latitud y longitud de las estaciones meteorológicas. Con esto, podemos representarlas en un mapa, mediante la librería library
 ggmap, según se expone en el tema 12 de la asignatura. Tendremos entonces una representación visual de, por ejemplo, el municipio spbre el que estemos calculando la media de precipitaciones.
+
+4.- Conclusiones
+
+En este trabajo, a partir de un conjunto de datos "planos", encuentro que el principal valor añadido es el enlazado de datos.
+Tras un proceso de transformación de los datos originales, en el que transformamos los datos (con la vista ya puesta en un objetivo), la posibilidad de enlazar los datos con otras ontologías le da anormes posibilidades de ampliar la riqueza de nuestro conjunto de datos. Asimismo, la publicación de los mismos dará a su vez muchas posibildades de crecimento a otros datasets.
 
 5.- Bibliografía
 
