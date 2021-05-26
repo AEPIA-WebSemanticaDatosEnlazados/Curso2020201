@@ -2,13 +2,13 @@
 
 Datos climáticos obtenidos por Red de Estaciones Agroclimáticas [2002-2020]. Red de Alerta e Información Fitosanitaria (RAIF)
 
-1.- Introducción:
+**1.- Introducción**
 En este trabajo, transformaremos un conjunto de datos basados en el registro de distintas variables meteorológicas en estaciones meteorológicas de Andalucía. Concretamente se trata de datos climáticos obtenidos por la red de estaciones agroclimáticas de la Red de Alerta e Información Fitosanitaria (RAIF). 
 La transformación a datos enlazados permitirá la explotación de los mismos.
 
-2.- Proceso de transformación
+**2.- Proceso de transformación**
 
-2.1.- Selección de la fuente de datos
+**2.1.- Selección de la fuente de datos**
 Estos datos se obtienen del portal de la Junta de Andalucía de datos abiertos (https://www.juntadeandalucia.es/datosabiertos/portal/dataset/raif-clima).
 Los requisitos de selección de la fuente de datos serán:
 
@@ -43,7 +43,7 @@ Los requisitos de selección de la fuente de datos serán:
   •	No se dan garantías. La licencia puede no ofrecer todos los permisos necesarios para la utilización prevista. Por ejemplo, otros derechos como los de publicidad, privacidad,     o los derechos morales pueden limitar el uso del material.
   2.1.3.- Posibilidad de enlazar con entidades genéricas (lugares)
 
-2.2.- Análisis de datos
+**2.2.- Análisis de datos**
 Al descomprimir el zip, disponemos de 3 tipos de ficheros:
 
 •	Datos: Clim_Diario_2020.xml, Clim_Diario_2019.xml … Cargaremos sólo 2020, por agilidad en los procesos y capacidad de computación.
@@ -90,7 +90,7 @@ Resulta el siguiente dataset:
 
 ![dataset](imagenes/dataset.png)
 
-2.3.- Estrategia de nombrado de recursos
+**2.3.- Estrategia de nombrado de recursos**
 
 Usaremos ‘#’ para términos ontológicos.
 
@@ -104,7 +104,7 @@ Recursos: https://raif-clima.datosenlazados.es/recursos/
 
 Estaciones: https://raif-clima.datosenlazados.es/recursos/estaciones
 
-2.4.- Desarrollo del vocabulario
+**2.4.- Desarrollo del vocabulario**
 
 Usaremos la siguiente ontología, que parece que se puede ajustar bastante bien a los datos que tenemos:
 
@@ -119,9 +119,11 @@ Definimos el mapeo entre el esquema de nuestros datos y la ontología que hemos 
 ![grafo ontologia AEMET](imagenes/RDF_schema_alignment1.png)
 ![grafo ontologia AEMET](imagenes/RDF_schema_alignment2.png)
 
-2.5.- El proceso de transformación de datos lo hemos llevado a cabo al realizar el análisis de datos, transformando los datos según fuera necesario.
+**2.5.- Proceso de transformación**
 
-2.6.- Enlazados de datos
+El proceso de transformación de datos lo hemos llevado a cabo al realizar el análisis de datos, transformando los datos según fuera necesario.
+
+**2.6.- Enlazados de datos**
 
 Llevamos a cabo el enlazado de datos a través de la herramienta de reconciliación de OpenRefine; previamente, añadimos el servicio de reconciliacion de DBPedia español (https://es.dbpedia.org/sparql). Marcamos entonces la reconciliación por tipo Municipality en la herramienta de conciliación:
 
@@ -150,7 +152,7 @@ A partir de esta columna, llevamos a cabo el enlazado de datos propiamente dicho
 ![enlazado de datos](imagenes/reconcile8.png)
 
 
-3.- Aplicación y explotación.
+**3.- Aplicación y explotación.**
 
 Con los datos transformados a datos enlazados en formato rdf, se pueden hacer consultas complejas sobre los datos, mediante SPARQL. la solución desarrollada aporta información sobre el municipio en que se encuentra la estación. Se podrían obtener datos por ejemplo de la media de precipitaciones registrada en la estación meteorológica de un municipio, sabiendo además, por ejemplo, la población existente en ese municipio. 
 
@@ -161,12 +163,12 @@ Podemos codificar un programa en R (.Rmd), para hacer consultas sobre el dataset
 Además, en el dataset tenemos latitud y longitud de las estaciones meteorológicas. Con esto, podemos representarlas en un mapa, mediante la librería library
 ggmap, según se expone en el tema 12 de la asignatura. Tendremos entonces una representación visual de, por ejemplo, el municipio spbre el que estemos calculando la media de precipitaciones.
 
-4.- Conclusiones
+**4.- Conclusiones**
 
 En este trabajo, a partir de un conjunto de datos "planos", encuentro que el principal valor añadido es el enlazado de datos.
 Tras un proceso de transformación de los datos originales, en el que transformamos los datos (con la vista ya puesta en un objetivo), la posibilidad de enlazar los datos con otras ontologías le da anormes posibilidades de ampliar la riqueza de nuestro conjunto de datos. Asimismo, la publicación de los mismos dará a su vez muchas posibildades de crecimento a otros datasets.
 
-5.- Bibliografía
+**5.- Bibliografía**
 
 5.1.- Material de la asignatura (MUIIA: Web semántica y datos enlazados)
 
