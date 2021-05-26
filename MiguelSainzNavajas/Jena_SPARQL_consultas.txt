@@ -1,0 +1,217 @@
+package sparql;
+
+import java.io.InputStream;
+
+import org.apache.jena.query.Query;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.QueryFactory;
+import org.apache.jena.query.QuerySolution;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.rdf.model.Literal;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.util.FileManager;
+import org.apache.jena.vocabulary.VCARD;
+
+
+public class pruebas
+{
+	public static String datex = "http://vocab.datex.org/terms#";
+	public static String txn = "http://lod.taxonconcept.org/ontology/txn.owl#";
+	public static String dg = "https://w3id.org/dingo#";
+	public static String schema = "http://schema.org/";
+	public static String pext = "http://www.ontotext.com/proton/protonext#";
+	public static String dbpedia_ageRange = "http://dbpedia.org/ontology/ageRange";
+	public static String dbpedia_district = "http://dbpedia.org/ontology/district";
+	public static String obo= "http://purl.obolibrary.org/obo#";
+	public static void main(String args[])
+	{
+		String filename = "TrabajoFinal.rdf";
+		
+		// Create an empty model
+		Model model = ModelFactory.createDefaultModel();
+				
+		// Use the FileManager to find the input file
+		InputStream in = FileManager.get().open(filename);
+
+		if (in == null)
+			throw new IllegalArgumentException("File: "+filename+" not found");
+
+		// Read the RDF/XML file
+		model.read(in, null);
+		
+
+		// Consulta 1
+		
+		String queryString = 
+				"PREFIX datex: <" + datex + "> " +
+				"PREFIX txn: <" + txn + "> " +
+				"PREFIX dg: <" + dg + "> " +
+				"SELECT ?Subject "+
+				"WHERE { ?Subject  datex:injuryStatus 'MT'." +
+						 "?Subject  txn:Sex 'MUJER'." +
+						 "?Subject   dg:PersonRole 'VIAJERO'.} ";
+		
+		
+		Query query = QueryFactory.create(queryString);
+		QueryExecution qexec = QueryExecutionFactory.create(query, model) ;
+		ResultSet results = qexec.execSelect() ;
+		
+		while (results.hasNext())
+		{
+			QuerySolution binding = results.nextSolution();
+			Resource subj = (Resource) binding.get("Subject");
+		    System.out.println("Subject: "+subj.getURI());
+		}
+		System.out.println();
+		
+
+		// Consulta 2
+		
+		String queryString2 = 
+				"PREFIX datex: <" + datex + "> " +
+				"PREFIX txn: <" + txn + "> " +
+				"PREFIX obo: <" + obo + "> " +
+				"SELECT ?Subject ?EdadMin "+
+				"WHERE { ?Subject  datex:injuryStatus 'MT'." +
+						 "?Subject  txn:Sex 'MUJER'." +
+						 "?Subject  obo:OBI_0002556 ?EdadMin.} ";
+		
+		
+		Query query2 = QueryFactory.create(queryString2);
+		QueryExecution qexec2 = QueryExecutionFactory.create(query2, model) ;
+		ResultSet results2 = qexec2.execSelect() ;
+		
+		while (results2.hasNext())
+		{
+			QuerySolution binding2 = results2.nextSolution();
+			Resource Sujeto = (Resource) binding2.get("Subject");
+			Literal EdadMin = (Literal) binding2.get("EdadMin");
+			System.out.println("Subject: "+Sujeto.getURI()+"  "+EdadMin.getInt());;
+			
+		}
+		System.out.println();
+		
+
+		// Consulta 3
+		
+		String queryString3 = 
+				"PREFIX datex: <" + datex + "> " +
+				"PREFIX txn: <" + txn + "> " +
+				"PREFIX dg: <" + dg + "> " +
+				"SELECT ?Sexo ?Persona "+
+				"WHERE { ?Subject  datex:injuryStatus 'MT'." +
+							"?Subject  txn:Sex ?Sexo." +
+							"?Subject   dg:PersonRole ?Persona.} ";
+				
+				
+		Query query3 = QueryFactory.create(queryString3);
+		QueryExecution qexec3 = QueryExecutionFactory.create(query3, model) ;
+		ResultSet results3 = qexec3.execSelect() ;
+				
+		while (results3.hasNext())
+		{
+			QuerySolution binding3 = results3.nextSolution();
+			//Resource Sujeto = (Resource) binding2.get("Subject");
+			Literal Persona = (Literal) binding3.get("Persona");
+			Literal Sexo = (Literal) binding3.get("Sexo");
+			//System.out.println("Subject: "+Sujeto.getURI()+"  "+Coche);;
+			System.out.println(Sexo+"  "+Persona);;
+		}
+		System.out.println();
+
+
+		// Consulta 4
+				
+		String queryString4 = 
+				"PREFIX datex: <" + datex + "> " +
+				"PREFIX txn: <" + txn + "> " +
+				"PREFIX dg: <" + dg + "> " +
+				"PREFIX dbpedia_ageRange: <" + dbpedia_ageRange + "> " +
+				"SELECT ?Sexo ?Persona ?Edad "+
+				"WHERE { ?Subject  datex:injuryStatus 'MT'." +
+							"?Subject  txn:Sex ?Sexo." +
+							"?Subject  dbpedia_ageRange: ?Edad." +
+							"?Subject  dg:PersonRole ?Persona.} ";
+				
+				
+		Query query4 = QueryFactory.create(queryString4);
+		QueryExecution qexec4 = QueryExecutionFactory.create(query4, model) ;
+		ResultSet results4 = qexec4.execSelect() ;
+				
+		while (results4.hasNext())
+		{
+			QuerySolution binding4 = results4.nextSolution();
+			//Resource Sujeto = (Resource) binding2.get("Subject");
+			Literal Persona = (Literal) binding4.get("Persona");
+			Literal Sexo = (Literal) binding4.get("Sexo");
+			Literal Edad = (Literal) binding4.get("Edad");
+			//System.out.println("Subject: "+Sujeto.getURI()+"  "+Coche);;
+			System.out.println(Sexo+"     "+Persona+"     "+Edad);;
+		}
+		System.out.println();
+			
+
+		// Consulta 5
+					
+		String queryString5 = 
+				"PREFIX datex: <" + datex + "> " +
+				"PREFIX txn: <" + txn + "> " +
+				"PREFIX dg: <" + dg + "> " +
+				"PREFIX dbpedia_ageRange: <" + dbpedia_ageRange + "> " +
+				"SELECT ?Sexo ?Persona ?Edad (COUNT(?Subject) AS ?Cuenta) "+
+				"WHERE { ?Subject  datex:injuryStatus 'MT'." +
+							"?Subject  txn:Sex ?Sexo." +
+							"?Subject  dbpedia_ageRange: ?Edad." +
+							"?Subject  dg:PersonRole ?Persona.} " +
+				"GROUP BY ?Sexo ?Persona ?Edad ORDER BY DESC(?Cuenta)";
+					
+					
+		Query query5 = QueryFactory.create(queryString5);
+		QueryExecution qexec5 = QueryExecutionFactory.create(query5, model) ;
+		ResultSet results5 = qexec5.execSelect() ;
+					
+		while (results5.hasNext())
+		{
+			QuerySolution binding5 = results5.nextSolution();
+			//Resource Sujeto = (Resource) binding2.get("Subject");
+			Literal Persona = (Literal) binding5.get("Persona");
+			Literal Sexo = (Literal) binding5.get("Sexo");
+			Literal Edad = (Literal) binding5.get("Edad");
+			Literal Cuenta = (Literal) binding5.get("Cuenta");
+			//System.out.println("Subject: "+Sujeto.getURI()+"  "+Coche);;
+			System.out.println(Sexo+"     "+Persona+"     "+Edad+"     "+Cuenta.getInt());;
+		}
+		System.out.println();
+					
+
+		// Consulta 6: probada con injuryStatus 'MT' y 'HG'
+						
+		String queryString6 = 
+				"PREFIX datex: <" + datex + "> " +
+				"PREFIX schema: <" + schema + "> " +
+				"PREFIX dbpedia_district: <" + dbpedia_district + "> " +
+				"SELECT ?Distrito (COUNT(?Subject) AS ?Cuenta) "+
+				"WHERE { ?Subject  datex:injuryStatus 'HG'." +
+							"?Subject   schema:Report ?Parte." +
+							"?Parte     dbpedia_district: ?Distrito.} "+
+				"GROUP BY ?Distrito ORDER BY DESC(?Cuenta)";
+						
+						
+		Query query6 = QueryFactory.create(queryString6);
+		QueryExecution qexec6 = QueryExecutionFactory.create(query6, model) ;
+		ResultSet results6 = qexec6.execSelect() ;
+						
+		while (results6.hasNext())
+		{
+			QuerySolution binding6 = results6.nextSolution();
+			Resource Distrito = (Resource) binding6.get("Distrito");
+			Literal Cuenta = (Literal) binding6.get("Cuenta");
+			System.out.println(Distrito.getLocalName()+"     "+Cuenta.getInt());;
+		}
+		System.out.println();
+	}
+}

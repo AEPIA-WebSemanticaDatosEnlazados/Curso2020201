@@ -78,7 +78,7 @@ El último paso ha consistido en utilizar la extensión RDF (ya integrada en LOD
 - Se utiliza la herramienta "Edit RDF Skeletonn" para definir dos tripletas de acuerdo a los apartados anteriores 2C y 2D.
 ![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An6.jpg)
 - Se comprueba que los enlaces generados son correctos en "Preview".
-![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An1.jpg)
+![ScreenShot](https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/An7.jpg)
 - Finalmente, se genera el archivo Turtle a través de "Export > RDF as Turtle".
 - Se nombra al archivo como "Films_S21", disponible aquí: https://github.com/magnuspit/Curso2020201/blob/patch-1/PedroFigueiras/Films_S21.ttl
 
