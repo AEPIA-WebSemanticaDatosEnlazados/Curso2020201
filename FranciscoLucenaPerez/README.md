@@ -1,14 +1,14 @@
-Memoria
+**Memoria**
 
 Datos climáticos obtenidos por Red de Estaciones Agroclimáticas [2002-2020]. Red de Alerta e Información Fitosanitaria (RAIF)
 
-1.- Introducción:
+**1.- Introducción**
 En este trabajo, transformaremos un conjunto de datos basados en el registro de distintas variables meteorológicas en estaciones meteorológicas de Andalucía. Concretamente se trata de datos climáticos obtenidos por la red de estaciones agroclimáticas de la Red de Alerta e Información Fitosanitaria (RAIF). 
 La transformación a datos enlazados permitirá la explotación de los mismos.
 
-2.- Proceso de transformación
+**2.- Proceso de transformación**
 
-2.1.- Selección de la fuente de datos
+**2.1.- Selección de la fuente de datos**
 Estos datos se obtienen del portal de la Junta de Andalucía de datos abiertos (https://www.juntadeandalucia.es/datosabiertos/portal/dataset/raif-clima).
 Los requisitos de selección de la fuente de datos serán:
 
@@ -43,7 +43,7 @@ Los requisitos de selección de la fuente de datos serán:
   •	No se dan garantías. La licencia puede no ofrecer todos los permisos necesarios para la utilización prevista. Por ejemplo, otros derechos como los de publicidad, privacidad,     o los derechos morales pueden limitar el uso del material.
   2.1.3.- Posibilidad de enlazar con entidades genéricas (lugares)
 
-2.2.- Análisis de datos
+**2.2.- Análisis de datos**
 Al descomprimir el zip, disponemos de 3 tipos de ficheros:
 
 •	Datos: Clim_Diario_2020.xml, Clim_Diario_2019.xml … Cargaremos sólo 2020, por agilidad en los procesos y capacidad de computación.
@@ -90,7 +90,7 @@ Resulta el siguiente dataset:
 
 ![dataset](imagenes/dataset.png)
 
-2.3.- Estrategia de nombrado de recursos
+**2.3.- Estrategia de nombrado de recursos**
 
 Usaremos ‘#’ para términos ontológicos.
 
@@ -104,7 +104,7 @@ Recursos: https://raif-clima.datosenlazados.es/recursos/
 
 Estaciones: https://raif-clima.datosenlazados.es/recursos/estaciones
 
-2.4.- Desarrollo del vocabulario
+**2.4.- Desarrollo del vocabulario**
 
 Usaremos la siguiente ontología, que parece que se puede ajustar bastante bien a los datos que tenemos:
 
@@ -114,4 +114,66 @@ que tiene el siguiente grafo conceptual:
 
 ![grafo ontologia AEMET](imagenes/grafo_ontologia_AEMET.png)
 
+Definimos el mapeo entre el esquema de nuestros datos y la ontología que hemos definido. Hemos definido un campo único, mediante el nombre de la estación y la fecha, al que llamaremos observación. Para la definición de su URI usaremos la siguiente expresión: "observacion"+valor. Además de los datos recogidos en la estación, pondremos de manifisto que esta estación pertenece a un municipio, que a su vez pertence a una provincia. Implementamos estas relaciones editando el RDF Skeleton. Queda el siguiente esquema:
 
+![grafo ontologia AEMET](imagenes/RDF_schema_alignment1.png)
+![grafo ontologia AEMET](imagenes/RDF_schema_alignment2.png)
+
+**2.5.- Proceso de transformación**
+
+El proceso de transformación de datos lo hemos llevado a cabo al realizar el análisis de datos, transformando los datos según fuera necesario.
+
+**2.6.- Enlazados de datos**
+
+Llevamos a cabo el enlazado de datos a través de la herramienta de reconciliación de OpenRefine; previamente, añadimos el servicio de reconciliacion de DBPedia español (https://es.dbpedia.org/sparql). Marcamos entonces la reconciliación por tipo Municipality en la herramienta de conciliación:
+
+![enlazado de datos](imagenes/reconcile.png)
+
+Conseguimos enlazar un 66% de los campos, pero la herramienta permite enlazar algunos valores de forma individual. Por ejemplo, se queda Níjar sin enlazar, pero podemos enlazar sólo por ese valor, a partir de una lista de sugerencias que ofrece la herramienta:
+
+![enlazado de datos](imagenes/reconcile3.png)
+
+Algunos valores también se quedan sin enlazar porque el valor del campo es nulo:
+
+![enlazado de datos](imagenes/reconcile4.png)
+
+Efectivamente, cuando transformamos datos e hicimos join por el código de estación con el fichero de estaciones, podemos observar que hay datos que no vienen:
+
+![enlazado de datos](imagenes/reconcile5.png)
+
+Finalmente, añadimos una columna a nuestro dataset con las url encontradas:
+
+![enlazado de datos](imagenes/reconcile6.png)
+
+A partir de esta columna, llevamos a cabo el enlazado de datos propiamente dicho, editando de nuevo el RDF Skeleton. Debemos generar la relación owl:sameAs que indica que el individuo de nuestro dataset (nombre_est en esta caso), es el mismo individuo que el encontrado en DPpedia:
+
+![enlazado de datos](imagenes/reconcile7.png)
+
+![enlazado de datos](imagenes/reconcile8.png)
+
+
+**3.- Aplicación y explotación.**
+
+Con los datos transformados a datos enlazados en formato rdf, se pueden hacer consultas complejas sobre los datos, mediante SPARQL. la solución desarrollada aporta información sobre el municipio en que se encuentra la estación. Se podrían obtener datos por ejemplo de la media de precipitaciones registrada en la estación meteorológica de un municipio, sabiendo además, por ejemplo, la población existente en ese municipio. 
+
+Podemos codificar un programa en R (.Rmd), para hacer consultas sobre el dataset:
+
+![aplicacion y explotacion](imagenes/explotacion1.png)
+
+Además, en el dataset tenemos latitud y longitud de las estaciones meteorológicas. Con esto, podemos representarlas en un mapa, mediante la librería library
+ggmap, según se expone en el tema 12 de la asignatura. Tendremos entonces una representación visual de, por ejemplo, el municipio spbre el que estemos calculando la media de precipitaciones.
+
+**4.- Conclusiones**
+
+En este trabajo, a partir de un conjunto de datos "planos", encuentro que el principal valor añadido es el enlazado de datos.
+Tras un proceso de transformación de los datos originales, en el que transformamos los datos (con la vista ya puesta en un objetivo), la posibilidad de enlazar los datos con otras ontologías le da anormes posibilidades de ampliar la riqueza de nuestro conjunto de datos. Asimismo, la publicación de los mismos dará a su vez muchas posibildades de crecimento a otros datasets.
+
+**5.- Bibliografía**
+
+5.1.- Material de la asignatura (MUIIA: Web semántica y datos enlazados)
+
+5.2.- Datos obtenidos del portal de la Junta de Andalucía de datos abiertos: https://www.juntadeandalucia.es/datosabiertos/portal/dataset/raif-clima
+
+5.3.- Ontología AEMET: http://aemet.linkeddata.es/ontology/
+
+5.4.- DBPedia https://es.dbpedia.org/
