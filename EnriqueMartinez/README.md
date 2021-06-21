@@ -64,19 +64,20 @@ ONTOLOGÍA
 
 Para el proceso de transformacion hemos decidido usar OpenRefine y la extensión RDF
 
-1.- Elimino las columnas no necesarias porque sean igual a otras y no aporten información nueva
+1.- Elimino las columnas no necesarias porque sean igual a otras y no aporten información nueva. Como distrito ya que los barrios es más específico entonces ya con el barrio se puede mapear siempre a distrito.
 
 ![Datos1](images/img1.png)
 
-2.- Transformamos las columnas a números (las numéricas) porque el resto de columnas no hay que transformarlas
+2.- Transformamos las columnas a números (las numéricas) porque el resto de columnas no hay que transformarlas. En este dataset solo es numérico el numero de nacimientos con lo cual es esa la única columna que decido transformar.
 
 ![Datos2](images/img2.png)
 
-3.- Renombramos las columnas
+3.- Renombramos las columnas de manera más legible.
 
 ![Datos3](images/img3.png)
 
-4.- Creamos el RDF
+4.- Creamos el RDF. Para ello vemos las relaciones que tienen las columnas y creamos el esquema del siguiente modo: 
+En cada barrio nacen personas que pueden ser masculinas o femeninas y dentro de ellas la madre puede ser de una provincia o de otra y por último dentro de estas se puede ver el número de nacimientos con esas condiciones.
 
 ![Datos4](images/img4.png)
 
@@ -97,6 +98,9 @@ Estas reconciliaciones se hacen para poder ejecutar consultas más complejas con
 ### 2.7 Publicación
 
 No se va a proceder a la publicación
+
+En el caso de publicarse al haberse obtenido los datos de la comunidad de Madrid son datos de dominio público y estas serían las condicionas para su explotación.
+https://www.comunidad.madrid/servicios/informacion-atencion-ciudadano/aviso-legal-privacidad
 
 ## 3.- Aplicación
 
@@ -121,7 +125,7 @@ SELECT  ?Barrio ?ProvinciaNacimientoMadre ?Nacimientos WHERE {
 GROUP BY ?Barrio
 ORDER BY ?Nacimientos
 
-"""## 4.- Conclusiones
+## 4.- Conclusiones
 
 Vemos como con wikidata se puede reconciliar, es decir, enlazar las ubicaciones, incluso los barrios para así poder realizar de una forma más simple las consultas. Tambien he de mencionar que me ha parecido una práctica muy compleja en comparación con lo que he visto de teoría teniendo que indagar por internet bastante para poder completarla
 
